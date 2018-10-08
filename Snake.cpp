@@ -93,6 +93,7 @@ HRESULT Snake::Render()
 
 HRESULT Snake::Init()
 {
+	spritesManager = new Sprites();
 	g_pTexturewall = *D3DUtil::getTexture(L"img\wall\brick.png");
 	//设置材质  
 	D3DMATERIAL9 mtrl;
@@ -103,18 +104,20 @@ HRESULT Snake::Init()
 	mtrl.Emissive = D3DXCOLOR(0.3f, 0.0f, 0.1f, 1.0f);
 	D3DUtil::getD3DDev()->SetMaterial(&mtrl);
 	for (int i = 0; i < wallnum; i++) {
-		g_pSprite1wall[i] = new Sprite();
-		g_pSprite1wall[i]->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH, BOX_WIDTH, 0);
+		Sprite* wall= new Sprite();
+		wall->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH, BOX_WIDTH, 0);
+		spritesManager->AddSprite(wall);
 	}
 	for (int i = 0; i < wallnum; i++) {
-		g_pSnake[i] = new Sprite();
-		g_pSnake[i]->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH*(5 - i), BOX_WIDTH * 5, 0);
+		Sprite* snake = new Sprite();
+		snake->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH*(5 - i), BOX_WIDTH * 5, 0);
+		spritesManager->AddSprite(snake);
 	}
 	// 创建并初始化地形  
 	//g_pTerrain = new TerrainClass();
 	//g_pTerrain->getTerrain(64*100, L"img/wall/brick.png");      //从文件加载高度图和纹理  
 	//g_pTerrain->InitTerrain(64, 100, 10.0f, 1.0f);  //四个值分别是顶点行数，顶点列数，顶点间间距，缩放系数  
-	// 三步曲之一，开启Alpha融合  
+	//三步曲之一，开启Alpha融合  
 	D3DUtil::getD3DDev()->SetRenderState(D3DRS_ALPHABLENDENABLE, true);
 	//三步曲之二，设置融合因子  
 	D3DUtil::getD3DDev()->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);

@@ -1,5 +1,4 @@
-#ifndef SETING_H
-#define SETING_H
+#pragma once 
 #define SCREEN_WIDTH	1300						//为窗口宽度定义的宏，以方便在此处修改窗口宽度
 #define SCREEN_HEIGHT	900							//为窗口高度定义的宏，以方便在此处修改窗口高度
 #define BOX_WIDTH	32						//砖块宽度
@@ -34,6 +33,8 @@ using namespace std;
 #include "D3DUtil.h"
 #include "StringUtil.h"
 #include "BaseGame.h"
+#include "Sprites.h"
+#include "BaseSprite.h"
 //*****************************************************************************************
 // Desc: 库文件定义部分  
 //***************************************************************************************** 
@@ -57,4 +58,3 @@ struct SNAKE
 	SNAKE * next;
 };
 #define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ |D3DFVF_TEX1)  
-#endif

@@ -3,6 +3,7 @@
 class Snake : BaseGame
 {
 private:
+	Sprites *spritesManager;
 	Sprite * g_pSnake[200];
 	LPDIRECT3DTEXTURE9  	g_pTexture = NULL;
 	LPDIRECT3DTEXTURE9  	g_pTexturewall;

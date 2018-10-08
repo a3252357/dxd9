@@ -1,7 +1,7 @@
 #ifndef BASEGAME_H
 #define BASEGAME_H
 #include "Seting.h"
-virtual class BaseGame
+class BaseGame
 {
 public:
 	virtual HRESULT Update() = 0;

@@ -28,6 +28,9 @@
     <Filter Include="BaseGame">
       <UniqueIdentifier>{94f3a76f-b419-43ad-8c16-e44eeef09a35}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SnakeGame\Bean">
+      <UniqueIdentifier>{24c1d67f-603d-43df-96f3-529dcede852d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DRect.cpp">
@@ -40,9 +43,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="InputInit.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Base.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
@@ -74,6 +74,12 @@
     </ClCompile>
     <ClCompile Include="Sprites.cpp">
       <Filter>BaseGame</Filter>
+    </ClCompile>
+    <ClCompile Include="SnakeBody.cpp">
+      <Filter>SnakeGame\Bean</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseSprite.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -148,9 +154,6 @@
     <ClInclude Include="InputInit.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Base.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -180,6 +183,12 @@
     </ClInclude>
     <ClInclude Include="Sprites.h">
       <Filter>BaseGame</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeBody.h">
+      <Filter>SnakeGame\Bean</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseSprite.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

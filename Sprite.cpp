@@ -1,6 +1,6 @@
 #include "Sprite.h"
 
-HRESULT Sprite::Sprite_Init(LPCWSTR  path,int x,int y,int angels)
+HRESULT Sprite::Sprite_Init(LPCWSTR  path,float x, float y, float angels)
 {
 	D3DXCreateSprite(D3DUtil::getD3DDev(), &m_Sprite);
 	m_Texture= D3DUtil::getTexture(path);
@@ -11,7 +11,7 @@ HRESULT Sprite::Sprite_Init(LPCWSTR  path,int x,int y,int angels)
 	m_angels = angels;
 	return S_OK;
 }
-HRESULT Sprite::Sprite_Init(LPDIRECT3DTEXTURE9 * Texture, int x, int y, int angels)
+HRESULT Sprite::Sprite_Init(LPDIRECT3DTEXTURE9 * Texture, float x, float y, float angels)
 {
 	D3DXCreateSprite(D3DUtil::getD3DDev(), &m_Sprite);
 	m_Texture = Texture;
@@ -33,7 +33,7 @@ HRESULT Sprite::Set_State(float x, float y, int angels)
 	return S_OK;
 }
 
-void Sprite::OUpdate()
+HRESULT Sprite::Update()
 {
 
 	rect.left = 0;
@@ -50,12 +50,14 @@ void Sprite::OUpdate()
 	//D3DXMatrixTranslation(&T2, m_x + BOX_WIDTH / 2, m_y + BOX_WIDTH / 2, 0.f);
 	D3DXMatrixTranslation(&TInv, m_x, m_y, 0.f);
 	TInv = T1*dd16*T2*TInv;
+	return S_OK;
 }
 
-void Sprite::ORender()
+HRESULT Sprite::Render()
 {
 	m_Sprite->Begin(D3DXSPRITE_ALPHABLEND);
 	//m_Sprite->SetTransform(&TInv);
 	HRESULT s1 = m_Sprite->Draw(*m_Texture, &rect, NULL, &vec, 0xffffffff);
 	HRESULT s= m_Sprite->End();
+	return S_OK;
 }

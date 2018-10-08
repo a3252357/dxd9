@@ -277,12 +277,12 @@ void Direct3D_Render(HWND hwnd)
 			{
 				g_pSprite1wall[z]->Set_State(i*BOX_WIDTH, j*BOX_WIDTH, 0);
 				g_pSprite1wall[z]->Update();
+				g_pSprite1wall[z]->Render();
 				z++;
 			}
 		}
 	}
 	currentTime = timeGetTime()*0.01f;//获取系统时间，其中timeGetTime函数返回的是以毫秒为单位的系统时间，所以需要乘以0.001，得到单位为秒的时间
-	printf("%d\n", currentTime);
 	if (currentTime - lastTime >= 1) {
 		for (int j = 0; j < snakenum; j++) {
 			SNAKE * list;
@@ -333,6 +333,7 @@ void Direct3D_Render(HWND hwnd)
 	}
 	for (int j = 0; j < snakenum; j++) {
 		g_pSnake[j]->Update();
+		g_pSnake[j]->Render();
 	}
 	//--------------------------------------------------------------------------------------
 	// 【Direct3D渲染五步曲之二】：开始绘制
@@ -387,7 +388,8 @@ void Direct3D_Render(HWND hwnd)
 	//meshBox->DrawSubset(2);
 	//meshBox->DrawSubset(3);
 	//meshBox->DrawSubset(4);
-	xfile.OUpdate();
+	xfile.Update();
+	xfile.Render();
 	//绘制地形  
 	D3DXMatrixTranslation(&g_WorldMatrix[1], 1.0f, 0.0f, 1.0f);
 	//g_pTerrain->RenderTerrain(&g_WorldMatrix[1], true);  //渲染地形，且第二个参数设为false，表示不渲染出地形的线框 

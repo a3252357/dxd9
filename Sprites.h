@@ -1,11 +1,14 @@
 #pragma once
+#include "BaseSprite.h"
 #include "Seting.h"
 class Sprites{
 	private:
-		list<Base> sprites;
+		list<BaseSprite*> sprites;
 		HRESULT Update();
 		HRESULT Init();
 		HRESULT Render();
 	public:
-		HRESULT AddSprite();
+		Sprites();
+		~Sprites();
+		HRESULT AddSprite(BaseSprite* _sprite);
 };

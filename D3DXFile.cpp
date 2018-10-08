@@ -27,16 +27,18 @@ HRESULT XFile::XFile_Init(LPCWSTR path)
 	return S_OK;
 }
 
-void XFile::OUpdate()
+HRESULT XFile::Update()
 {
 	for (int i = 0; i < m_Mtrls.size(); i++) {
 		D3DUtil::getD3DDev()->SetMaterial(&m_Mtrls[i]);
 		D3DUtil::getD3DDev()->SetTexture(0,m_Textures[i]);
 		m_Mesh->DrawSubset(i);
 	}
+	return S_OK;
 }
 
-void XFile::ORender()
+HRESULT XFile::Render()
 {
 	//throw std::logic_error("The method or operation is not implemented.");
+	return S_OK;
 }

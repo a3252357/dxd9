@@ -153,13 +153,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Base.cpp" />
+    <ClCompile Include="BaseSprite.cpp" />
     <ClCompile Include="CameraClass.cpp" />
     <ClCompile Include="D3DRect.cpp" />
     <ClCompile Include="D3DUtil.cpp" />
     <ClCompile Include="D3DXFile.cpp" />
     <ClCompile Include="InputInit.cpp" />
     <ClCompile Include="Snake.cpp" />
+    <ClCompile Include="SnakeBody.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Sprites.cpp" />
     <ClCompile Include="StringUtil.cpp" />
@@ -190,7 +191,7 @@
     <Image Include="img\wall\river.png" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Base.h" />
+    <ClInclude Include="BaseSprite.h" />
     <ClInclude Include="BaseGame.h" />
     <ClInclude Include="D3DRect.h" />
     <ClInclude Include="D3DUtil.h" />
@@ -198,6 +199,7 @@
     <ClInclude Include="InputInit.h" />
     <ClInclude Include="Seting.h" />
     <ClInclude Include="Snake.h" />
+    <ClInclude Include="SnakeBody.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="Sprites.h" />
