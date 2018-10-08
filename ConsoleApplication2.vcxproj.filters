@@ -16,6 +16,18 @@
     <Filter Include="头文件\Util">
       <UniqueIdentifier>{f52b260e-1754-40c3-a5e6-0e897b81a744}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SnakeGame">
+      <UniqueIdentifier>{3d2c9dad-fcf5-41c3-aa7e-ef5d45de17ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SnakeGame\头文件">
+      <UniqueIdentifier>{2e91462b-909d-473c-b8d3-7d2a37f0e6fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SnakeGame\源文件">
+      <UniqueIdentifier>{d7049894-cd54-4b6e-bad8-603713e243ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseGame">
+      <UniqueIdentifier>{94f3a76f-b419-43ad-8c16-e44eeef09a35}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DRect.cpp">
@@ -56,6 +68,12 @@
     </ClCompile>
     <ClCompile Include="StringUtil.cpp">
       <Filter>头文件\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Snake.cpp">
+      <Filter>SnakeGame\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprites.cpp">
+      <Filter>BaseGame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +171,15 @@
     </ClInclude>
     <ClInclude Include="StringUtil.h">
       <Filter>头文件\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Snake.h">
+      <Filter>SnakeGame\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseGame.h">
+      <Filter>BaseGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprites.h">
+      <Filter>BaseGame</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

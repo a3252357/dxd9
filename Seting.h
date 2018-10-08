@@ -18,6 +18,7 @@ using namespace std;
 #include <math.h>
 #include <map>
 #include <vector>
+#include <list>
 //#include <atlconv.h>
 #include <string>
 #include <cstring>
@@ -32,6 +33,7 @@ using namespace std;
 #include "CameraClass.h"
 #include "D3DUtil.h"
 #include "StringUtil.h"
+#include "BaseGame.h"
 //*****************************************************************************************
 // Desc: 库文件定义部分  
 //***************************************************************************************** 

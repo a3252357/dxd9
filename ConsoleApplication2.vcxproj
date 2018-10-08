@@ -159,7 +159,9 @@
     <ClCompile Include="D3DUtil.cpp" />
     <ClCompile Include="D3DXFile.cpp" />
     <ClCompile Include="InputInit.cpp" />
+    <ClCompile Include="Snake.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Sprites.cpp" />
     <ClCompile Include="StringUtil.cpp" />
     <ClCompile Include="SystemInit.cpp" />
     <ClCompile Include="TerrainClass.cpp" />
@@ -189,13 +191,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base.h" />
+    <ClInclude Include="BaseGame.h" />
     <ClInclude Include="D3DRect.h" />
     <ClInclude Include="D3DUtil.h" />
     <ClInclude Include="D3DXFile.h" />
     <ClInclude Include="InputInit.h" />
     <ClInclude Include="Seting.h" />
+    <ClInclude Include="Snake.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteManager.h" />
+    <ClInclude Include="Sprites.h" />
     <ClInclude Include="StringUtil.h" />
     <ClInclude Include="SystemInit.h" />
     <ClInclude Include="TextureManager.h" />
