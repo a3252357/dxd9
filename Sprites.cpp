@@ -9,9 +9,9 @@ Sprites::~Sprites()
 }
 HRESULT Sprites::Update()
 {
-	list<BaseSprite*>::iterator plist;
+	list<shared_ptr<BaseSprite>>::iterator plist;
 	for (plist = sprites.begin(); plist != sprites.end(); plist++) {
-		BaseSprite* base = *plist;
+		shared_ptr<BaseSprite> base = *plist;
 		if (base->getType()==0) {
 			base->Update();
 		}
@@ -26,9 +26,9 @@ HRESULT Sprites::Init()
 
 HRESULT Sprites::Render()
 {
-	list<BaseSprite*>::iterator plist;
+	list<shared_ptr<BaseSprite>>::iterator plist;
 	for (plist = sprites.begin(); plist != sprites.end(); plist++) {
-		BaseSprite* base = *plist;
+		shared_ptr<BaseSprite> base = *plist;
 		if (base->getType() == 0) {
 			base->Render();
 		}
@@ -36,7 +36,7 @@ HRESULT Sprites::Render()
 	return S_OK;
 }
 
-HRESULT Sprites::AddSprite(BaseSprite* _sprite)
+HRESULT Sprites::AddSprite(shared_ptr<BaseSprite> _sprite)
 {
 	sprites.push_back(_sprite);
 	return S_OK;

@@ -55,6 +55,6 @@ struct SNAKE
 	int snakeup;               // 操作的方向  
 	int x=0; 
 	int y=0;// 纹理坐标  
-	SNAKE * next;
+	shared_ptr<SNAKE> next;
 };
 #define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ |D3DFVF_TEX1)  

@@ -3,18 +3,18 @@
 class Snake : BaseGame
 {
 private:
-	Sprites *spritesManager;
-	Sprite * g_pSnake[200];
+	shared_ptr<Sprites> spritesManager;
+	shared_ptr<Sprite> g_pSnake[200];
 	LPDIRECT3DTEXTURE9  	g_pTexture = NULL;
 	LPDIRECT3DTEXTURE9  	g_pTexturewall;
-	Sprite*            g_pSprite1wall[200];
+	shared_ptr<Sprite>           g_pSprite1wall[200];
 	int snakenum = 10;
 	int snakeup = 0;
 	int wallnum = 200;
-	SNAKE *last;
-	SNAKE *cur;
-	SNAKE *frist;
-	SNAKE *snake;
+	shared_ptr<SNAKE> last;
+	shared_ptr<SNAKE> cur;
+	shared_ptr<SNAKE> frist;
+	shared_ptr<SNAKE> snake;
 	int wall[10][10] =
 	{
 		{ 1,1,1,1,1,1,1,1,1,1 },

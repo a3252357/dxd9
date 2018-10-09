@@ -49,9 +49,9 @@ LPDIRECT3DTEXTURE9  	g_pTexturewall;
 LPDIRECT3DTEXTURE9  	g_pTextureBoss;
 LPDIRECT3DTEXTURE9  	g_pTexturePlayer;
 ID3DXMesh* meshBox;
-SNAKE *last;
-SNAKE *cur;
-SNAKE *frist;
+shared_ptr<SNAKE>last;
+shared_ptr<SNAKE>cur;
+shared_ptr<SNAKE>frist;
 CameraClass*                            g_pCamera = NULL;
 int xp = 0;
 int yp = 0;
@@ -254,7 +254,7 @@ HRESULT Objects_Init()
 // Name: Direct3D_Render()
 // Desc: 使用Direct3D进行渲染
 //*****************************************************************************************
-SNAKE *snake;
+shared_ptr<SNAKE>snake;
 void Direct3D_Render(HWND hwnd)
 {
 
@@ -285,9 +285,9 @@ void Direct3D_Render(HWND hwnd)
 	currentTime = timeGetTime()*0.01f;//获取系统时间，其中timeGetTime函数返回的是以毫秒为单位的系统时间，所以需要乘以0.001，得到单位为秒的时间
 	if (currentTime - lastTime >= 1) {
 		for (int j = 0; j < snakenum; j++) {
-			SNAKE * list;
+			shared_ptr<SNAKE> list;
 			if (j == 0) {
-				snake = new SNAKE();
+				snake = make_shared<SNAKE>();
 				snake->snakeup = snakeup;
 				if (snakeup == 0) {
 					g_pSnake[j]->Set_State(g_pSnake[j]->m_x + 32, g_pSnake[j]->m_y, 0);

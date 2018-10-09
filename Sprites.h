@@ -3,12 +3,12 @@
 #include "Seting.h"
 class Sprites{
 	private:
-		list<BaseSprite*> sprites;
+		list<shared_ptr<BaseSprite>> sprites;
 		HRESULT Update();
 		HRESULT Init();
 		HRESULT Render();
 	public:
 		Sprites();
 		~Sprites();
-		HRESULT AddSprite(BaseSprite* _sprite);
+		HRESULT AddSprite(shared_ptr<BaseSprite> _sprite);
 };

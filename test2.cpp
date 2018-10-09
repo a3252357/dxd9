@@ -50,9 +50,9 @@
 //LPDIRECT3DTEXTURE9  	g_pTextureBoss;
 //LPDIRECT3DTEXTURE9  	g_pTexturePlayer;
 //ID3DXMesh* meshBox;
-//SNAKE *last;
-//SNAKE *cur;
-//SNAKE *frist;
+//shared_ptr<SNAKE>last;
+//shared_ptr<SNAKE>cur;
+//shared_ptr<SNAKE>frist;
 //CameraClass*                            g_pCamera = NULL;
 //int xp = 0;
 //int yp = 0;
@@ -271,7 +271,7 @@
 //// Name: Direct3D_Render()
 //// Desc: 使用Direct3D进行渲染
 ////*****************************************************************************************
-//SNAKE *snake;
+//shared_ptr<SNAKE>snake;
 //void Direct3D_Render(HWND hwnd)
 //{
 //
@@ -302,9 +302,9 @@
 //	printf("%d\n", currentTime);
 //	if (currentTime - lastTime >= 1) {
 //		for (int j = 0; j < snakenum; j++) {
-//			SNAKE * list;
+//			shared_ptr<SNAKE> list;
 //			if (j == 0) {
-//				snake = new SNAKE();
+//				snake = make_shared<SNAKE>();
 //				snake->snakeup = snakeup;
 //				if (snakeup == 0) {
 //					g_pSnake[j]->Set_State(g_pSnake[j]->m_x + 32, g_pSnake[j]->m_y, 0);

@@ -4,8 +4,9 @@
 class SnakeBody:BaseSprite {
 private:
 	int snakeup;
-public:
 	list<BaseSprite*> bodys;
+public:
+	HRESULT Add(BaseSprite* _sprite);
 	HRESULT Update() override;
 	HRESULT Render() override;
 };

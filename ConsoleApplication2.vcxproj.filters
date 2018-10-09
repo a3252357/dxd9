@@ -31,6 +31,9 @@
     <Filter Include="SnakeGame\Bean">
       <UniqueIdentifier>{24c1d67f-603d-43df-96f3-529dcede852d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TimeSystem">
+      <UniqueIdentifier>{e8817119-172f-4a1e-b758-9e0e77e7eafe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DRect.cpp">
@@ -189,6 +192,9 @@
     </ClInclude>
     <ClInclude Include="BaseSprite.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeSystemInterface.h">
+      <Filter>TimeSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

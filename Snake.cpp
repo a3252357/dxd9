@@ -11,14 +11,6 @@ Snake::~Snake()
 
 HRESULT Snake::Update()
 {
-	if (InputInit::g_KeyboardState[DIK_LEFT] & 0x8000f) {
-		snakeup = 2;
-	}
-	if (InputInit::g_KeyboardState[DIK_RIGHT] & 0x8000f) { snakeup = 0; }
-	if (InputInit::g_KeyboardState[DIK_UP] & 0x8000f) {
-		snakeup = 1;
-	}
-	if (InputInit::g_KeyboardState[DIK_DOWN] & 0x8000f) { snakeup = 3; }
 	return S_OK;
 }
 
@@ -39,9 +31,9 @@ HRESULT Snake::Render()
 	printf("%d\n", currentTime);
 	if (currentTime - lastTime >= 1) {
 		for (int j = 0; j < snakenum; j++) {
-			SNAKE * list;
+			shared_ptr<SNAKE> list;
 			if (j == 0) {
-				snake = new SNAKE();
+				snake = make_shared<SNAKE>();
 				snake->snakeup = snakeup;
 				if (snakeup == 0) {
 					g_pSnake[j]->Set_State(g_pSnake[j]->m_x + 32, g_pSnake[j]->m_y, 0);
@@ -93,7 +85,7 @@ HRESULT Snake::Render()
 
 HRESULT Snake::Init()
 {
-	spritesManager = new Sprites();
+	spritesManager =make_shared<Sprites>();
 	g_pTexturewall = *D3DUtil::getTexture(L"img\wall\brick.png");
 	//ÉèÖÃ²ÄÖÊ  
 	D3DMATERIAL9 mtrl;
@@ -104,12 +96,12 @@ HRESULT Snake::Init()
 	mtrl.Emissive = D3DXCOLOR(0.3f, 0.0f, 0.1f, 1.0f);
 	D3DUtil::getD3DDev()->SetMaterial(&mtrl);
 	for (int i = 0; i < wallnum; i++) {
-		Sprite* wall= new Sprite();
+		shared_ptr<Sprite> wall= make_shared<Sprite>();
 		wall->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH, BOX_WIDTH, 0);
 		spritesManager->AddSprite(wall);
 	}
 	for (int i = 0; i < wallnum; i++) {
-		Sprite* snake = new Sprite();
+		shared_ptr<Sprite> snake = make_shared<Sprite>();
 		snake->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH*(5 - i), BOX_WIDTH * 5, 0);
 		spritesManager->AddSprite(snake);
 	}
