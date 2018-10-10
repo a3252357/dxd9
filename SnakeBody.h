@@ -4,9 +4,10 @@
 class SnakeBody:BaseSprite {
 private:
 	int snakeup;
-	list<BaseSprite*> bodys;
+	list<shared_ptr<Sprite>> bodys;
 public:
-	HRESULT Add(BaseSprite* _sprite);
+	HRESULT Add(shared_ptr<Sprite> _sprite);
 	HRESULT Update() override;
 	HRESULT Render() override;
+	void snakenext();
 };

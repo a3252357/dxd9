@@ -38,16 +38,16 @@ float					g_FPS = 0.0f;       //一个浮点型的变量，代表帧速率
 wchar_t					g_strFPS[50];    //包含帧速率的字符数组
 RECT					g_FontPosition = { 0, 0, 0, 0 };//定义一个矩形，用于字体位置的设定
 b2World * mWorld;
-ID3DXSprite*            g_pSprite = NULL;
-ID3DXSprite*            g_pSpriteBoss = NULL;
-ID3DXSprite*            g_pSpritePlayer = NULL;
-ID3DXSprite*            g_pSprite1[100];
+//ID3DXSprite*            g_pSprite = NULL;
+//ID3DXSprite*            g_pSpriteBoss = NULL;
+//ID3DXSprite*            g_pSpritePlayer = NULL;
+//ID3DXSprite*            g_pSprite1[100];
 Sprite*            g_pSprite1wall[200];
 Sprite*            g_pSnake[200];
-LPDIRECT3DTEXTURE9  	g_pTexture = NULL;
+//LPDIRECT3DTEXTURE9  	g_pTexture = NULL;
 LPDIRECT3DTEXTURE9  	g_pTexturewall;
-LPDIRECT3DTEXTURE9  	g_pTextureBoss;
-LPDIRECT3DTEXTURE9  	g_pTexturePlayer;
+//LPDIRECT3DTEXTURE9  	g_pTextureBoss;
+//LPDIRECT3DTEXTURE9  	g_pTexturePlayer;
 ID3DXMesh* meshBox;
 shared_ptr<SNAKE>last;
 shared_ptr<SNAKE>cur;
@@ -99,6 +99,8 @@ float32 angels = 0.0f;
 float32 angels1[100];
 RECT rect = RECT();
 D3DXVECTOR3 vec = D3DXVECTOR3();
+shared_ptr<time_wheel> time1;
+shared_ptr<Timer> timer;
 D3DXMATRIX dd16;
 D3DXMATRIX T1, T2, TInv;
 LPD3DXMESH g_teapot = NULL;     //茶壶对象  //在窗口右上角处，显示每秒帧数
@@ -144,15 +146,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	return 0;
 }
 
-
-
+int start = clock();
+int end1 = clock();
 //*****************************************************************************************
 // Name: WndProc()
 // Desc: 对窗口消息进行处理
 //*****************************************************************************************
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)   //窗口过程函数WndProc
 {
-
 
 	switch (message)				//switch语句开始
 	{
@@ -178,11 +179,21 @@ LPDIRECT3DVERTEXBUFFER9 g_pVertexBuffer = NULL;    //顶点缓冲区对象
 												   // Desc: 设置光源类型  
 												   //--------------------------------------------------------------------------------------  
 LPDIRECT3DTEXTURE9      g_pTexture1 = NULL;   // 纹理接口对象  
-
-
+shared_ptr<TimeS> time3=make_shared<TimeS>();
+void func(shared_ptr<TimerData> timedate) {
+	time3->end();
+	AllocConsole();//打开控制台窗口
+	freopen("CONOUT$", "w", stdout);
+	printf("%s", time3->time);
+	//cout << "This is a test info" << std::endl;
+}
 HRESULT Objects_Init()
 {
-
+	time1 = make_shared<time_wheel>();
+	//g_pTexturewall->Release();
+	timer= make_shared<Timer>(5000);
+	timer->cb_func = func;
+	time1->add_timer(timer);
 	g_pTexturewall = *D3DUtil::getTexture(L"img\wall\brick.png");
 	//world.SetAllowSleeping(true);
 	//创建字体
@@ -234,6 +245,7 @@ HRESULT Objects_Init()
 
 
 	lastTime = timeGetTime()*0.01f; //将当前时间currentTime赋给持续时间lastTime，作为下一秒的基准时间
+	start = clock();
 	return S_OK;
 }
 
@@ -257,6 +269,12 @@ HRESULT Objects_Init()
 shared_ptr<SNAKE>snake;
 void Direct3D_Render(HWND hwnd)
 {
+	if (!time3->istimer) {
+		time3->start();
+	}
+	end1 = clock();
+	if (end1 - start >= 5) { time1->tick();	start+= 5;
+	}
 
 	D3DXMATRIX R;
 	D3DXMATRIX g_WorldMatrix[4];
@@ -305,7 +323,7 @@ void Direct3D_Render(HWND hwnd)
 					g_pSnake[j]->Set_State(g_pSnake[j]->m_x, g_pSnake[j]->m_y + 32, 0);
 					snake->y = 32 * (currentTime - lastTime);
 				}
-				printf("%d", 32 * (currentTime - lastTime));
+				//printf("%d", 32 * (currentTime - lastTime));
 				if (last == NULL)
 				{
 					cur = snake;

@@ -9,6 +9,8 @@ using namespace std;
 // Desc: 头文件定义部分  
 //*****************************************************************************************    
 #include <d3d9.h>
+#include <time.h>
+#include <stdio.h>
 #include <d3dx9.h>
 #include <DInput.h>
 #include <tchar.h>
@@ -35,6 +37,10 @@ using namespace std;
 #include "BaseGame.h"
 #include "Sprites.h"
 #include "BaseSprite.h"
+#include "TimerData.h"
+#include "TimeSystem.h"
+#include "TimeS.h"
+
 //*****************************************************************************************
 // Desc: 库文件定义部分  
 //***************************************************************************************** 
