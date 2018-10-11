@@ -1,20 +1,19 @@
 #pragma once
 #include "Seting.h"
+class SnakeBody;
+class Sprites;
 class Snake : BaseGame
 {
 private:
 	shared_ptr<Sprites> spritesManager;
+	shared_ptr<SnakeBody> snakeBody;
 	shared_ptr<Sprite> g_pSnake[200];
 	LPDIRECT3DTEXTURE9  	g_pTexture = NULL;
 	LPDIRECT3DTEXTURE9  	g_pTexturewall;
-	shared_ptr<Sprite>           g_pSprite1wall[200];
+	shared_ptr<Sprite>           g_pSprite1wall[100];
 	int snakenum = 10;
 	int snakeup = 0;
 	int wallnum = 200;
-	shared_ptr<SNAKE> last;
-	shared_ptr<SNAKE> cur;
-	shared_ptr<SNAKE> frist;
-	shared_ptr<SNAKE> snake;
 	int wall[10][10] =
 	{
 		{ 1,1,1,1,1,1,1,1,1,1 },
@@ -37,3 +36,4 @@ public:
 	HRESULT Render() override;
 	HRESULT Init()	override;
 };
+void snakenext(shared_ptr<SnakeBody> sprite);

@@ -15,6 +15,7 @@
 // Desc: 头文件定义部分  
 //*****************************************************************************************                                                                                       
 #include "Seting.h"
+#include "TimeInit.h"
 #define dDOUBLE
 
 extern long g_lMouseMoveX, g_lMouseMoveY;
@@ -99,7 +100,7 @@ float32 angels = 0.0f;
 float32 angels1[100];
 RECT rect = RECT();
 D3DXVECTOR3 vec = D3DXVECTOR3();
-shared_ptr<time_wheel> time1;
+shared_ptr<TimeWheel> time1;
 shared_ptr<Timer> timer;
 D3DXMATRIX dd16;
 D3DXMATRIX T1, T2, TInv;
@@ -121,6 +122,7 @@ float				Get_FPS();
 //*****************************************************************************************
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
+	TimeInit::Time_Init();
 	//AllocConsole();
 	//freopen("CONOUT$", "w", stdout);
 	SystemInit::init_Sys(hInstance, hPrevInstance, lpCmdLine, nShowCmd, WndProc);
@@ -146,8 +148,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	return 0;
 }
 
-int start = clock();
-int end1 = clock();
 //*****************************************************************************************
 // Name: WndProc()
 // Desc: 对窗口消息进行处理
@@ -181,20 +181,22 @@ LPDIRECT3DVERTEXBUFFER9 g_pVertexBuffer = NULL;    //顶点缓冲区对象
 LPDIRECT3DTEXTURE9      g_pTexture1 = NULL;   // 纹理接口对象  
 shared_ptr<TimeS> time3=make_shared<TimeS>();
 void func(shared_ptr<TimerData> timedate) {
-	time3->end();
-	AllocConsole();//打开控制台窗口
-	freopen("CONOUT$", "w", stdout);
-	printf("%s", time3->time);
+	//AllocConsole();//打开控制台窗口
+	//freopen("CONOUT$", "w", stdout);
+	//printf("%s", time3->time);
 	//cout << "This is a test info" << std::endl;
 }
+shared_ptr<Snake>snake;
 HRESULT Objects_Init()
 {
-	time1 = make_shared<time_wheel>();
+	//time1 = make_shared<time_wheel>();
 	//g_pTexturewall->Release();
-	timer= make_shared<Timer>(5000);
-	timer->cb_func = func;
-	time1->add_timer(timer);
-	g_pTexturewall = *D3DUtil::getTexture(L"img\wall\brick.png");
+	//timer= make_shared<Timer>(5000);
+	//timer->cb_func = func;
+	//time1->add_timer(timer);
+	snake = make_shared<Snake>();
+	snake->Init();
+	//g_pTexturewall = *D3DUtil::getTexture(L"img\wall\brick.png");
 	//world.SetAllowSleeping(true);
 	//创建字体
 	if (FAILED(D3DXCreateFont(D3DUtil::getD3DDev(), 30, 0, 0, 1, FALSE, DEFAULT_CHARSET,
@@ -223,6 +225,7 @@ HRESULT Objects_Init()
 	mtrl.Emissive = D3DXCOLOR(0.3f, 0.0f, 0.1f, 1.0f);
 	D3DUtil::getD3DDev()->SetMaterial(&mtrl);
 	g_pCamera = new CameraClass(D3DUtil::getD3DDev());
+	/*
 	for (int i = 0; i < wallnum; i++) {
 		g_pSprite1wall[i] = new Sprite();
 		g_pSprite1wall[i]->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH, BOX_WIDTH, 0);
@@ -231,6 +234,7 @@ HRESULT Objects_Init()
 		g_pSnake[i] = new Sprite();
 		g_pSnake[i]->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH*(5 - i), BOX_WIDTH * 5, 0);
 	}
+	*/
 	// 创建并初始化地形  
 	//g_pTerrain = new TerrainClass();
 	//g_pTerrain->getTerrain(64*100, L"img/wall/brick.png");      //从文件加载高度图和纹理  
@@ -243,9 +247,9 @@ HRESULT Objects_Init()
 	//三步曲之三，设置融合运算方式  
 	D3DUtil::getD3DDev()->SetRenderState(D3DRS_BLENDOP, D3DBLENDOP_ADD);  //这句设置运算方式为D3DBLENDOP_ADD的代码Direct3D默认为我们写了，所以注释掉这句也没大碍 
 
-
+	AllocConsole();
+	freopen("CONOUT$", "w", stdout);
 	lastTime = timeGetTime()*0.01f; //将当前时间currentTime赋给持续时间lastTime，作为下一秒的基准时间
-	start = clock();
 	return S_OK;
 }
 
@@ -266,14 +270,37 @@ HRESULT Objects_Init()
 // Name: Direct3D_Render()
 // Desc: 使用Direct3D进行渲染
 //*****************************************************************************************
-shared_ptr<SNAKE>snake;
+long start = 0;
+long start_1 = 0;
+long end1 = 0;
+int z = 0;
 void Direct3D_Render(HWND hwnd)
 {
-	if (!time3->istimer) {
+	if (start == 0) {
 		time3->start();
+		start = time3->getStart();
+		start_1 = time3->getStart();
 	}
-	end1 = clock();
-	if (end1 - start >= 5) { time1->tick();	start+= 5;
+	else {
+		end1 = time3->getEnd();
+		if (end1 - start_1 < 30) {
+			if ((end1 - start_1) >= 20) {
+				char s[40];
+				//sprintf(s, "@%d@", end1 - start_1);
+				//printf(s);
+				TimeInit::time->tick();
+				start_1 += 20;
+			}
+		}
+		else {
+			start_1 = time3->getStart();
+		}
+		long sd = end1 - start;
+		char s[40];
+		//sprintf(s, "@%d@", end1 - start);
+		//printf(s);
+		time3->start();
+		start = time3->getStart();
 	}
 
 	D3DXMATRIX R;
@@ -287,7 +314,7 @@ void Direct3D_Render(HWND hwnd)
 	RECT formatRect;
 	GetClientRect(hwnd, &formatRect);
 	// 创建并初始化虚拟摄像机  
-
+	/*
 	int z = 0;
 	for (int i = 0; i < SCREEN_WIDTH / BOX_WIDTH; i++) {
 		for (int j = 0; j < SCREEN_HEIGHT / BOX_WIDTH; j++) {
@@ -353,11 +380,13 @@ void Direct3D_Render(HWND hwnd)
 		g_pSnake[j]->Update();
 		g_pSnake[j]->Render();
 	}
+	*/
 	//--------------------------------------------------------------------------------------
 	// 【Direct3D渲染五步曲之二】：开始绘制
 	//--------------------------------------------------------------------------------------
-
+	snake->Update();
 	D3DUtil::getD3DDev()->BeginScene();
+	snake->Render();
 	InputInit::ReadKeyAndMouse();
 	// 获取键盘消息并给予设置相应的填充模式  
 	if (InputInit::g_KeyboardState[DIK_1] & 0x8000f)         // 若数字键1被按下，进行线框填充  

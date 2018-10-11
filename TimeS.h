@@ -1,5 +1,6 @@
 #pragma once
 #include <windows.h>
+#include <time.h>
 class TimeS
 {
 public:
@@ -7,17 +8,18 @@ public:
 	~TimeS(void);//Îö¹¹º¯Êý
 
 private:
-	LARGE_INTEGER startTime;
+	long startTime;
 
-	LARGE_INTEGER endTime;
+	long endTime;
 
-	LARGE_INTEGER cpuHz;
+	long cpuHz;
 
 public:
-	double time;
-	bool istimer;
+	long time;
 public:
 	void start();
+	long getStart();
+	long getEnd();
 	void end();
 };
 

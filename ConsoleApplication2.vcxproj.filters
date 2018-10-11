@@ -1,100 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="资源文件">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="头文件\Util">
-      <UniqueIdentifier>{f52b260e-1754-40c3-a5e6-0e897b81a744}</UniqueIdentifier>
-    </Filter>
     <Filter Include="SnakeGame">
       <UniqueIdentifier>{3d2c9dad-fcf5-41c3-aa7e-ef5d45de17ae}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SnakeGame\头文件">
-      <UniqueIdentifier>{2e91462b-909d-473c-b8d3-7d2a37f0e6fe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SnakeGame\源文件">
-      <UniqueIdentifier>{d7049894-cd54-4b6e-bad8-603713e243ab}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BaseGame">
-      <UniqueIdentifier>{94f3a76f-b419-43ad-8c16-e44eeef09a35}</UniqueIdentifier>
     </Filter>
     <Filter Include="SnakeGame\Bean">
       <UniqueIdentifier>{24c1d67f-603d-43df-96f3-529dcede852d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="TimeSystem">
+    <Filter Include="SnakeGame\GameMain">
+      <UniqueIdentifier>{95c3b8c2-15be-4e41-90f2-3d4a161c19d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{e6e52d0a-f22d-444d-bc29-9f6b505a906f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseGame">
+      <UniqueIdentifier>{94f3a76f-b419-43ad-8c16-e44eeef09a35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseGame\链表">
+      <UniqueIdentifier>{ae462bf6-90af-456a-b3af-9f1ba5f6dc23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseGame\TimeSystem">
       <UniqueIdentifier>{e8817119-172f-4a1e-b758-9e0e77e7eafe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseGame\Sprite管理">
+      <UniqueIdentifier>{8b05089a-6ab3-46d5-ae7e-28ac3d713a0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseGame\Sprite系统">
+      <UniqueIdentifier>{f458d11a-9cfa-4cf8-9871-0ef8486436ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseGame\Util">
+      <UniqueIdentifier>{f52b260e-1754-40c3-a5e6-0e897b81a744}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D3DRect.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="SystemInit.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="TextureManager.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="InputInit.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="D3DXFile.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="TerrainClass.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CameraClass.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="test2.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="test.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="D3DUtil.cpp">
-      <Filter>头文件\Util</Filter>
+      <Filter>BaseGame\Util</Filter>
     </ClCompile>
     <ClCompile Include="StringUtil.cpp">
-      <Filter>头文件\Util</Filter>
-    </ClCompile>
-    <ClCompile Include="Snake.cpp">
-      <Filter>SnakeGame\源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Sprites.cpp">
-      <Filter>BaseGame</Filter>
+      <Filter>BaseGame\Util</Filter>
     </ClCompile>
     <ClCompile Include="SnakeBody.cpp">
       <Filter>SnakeGame\Bean</Filter>
     </ClCompile>
-    <ClCompile Include="BaseSprite.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="TimeSystem.cpp">
-      <Filter>TimeSystem</Filter>
-    </ClCompile>
     <ClCompile Include="Timer.cpp">
-      <Filter>TimeSystem</Filter>
+      <Filter>BaseGame\TimeSystem</Filter>
     </ClCompile>
     <ClCompile Include="TimerData.cpp">
-      <Filter>TimeSystem</Filter>
+      <Filter>BaseGame\TimeSystem</Filter>
     </ClCompile>
     <ClCompile Include="TimeS.cpp">
-      <Filter>TimeSystem</Filter>
+      <Filter>BaseGame\TimeSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprites.cpp">
+      <Filter>BaseGame\Sprite管理</Filter>
+    </ClCompile>
+    <ClCompile Include="Snake.cpp">
+      <Filter>SnakeGame\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseSprite.cpp">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraClass.cpp">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClCompile>
+    <ClCompile Include="D3DRect.cpp">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClCompile>
+    <ClCompile Include="D3DXFile.cpp">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClCompile>
+    <ClCompile Include="InputInit.cpp">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemInit.cpp">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainClass.cpp">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="test2.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ListUser.h">
+      <Filter>BaseGame\链表</Filter>
+    </ClCompile>
+    <ClCompile Include="ListUser.cpp">
+      <Filter>BaseGame\链表</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeInit.cpp">
+      <Filter>BaseGame\TimeSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeWheel.cpp">
+      <Filter>BaseGame\TimeSystem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -154,71 +164,77 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Seting.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SystemInit.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="D3DRect.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureManager.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="InputInit.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="D3DXFile.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="TerrainClass.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CameraClass.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="D3DUtil.h">
-      <Filter>头文件\Util</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteManager.h">
-      <Filter>头文件</Filter>
+      <Filter>BaseGame\Util</Filter>
     </ClInclude>
     <ClInclude Include="StringUtil.h">
-      <Filter>头文件\Util</Filter>
-    </ClInclude>
-    <ClInclude Include="Snake.h">
-      <Filter>SnakeGame\头文件</Filter>
+      <Filter>BaseGame\Util</Filter>
     </ClInclude>
     <ClInclude Include="BaseGame.h">
-      <Filter>BaseGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprites.h">
       <Filter>BaseGame</Filter>
     </ClInclude>
     <ClInclude Include="SnakeBody.h">
       <Filter>SnakeGame\Bean</Filter>
     </ClInclude>
-    <ClInclude Include="BaseSprite.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="TimeSystemInterface.h">
-      <Filter>TimeSystem</Filter>
-    </ClInclude>
-    <ClInclude Include="TimeSystem.h">
-      <Filter>TimeSystem</Filter>
+      <Filter>BaseGame\TimeSystem</Filter>
     </ClInclude>
     <ClInclude Include="Timer.h">
-      <Filter>TimeSystem</Filter>
+      <Filter>BaseGame\TimeSystem</Filter>
     </ClInclude>
     <ClInclude Include="TimerData.h">
-      <Filter>TimeSystem</Filter>
+      <Filter>BaseGame\TimeSystem</Filter>
     </ClInclude>
     <ClInclude Include="TimeS.h">
-      <Filter>TimeSystem</Filter>
+      <Filter>BaseGame\TimeSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>BaseGame\链表</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprites.h">
+      <Filter>BaseGame\Sprite管理</Filter>
+    </ClInclude>
+    <ClInclude Include="Snake.h">
+      <Filter>SnakeGame\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseSprite.h">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraClass.h">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DRect.h">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DXFile.h">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClInclude>
+    <ClInclude Include="InputInit.h">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteManager.h">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemInit.h">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainClass.h">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClInclude>
+    <ClInclude Include="Seting.h">
+      <Filter>BaseGame\Sprite系统</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeInit.h">
+      <Filter>BaseGame\TimeSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeWheel.h">
+      <Filter>BaseGame\TimeSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

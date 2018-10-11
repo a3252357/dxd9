@@ -5,9 +5,9 @@ class Timer
 {
 public:
 	Timer(int ts)
-		:next(NULL), prev(NULL), time(ts) {}
-	void(*cb_func)(shared_ptr<TimerData>);      //定时器的回调函数
-	shared_ptr<TimerData> user_data;             //客户端数据
+		:next(NULL), prev(NULL), time(ts) {} 
+	void *(*cb_func)();      //定时器的回调函数
+	TimerData user_data;             //客户端数据
 
 public:
 	int time;                      //定时器时间

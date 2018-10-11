@@ -1,15 +1,15 @@
 //tw_timer.cpp
 
-#include "TimeSystem.h"
+#include "TimeWheel.h"
 
-time_wheel::time_wheel() :cur_slot(0)
+TimeWheel::TimeWheel() :cur_slot(0)
 {
 	//初始化每个槽的头结点
 	for (int i = 0; i < N; ++i)
 		slots[i] = NULL;
 }
 
-time_wheel::~time_wheel()
+TimeWheel::~TimeWheel()
 {
 	//遍历每个槽，并销毁定时器
 	for (int i = 0; i < N; ++i) {
@@ -22,7 +22,7 @@ time_wheel::~time_wheel()
 	}
 }
 
-void time_wheel::add_timer(shared_ptr<Timer>timer)
+void TimeWheel::add_timer(shared_ptr<Timer>timer)
 {
 	int timeout = timer->time;
 	if (timeout < 0)
@@ -53,7 +53,7 @@ void time_wheel::add_timer(shared_ptr<Timer>timer)
 	}
 }
 
-void time_wheel::del_timer(shared_ptr<Timer> timer)
+void TimeWheel::del_timer(shared_ptr<Timer> timer)
 {
 	if (!timer)
 		return;
@@ -86,7 +86,7 @@ void time_wheel::del_timer(shared_ptr<Timer> timer)
 	}
 }
 
-void time_wheel::tick()
+void TimeWheel::tick()
 {
 	//取得时间轮上当前槽的头结点
 	shared_ptr<Timer> tmp = slots[cur_slot];
@@ -97,11 +97,11 @@ void time_wheel::tick()
 
 		//如果定时器的rotation值大于0，则未到时，不处理
 		if (tmp->time > N*TI) {
-			tmp->time -= N* TI;
+			tmp->time -= N*TI;
 			tmp = tmp->next;
 		}
 		else {
-			tmp->cb_func(tmp->user_data);
+			tmp->cb_func();
 			if (tmp == slots[cur_slot]) {
 				//printf("delete header in cur_slot\n");
 				slots[cur_slot] = tmp->next;

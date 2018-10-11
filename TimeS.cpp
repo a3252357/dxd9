@@ -1,8 +1,7 @@
 #include "TimeS.h"
 TimeS::TimeS(void)
 {
-	istimer = false;
-	QueryPerformanceFrequency(&cpuHz);
+
 }
 
 TimeS::~TimeS(void)
@@ -11,15 +10,23 @@ TimeS::~TimeS(void)
 
 void TimeS::start()
 {
-  bool set=	QueryPerformanceCounter(&startTime);
-  istimer = true;
+	startTime=clock();
+}
+
+long TimeS::getStart()
+{
+	return startTime;
+}
+
+long TimeS::getEnd()
+{
+	end();
+	return endTime;
 }
 
 void TimeS::end()
 {
-	bool set = QueryPerformanceCounter(&endTime);
-
-	time = ((double)endTime.QuadPart - (double)startTime.QuadPart) / (double)cpuHz.QuadPart;
-	istimer = false;
+	endTime = clock();
+	time = endTime - startTime;
 }
 

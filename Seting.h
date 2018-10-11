@@ -38,8 +38,12 @@ using namespace std;
 #include "Sprites.h"
 #include "BaseSprite.h"
 #include "TimerData.h"
-#include "TimeSystem.h"
+#include "TimeWheel.h"
+#include "TimeInit.h"
 #include "TimeS.h"
+#include "SnakeBody.h"
+#include "Snake.h"
+#include "Node.h"
 
 //*****************************************************************************************
 // Desc: 库文件定义部分  

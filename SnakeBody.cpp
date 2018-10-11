@@ -1,14 +1,26 @@
 #include "SnakeBody.h"
 
+SnakeBody* SnakeBody::CurMy;
+SnakeBody::SnakeBody()
+{
+}
+
+SnakeBody::~SnakeBody()
+{
+}
 
 HRESULT SnakeBody::Add(shared_ptr<Sprite> _sprite)
 {
-	bodys.push_back(_sprite);
+	bodys.add(_sprite);
 	return S_OK;
 }
 
 HRESULT SnakeBody::Update()
 {
+	for (int i = 0;i<bodys.size();i++)
+	{
+		bodys.find(i)->Update();
+	}
 	if (InputInit::g_KeyboardState[DIK_LEFT] & 0x8000f) {
 		snakeup = 2;
 	}
@@ -22,17 +34,33 @@ HRESULT SnakeBody::Update()
 
 HRESULT SnakeBody::Render()
 {
+	for(int i=0;i<bodys.size();i++)
+	{
+		bodys.find(i)->Render();
+	}
 	return S_OK;
 }
 
+void * SnakeBody::callback()
+{
+	CurMy->snakenext();
+	return NULL;
+}
+void SnakeBody::setCurMy()
+{//设置当前对象为回调函数调用的对象  
+	CurMy = this;
+}
 void SnakeBody::snakenext()
 {
 	list<shared_ptr<Sprite>>::iterator plist;
-	for (plist = bodys.begin(); plist != bodys.end(); plist++) {
-		shared_ptr<Sprite> basehead = *plist;
-		if (plist == bodys.begin()) {
+	bodys.setNow();
+	for (int i = 2;i<bodys.size();i++)
+	{
+		shared_ptr<Sprite> basehead = bodys.getNow()->data;
+		if (basehead == bodys.find(0)) {
 			if (snakeup == 0) {
 				basehead->Set_State(basehead->m_x + 32, basehead->m_y, 0);
+				printf("ce");
 			}
 			if (snakeup == 1) {
 				basehead->Set_State(basehead->m_x, basehead->m_y - 32, 0);
@@ -45,12 +73,18 @@ void SnakeBody::snakenext()
 			}
 		}
 		else {
-			plist--;
-			shared_ptr<Sprite> base = *plist;
+			shared_ptr<Sprite> base = basehead;
+			bodys.goPrev();
+			basehead = bodys.getNow()->data;
 			base->Set_State(basehead->n_x, basehead->n_y, 0);
-			plist++;
+			bodys.goNext();
 			//				if (list->next != NULL)
 			//			list = list->next;
 		}
+		bodys.goNext();
 	}
+	shared_ptr<Timer> timer = make_shared<Timer>(1000);
+	this->setCurMy();
+	timer->cb_func = this->callback;
+	TimeInit::time->add_timer(timer);
 }
