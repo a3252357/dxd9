@@ -2,6 +2,7 @@
 #include "Seting.h"
 class SnakeBody;
 class Sprites;
+class TimeWithSprite;
 class Snake : BaseGame
 {
 private:

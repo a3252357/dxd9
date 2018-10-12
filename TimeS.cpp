@@ -13,12 +13,12 @@ void TimeS::start()
 	startTime=clock();
 }
 
-long TimeS::getStart()
+long long TimeS::getStart()
 {
 	return startTime;
 }
 
-long TimeS::getEnd()
+long long TimeS::getEnd()
 {
 	end();
 	return endTime;

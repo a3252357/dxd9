@@ -8,18 +8,18 @@ public:
 	~TimeS(void);//Îö¹¹º¯Êý
 
 private:
-	long startTime;
+	long long startTime;
 
-	long endTime;
+	long long endTime;
 
-	long cpuHz;
+	long long cpuHz;
 
 public:
-	long time;
+	long long time;
 public:
 	void start();
-	long getStart();
-	long getEnd();
+	long long getStart();
+	long long getEnd();
 	void end();
 };
 

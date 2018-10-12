@@ -268,9 +268,9 @@ HRESULT Objects_Init()
 // Name: Direct3D_Render()
 // Desc: 使用Direct3D进行渲染
 //*****************************************************************************************
-long start = 0;
-long start_1 = 0;
-long end1 = 0;
+long long start = 0;
+long  long start_1 = 0;
+long long end1 = 0;
 int z = 0;
 void Direct3D_Render(HWND hwnd)
 {
