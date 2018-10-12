@@ -20,9 +20,6 @@ HRESULT Snake::Render()
 	spritesManager->Render();
 	return S_OK;
 }
-void snakenext(shared_ptr<SnakeBody> sprite) {
-	sprite->snakenext();
-}
 
 HRESULT Snake::Init()
 {
@@ -61,10 +58,7 @@ HRESULT Snake::Init()
 		snakeBody->Add(snake);
 	}
 	spritesManager->AddSprite(snakeBody);
-	shared_ptr<Timer> timer = make_shared<Timer>(1000);
-	snakeBody->setCurMy();
-	timer->cb_func = snakeBody->callback;
-	TimeInit::time->add_timer(timer);
+	snakeBody->timer->start(1000,0,10);
 	// 创建并初始化地形  
 	//g_pTerrain = new TerrainClass();
 	//g_pTerrain->getTerrain(64*100, L"img/wall/brick.png");      //从文件加载高度图和纹理  

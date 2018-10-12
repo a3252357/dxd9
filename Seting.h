@@ -44,6 +44,7 @@ using namespace std;
 #include "SnakeBody.h"
 #include "Snake.h"
 #include "Node.h"
+#include "TimerWithSprite.h"
 
 //*****************************************************************************************
 // Desc: 库文件定义部分  

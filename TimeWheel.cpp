@@ -24,7 +24,7 @@ TimeWheel::~TimeWheel()
 
 void TimeWheel::add_timer(shared_ptr<Timer>timer)
 {
-	int timeout = timer->time;
+	int timeout = timer->_time;
 	if (timeout < 0)
 		return;
 
@@ -86,6 +86,39 @@ void TimeWheel::del_timer(shared_ptr<Timer> timer)
 	}
 }
 
+void TimeWheel::del_timer_next(shared_ptr<Timer> timer)
+{
+	if (!timer)
+		return;
+
+	int timeout = timer->time;
+	if (timeout < 0)
+		return;
+
+	int ticks = 0;              //待刪除定时器所需要总ticks
+	if (timeout < TI)
+		ticks = 1;
+	else
+		ticks = timeout / TI;
+
+	//int rotation = ticks / N;   //计算待刪除的定时器在时间轮上要转动多少圈后触发
+	int ts = (cur_slot + ticks) % N; //计算待刪除定时器应该被插入的位置
+	if (timer == slots[ts]) {   //如果是头结点
+		slots[ts] = slots[ts]->next;
+		if (slots[ts])
+			slots[ts]->prev = NULL;
+
+		//timer.~shared_ptr();
+	}
+	else {
+		timer->prev->next = timer->next;
+		if (timer->next)
+			timer->next->prev = timer->prev;
+
+		//timer.~shared_ptr();
+	}
+}
+
 void TimeWheel::tick()
 {
 	//取得时间轮上当前槽的头结点
@@ -101,28 +134,39 @@ void TimeWheel::tick()
 			tmp = tmp->next;
 		}
 		else {
-			tmp->cb_func();
-			if (tmp == slots[cur_slot]) {
-				//printf("delete header in cur_slot\n");
-				slots[cur_slot] = tmp->next;
+				tmp->cb_func();
+				if (tmp == slots[cur_slot]) {
+					//printf("delete header in cur_slot\n");
+					slots[cur_slot] = tmp->next;
 
-				tmp.~shared_ptr();
+					if (tmp->type == 0 && --(tmp->count) == 0) {
+						tmp.~shared_ptr();
+					}
+					else {
+						//del_timer_next(tmp);
+						add_timer(tmp);
+					}
+					if (slots[cur_slot])
+						slots[cur_slot]->prev = NULL;
 
-				if (slots[cur_slot])
-					slots[cur_slot]->prev = NULL;
+					tmp = slots[cur_slot];
+				}
+				else {
+					tmp->prev->next = tmp->next;
+					if (tmp->next)
+						tmp->next->prev = tmp->prev;
 
-				tmp = slots[cur_slot];
-			}
-			else {
-				tmp->prev->next = tmp->next;
-				if (tmp->next)
-					tmp->next->prev = tmp->prev;
+					shared_ptr<Timer> tmp2 = tmp->next;
 
-				shared_ptr<Timer> tmp2 = tmp->next;
-
-				tmp.~shared_ptr();
-				tmp = tmp2;
-			}
+					if (tmp->type == 0 && --(tmp->count) == 0) {
+						tmp.~shared_ptr();
+					}
+					else {
+						//del_timer_next(tmp);
+						add_timer(tmp);
+					}
+					tmp = tmp2;
+				}
 		}
 	}
 

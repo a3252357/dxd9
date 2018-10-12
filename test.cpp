@@ -43,8 +43,6 @@ b2World * mWorld;
 //ID3DXSprite*            g_pSpriteBoss = NULL;
 //ID3DXSprite*            g_pSpritePlayer = NULL;
 //ID3DXSprite*            g_pSprite1[100];
-Sprite*            g_pSprite1wall[200];
-Sprite*            g_pSnake[200];
 //LPDIRECT3DTEXTURE9  	g_pTexture = NULL;
 LPDIRECT3DTEXTURE9  	g_pTexturewall;
 //LPDIRECT3DTEXTURE9  	g_pTextureBoss;
@@ -426,19 +424,19 @@ void Direct3D_Render(HWND hwnd)
 
 
 	//D3DXMatrixRotationY(&R, ::timeGetTime() / 720.0f);
-	D3DXMatrixTranslation(&g_WorldMatrix[0], 0.0f, 0.0f, 0.0f);
-	g_WorldMatrix[0] = g_WorldMatrix[0];
-	D3DUtil::getD3DDev()->SetTransform(D3DTS_WORLD, &g_WorldMatrix[0]);
+	//D3DXMatrixTranslation(&g_WorldMatrix[0], 0.0f, 0.0f, 0.0f);
+	//g_WorldMatrix[0] = g_WorldMatrix[0];
+	//D3DUtil::getD3DDev()->SetTransform(D3DTS_WORLD, &g_WorldMatrix[0]);
 	D3DUtil::getD3DDev()->SetTexture(0, g_pTexture1);
 	//meshBox->DrawSubset(0);
 	//meshBox->DrawSubset(1);
 	//meshBox->DrawSubset(2);
 	//meshBox->DrawSubset(3);
 	//meshBox->DrawSubset(4);
-	xfile.Update();
-	xfile.Render();
+	//xfile.Update();
+	//xfile.Render();
 	//绘制地形  
-	D3DXMatrixTranslation(&g_WorldMatrix[1], 1.0f, 0.0f, 1.0f);
+	//D3DXMatrixTranslation(&g_WorldMatrix[1], 1.0f, 0.0f, 1.0f);
 	//g_pTerrain->RenderTerrain(&g_WorldMatrix[1], true);  //渲染地形，且第二个参数设为false，表示不渲染出地形的线框 
 	D3DUtil::getD3DDev()->EndScene();
 	//设置自定义的FVF

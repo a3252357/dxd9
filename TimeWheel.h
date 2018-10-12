@@ -11,6 +11,7 @@ public:
 
 	void add_timer(shared_ptr<Timer> timer);   //根据定时值创建定时器，并插入合适的位置
 	void del_timer(shared_ptr<Timer> timer);    //删除目标定时器
+	void del_timer_next(shared_ptr<Timer> timer);    //删除目标定时器
 	void tick();                //时间到后调用该函数，时间轮向前滚动一个槽间隔
 
 private:

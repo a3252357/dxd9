@@ -2,6 +2,7 @@
 #include "Seting.h"
 #include "BaseSprite.h"
 #include "ListUser.h"
+#include "TimerWithSprite.h"
 class Sprite;
 class SnakeBody:public BaseSprite {
 private:
@@ -14,8 +15,6 @@ public:
 	HRESULT Update() override;
 	HRESULT Render() override;
 	void snakenext();
-	static SnakeBody* CurMy;//存储回调函数调用的对象  
-	static void* callback();
-	void setCurMy();
+	TimerWithSprite<SnakeBody>* timer;
 	//回调函数  
 };

@@ -1,8 +1,10 @@
 #include "SnakeBody.h"
 
-SnakeBody* SnakeBody::CurMy;
 SnakeBody::SnakeBody()
 {
+	timer = new TimerWithSprite<SnakeBody>(this, &SnakeBody::snakenext);
+	//timer->cb_func = &SnakeBody::snakenext;
+	//timer->CurMy = this;
 }
 
 SnakeBody::~SnakeBody()
@@ -41,15 +43,6 @@ HRESULT SnakeBody::Render()
 	return S_OK;
 }
 
-void * SnakeBody::callback()
-{
-	CurMy->snakenext();
-	return NULL;
-}
-void SnakeBody::setCurMy()
-{//设置当前对象为回调函数调用的对象  
-	CurMy = this;
-}
 void SnakeBody::snakenext()
 {
 	list<shared_ptr<Sprite>>::iterator plist;
@@ -83,8 +76,4 @@ void SnakeBody::snakenext()
 		}
 		bodys.goNext();
 	}
-	shared_ptr<Timer> timer = make_shared<Timer>(1000);
-	this->setCurMy();
-	timer->cb_func = this->callback;
-	TimeInit::time->add_timer(timer);
 }

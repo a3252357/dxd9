@@ -11,6 +11,7 @@ private:
 	LPDIRECT3DTEXTURE9  	g_pTexture = NULL;
 	LPDIRECT3DTEXTURE9  	g_pTexturewall;
 	shared_ptr<Sprite>           g_pSprite1wall[100];
+	shared_ptr<TimeWithSprite> timer;
 	int snakenum = 10;
 	int snakeup = 0;
 	int wallnum = 200;
@@ -30,6 +31,7 @@ private:
 	int  currentTime = 0;//当前时间
 	int  lastTime = 0;//持续时间
 public:
+	
 	Snake();
 	~Snake();
 	HRESULT Update() override;

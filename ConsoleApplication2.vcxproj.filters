@@ -236,8 +236,11 @@
     <ClInclude Include="TimeWheel.h">
       <Filter>BaseGame\TimeSystem</Filter>
     </ClInclude>
+    <ClInclude Include="TimerWithSprite.h">
+      <Filter>BaseGame\TimeSystem</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
 </Project>

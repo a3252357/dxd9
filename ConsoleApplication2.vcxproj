@@ -219,12 +219,13 @@
     <ClInclude Include="TimeInit.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TimerData.h" />
+    <ClInclude Include="TimerWithSprite.h" />
     <ClInclude Include="TimeS.h" />
     <ClInclude Include="TimeWheel.h" />
     <ClInclude Include="TimeSystemInterface.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

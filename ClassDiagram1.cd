@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Comment CommentText="时间系统">
+    <Position X="7.118" Y="4.967" Height="0.618" Width="1.7" />
+  </Comment>
+  <Class Name="SnakeBody" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAZAAAAAAAAgAAAAIAAABAAAEAEAAAgAABAAABAAAAA=</HashCode>
+      <FileName>SnakeBody.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Snake" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYCCAEAAAAAAAAABAAAAgAIAEAIAAiAEBAGAAAAAAI=</HashCode>
+      <FileName>Snake.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseGame" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABACAAAAAAA=</HashCode>
+      <FileName>BaseGame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ListUser&lt;T&gt;" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAICAAgAgAAAAMAsAAIAAACAAAAgAADQAAAAACQgA=</HashCode>
+      <FileName>ListUser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Node&lt;T&gt;" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAIAAAA=</HashCode>
+      <FileName>Node.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Timer" Collapsed="true">
+    <Position X="7.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAgAAAAAAAQAAAAAAAAAABAAAIEAAA=</HashCode>
+      <FileName>Timer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimerData" Collapsed="true">
+    <Position X="3.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TimerData.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeS" Collapsed="true">
+    <Position X="5.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAJAAACAACAAAAgAAAgACAAAAAAgAAgAAAAAEAAAAA=</HashCode>
+      <FileName>TimeS.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWheel" Collapsed="true">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAQgACAAIAAAABAAAAAAAAAABAACAE=</HashCode>
+      <FileName>TimeWheel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeSystemInterface" Collapsed="true">
+    <Position X="3.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TimeSystemInterface.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeInit" Collapsed="true">
+    <Position X="5.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>TimeInit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprites" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAgAAAAAAAAAAAAAABAAAAAAAAAJACAACAAAA=</HashCode>
+      <FileName>Sprites.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseSprite" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAQABAAAAABAAAAAAAAA=</HashCode>
+      <FileName>BaseSprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="D3DRect" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAACAAAAAABAAAACAAABAAESAAAAAAEAAAAA=</HashCode>
+      <FileName>D3DRect.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XFile" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQAAAAAAAAAAAAAEAAAAAAAIAAABAAAAAAAAg=</HashCode>
+      <FileName>D3DXFile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputInit" Collapsed="true">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAEEBAAAAAAAAAAAAhAAIgAAAAAAAAA=</HashCode>
+      <FileName>InputInit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprite" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAQAAAAAAACAAACgAMAAgSAAACAAAABAAAAAAABA=</HashCode>
+      <FileName>Sprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpriteManager" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAgAAABCCAAAABAAAAAAAA=</HashCode>
+      <FileName>SpriteManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemInit" Collapsed="true">
+    <Position X="15.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAKBAAAAEAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>SystemInit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextureManager" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAgAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TextureManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TerrainClass" Collapsed="true">
+    <Position X="17" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IjAAAAAAAYABAAAAQAgAAACAAAABAAhGBAAAAABEAAA=</HashCode>
+      <FileName>TerrainClass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraClass" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EVAAAACAAAEBCQAARAEAAAAAEAAAAgBQAwChABAAABA=</HashCode>
+      <FileName>CameraClass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="D3DUtil" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAgABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D3DUtil.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StringUtil" Collapsed="true">
+    <Position X="13.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StringUtil.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="CUSTOMVERTEX1" Collapsed="true">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAgAAAAAAAYAA=</HashCode>
+      <FileName>Seting.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="SNAKE" Collapsed="true">
+    <Position X="11.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAABgAAIAAAA=</HashCode>
+      <FileName>Seting.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="TEXTURE_MAP" Collapsed="true">
+    <Position X="10" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TextureManager.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
