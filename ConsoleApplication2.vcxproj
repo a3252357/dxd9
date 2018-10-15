@@ -153,17 +153,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractFactory.cpp" />
     <ClCompile Include="BaseSprite.cpp" />
+    <ClCompile Include="Box2DSystem.cpp" />
     <ClCompile Include="CameraClass.cpp" />
     <ClCompile Include="D3DRect.cpp" />
     <ClCompile Include="D3DUtil.cpp" />
     <ClCompile Include="D3DXFile.cpp" />
+    <ClCompile Include="FactoryProducer.cpp" />
     <ClCompile Include="InputInit.cpp" />
     <ClCompile Include="ListUser.cpp" />
     <ClCompile Include="ListUser.h" />
     <ClCompile Include="Snake.cpp" />
     <ClCompile Include="SnakeBody.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="SpriteBody.cpp" />
+    <ClCompile Include="SpriteFactory.cpp" />
     <ClCompile Include="Sprites.cpp" />
     <ClCompile Include="StringUtil.cpp" />
     <ClCompile Include="SystemInit.cpp" />
@@ -198,17 +203,22 @@
     <Image Include="img\wall\river.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractFactory.h" />
     <ClInclude Include="BaseSprite.h" />
     <ClInclude Include="BaseGame.h" />
+    <ClInclude Include="Box2DSystem.h" />
     <ClInclude Include="D3DRect.h" />
     <ClInclude Include="D3DUtil.h" />
     <ClInclude Include="D3DXFile.h" />
+    <ClInclude Include="FactoryProducer.h" />
     <ClInclude Include="InputInit.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Seting.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="SnakeBody.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpriteBody.h" />
+    <ClInclude Include="SpriteFactory.h" />
     <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="Sprites.h" />
     <ClInclude Include="StringUtil.h" />
@@ -223,6 +233,7 @@
     <ClInclude Include="TimeS.h" />
     <ClInclude Include="TimeWheel.h" />
     <ClInclude Include="TimeSystemInterface.h" />
+    <ClInclude Include="SpriteType.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

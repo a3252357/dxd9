@@ -15,6 +15,7 @@ class Sprite:public BaseSprite
 		D3DXVECTOR3 vec;
 		D3DXMATRIX dd16;
 		D3DXMATRIX T1, T2, TInv;
+		SpriteBody body;
 		float m_x, m_y, m_angels,n_x,n_y;
 
 };

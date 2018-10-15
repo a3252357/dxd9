@@ -45,6 +45,10 @@ using namespace std;
 #include "Snake.h"
 #include "Node.h"
 #include "TimerWithSprite.h"
+#include "SpriteType.h"
+#include "SpriteFactory.h"
+#include "FactoryProducer.h"
+#include "SpriteBody.h";
 
 //*****************************************************************************************
 // Desc: 库文件定义部分  

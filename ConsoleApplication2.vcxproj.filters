@@ -35,6 +35,15 @@
     <Filter Include="BaseGame\Util">
       <UniqueIdentifier>{f52b260e-1754-40c3-a5e6-0e897b81a744}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BaseGame\物理引擎%28Box2D%29">
+      <UniqueIdentifier>{857b9343-34e0-4509-a8be-4c154bace58d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="工厂">
+      <UniqueIdentifier>{8c5afdde-ad1e-498a-baa2-30b50dafa6ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="工厂\类型枚举">
+      <UniqueIdentifier>{6db6d663-cbd7-4802-a4be-6b1ba0e8cc31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DUtil.cpp">
@@ -106,6 +115,19 @@
     <ClCompile Include="TimeWheel.cpp">
       <Filter>BaseGame\TimeSystem</Filter>
     </ClCompile>
+    <ClCompile Include="Box2DSystem.cpp">
+      <Filter>BaseGame\物理引擎%28Box2D%29</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryProducer.cpp">
+      <Filter>工厂</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractFactory.cpp">
+      <Filter>工厂</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteFactory.cpp">
+      <Filter>工厂</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteBody.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\wall\base.png">
@@ -238,6 +260,24 @@
     </ClInclude>
     <ClInclude Include="TimerWithSprite.h">
       <Filter>BaseGame\TimeSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Box2DSystem.h">
+      <Filter>BaseGame\物理引擎%28Box2D%29</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteBody.h">
+      <Filter>BaseGame\物理引擎%28Box2D%29</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryProducer.h">
+      <Filter>工厂</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractFactory.h">
+      <Filter>工厂</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteFactory.h">
+      <Filter>工厂</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteType.h">
+      <Filter>工厂\类型枚举</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

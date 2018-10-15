@@ -22,7 +22,7 @@ HRESULT Snake::Render()
 }
 
 HRESULT Snake::Init()
-{
+{	
 	snakeBody = make_shared<SnakeBody>();
 	spritesManager =make_shared<Sprites>();
 	g_pTexturewall = *D3DUtil::getTexture(L"img\wall\brick.png");
