@@ -36,7 +36,6 @@ using namespace std;
 #include "StringUtil.h"
 #include "BaseGame.h"
 #include "Sprites.h"
-#include "BaseSprite.h"
 #include "TimerData.h"
 #include "TimeWheel.h"
 #include "TimeInit.h"
@@ -48,7 +47,9 @@ using namespace std;
 #include "SpriteType.h"
 #include "SpriteFactory.h"
 #include "FactoryProducer.h"
-#include "SpriteBody.h";
+#include "Box2DSystem.h"
+#include "GameSystem.h"
+#include "SpriteBody.h"
 
 //*****************************************************************************************
 // Desc: 库文件定义部分  
@@ -64,12 +65,5 @@ struct CUSTOMVERTEX1
 	FLOAT _u, _v;                   // 纹理坐标  
 	CUSTOMVERTEX1(FLOAT x, FLOAT y, FLOAT z, FLOAT u, FLOAT v)
 		:_x(x), _y(y), _z(z), _u(u), _v(v) {}
-};
-struct SNAKE
-{
-	int snakeup;               // 操作的方向  
-	int x=0; 
-	int y=0;// 纹理坐标  
-	shared_ptr<SNAKE> next;
 };
 #define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ |D3DFVF_TEX1)  

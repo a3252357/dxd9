@@ -1,11 +1,11 @@
 #pragma once
-#include "Seting.h"
-class BaseSprite;
+#include <memory>
+#include "BaseSprite.h"
+#include "SpriteType.h"
+using namespace std;
 class AbstractFactory
 {
 public:
-	AbstractFactory();
-	~AbstractFactory();
-	virtual shared_ptr<BaseSprite> getSprite(SpriteType sprite);
+	virtual shared_ptr<BaseSprite> getSprite(SpriteType sprite)=0;
 };
 

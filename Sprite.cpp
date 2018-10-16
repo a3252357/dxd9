@@ -1,5 +1,4 @@
 #include "Sprite.h"
-
 HRESULT Sprite::Sprite_Init(LPCWSTR  path,float x, float y, float angels)
 {
 	D3DXCreateSprite(D3DUtil::getD3DDev(), &m_Sprite);
@@ -9,6 +8,8 @@ HRESULT Sprite::Sprite_Init(LPCWSTR  path,float x, float y, float angels)
 	m_x = x;
 	m_y = y;
 	m_angels = angels;
+	body = new SpriteBody();
+	body->Init(&m_x, &m_y, &m_angels);
 	return S_OK;
 }
 HRESULT Sprite::Sprite_Init(LPDIRECT3DTEXTURE9 * Texture, float x, float y, float angels)
@@ -35,7 +36,7 @@ HRESULT Sprite::Set_State(float x, float y, int angels)
 
 HRESULT Sprite::Update()
 {
-
+	body->Update(0);
 	rect.left = 0;
 	rect.right = BOX_WIDTH;
 	rect.top = 0;

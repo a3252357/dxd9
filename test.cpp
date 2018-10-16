@@ -48,9 +48,6 @@ LPDIRECT3DTEXTURE9  	g_pTexturewall;
 //LPDIRECT3DTEXTURE9  	g_pTextureBoss;
 //LPDIRECT3DTEXTURE9  	g_pTexturePlayer;
 ID3DXMesh* meshBox;
-shared_ptr<SNAKE>last;
-shared_ptr<SNAKE>cur;
-shared_ptr<SNAKE>frist;
 CameraClass*                            g_pCamera = NULL;
 int xp = 0;
 int yp = 0;
@@ -120,10 +117,9 @@ float				Get_FPS();
 //*****************************************************************************************
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
-	TimeInit::Time_Init();
+	SystemInit::init_Sys(hInstance, hPrevInstance, lpCmdLine, nShowCmd, WndProc);
 	//AllocConsole();
 	//freopen("CONOUT$", "w", stdout);
-	SystemInit::init_Sys(hInstance, hPrevInstance, lpCmdLine, nShowCmd, WndProc);
 
 	if (!(S_OK == Objects_Init())) return E_FAIL;
 	MoveWindow(D3DUtil::getHWND(), 200, 50, SCREEN_WIDTH, SCREEN_HEIGHT, true);   //调整窗口显示时的位置，窗口左上角位于屏幕坐标（200，50）处
@@ -252,7 +248,10 @@ HRESULT Objects_Init()
 }
 
 
-
+long long start = 0;
+long  long start_1 = 0;
+long long end1 = 0;
+int z = 0;
 
 //*****************************************************************************************
 // Name: Direct3D_Render()
@@ -268,10 +267,6 @@ HRESULT Objects_Init()
 // Name: Direct3D_Render()
 // Desc: 使用Direct3D进行渲染
 //*****************************************************************************************
-long long start = 0;
-long  long start_1 = 0;
-long long end1 = 0;
-int z = 0;
 void Direct3D_Render(HWND hwnd)
 {
 	if (start == 0) {
@@ -287,6 +282,7 @@ void Direct3D_Render(HWND hwnd)
 				//sprintf(s, "@%d@", end1 - start_1);
 				//printf(s);
 				TimeInit::time->tick();
+				GameSystem::Update(end1 - start_1);
 				start_1 += 20;
 			}
 		}
@@ -300,7 +296,6 @@ void Direct3D_Render(HWND hwnd)
 		time3->start();
 		start = time3->getStart();
 	}
-
 	D3DXMATRIX R;
 	D3DXMATRIX g_WorldMatrix[4];
 	//--------------------------------------------------------------------------------------

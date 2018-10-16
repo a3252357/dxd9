@@ -161,6 +161,7 @@
     <ClCompile Include="D3DUtil.cpp" />
     <ClCompile Include="D3DXFile.cpp" />
     <ClCompile Include="FactoryProducer.cpp" />
+    <ClCompile Include="GameSystem.cpp" />
     <ClCompile Include="InputInit.cpp" />
     <ClCompile Include="ListUser.cpp" />
     <ClCompile Include="ListUser.h" />
@@ -211,6 +212,7 @@
     <ClInclude Include="D3DUtil.h" />
     <ClInclude Include="D3DXFile.h" />
     <ClInclude Include="FactoryProducer.h" />
+    <ClInclude Include="GameSystem.h" />
     <ClInclude Include="InputInit.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Seting.h" />

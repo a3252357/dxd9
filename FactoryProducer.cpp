@@ -1,8 +1,8 @@
 #include "FactoryProducer.h"
 
-AbstractFactory FactoryProducer::getFactory(string choice)
+shared_ptr<AbstractFactory> FactoryProducer::getFactory(string choice)
 {
 	if (choice == "sprite") {
-		return SpriteFactory();
+		return make_shared<SpriteFactory>();
 	}
 }

@@ -44,6 +44,9 @@
     <Filter Include="工厂\类型枚举">
       <UniqueIdentifier>{6db6d663-cbd7-4802-a4be-6b1ba0e8cc31}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BaseGame\子系统管理">
+      <UniqueIdentifier>{e614f962-8e35-4215-b2fa-2ebaf1e689c1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DUtil.cpp">
@@ -127,7 +130,12 @@
     <ClCompile Include="SpriteFactory.cpp">
       <Filter>工厂</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteBody.cpp" />
+    <ClCompile Include="SpriteBody.cpp">
+      <Filter>BaseGame\物理引擎%28Box2D%29</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSystem.cpp">
+      <Filter>BaseGame\子系统管理</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\wall\base.png">
@@ -278,6 +286,9 @@
     </ClInclude>
     <ClInclude Include="SpriteType.h">
       <Filter>工厂\类型枚举</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSystem.h">
+      <Filter>BaseGame\子系统管理</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

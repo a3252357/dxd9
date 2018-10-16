@@ -1,6 +1,6 @@
 #pragma once
-#include "AbstractFactory.h"
 #include "Seting.h"
+#include "AbstractFactory.h"
 class BaseSprite;
 class SpriteFactory:public AbstractFactory
 {

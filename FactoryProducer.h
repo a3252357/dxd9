@@ -3,5 +3,5 @@
 #include "AbstractFactory.h"
  class FactoryProducer {
  public:
-	 static AbstractFactory getFactory(string choice);
+	 static shared_ptr<AbstractFactory> getFactory(string choice);
 };

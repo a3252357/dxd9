@@ -39,7 +39,8 @@ HRESULT SystemInit::init_Sys(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR
 	Light_Set(1);
 	Matrix_Set();
 	InputInit::InitInput(hInstance);
-	return E_NOTIMPL;
+	GameSystem::Init();
+	return S_OK;
 }
 
 VOID SystemInit::Light_Set(UINT nType)

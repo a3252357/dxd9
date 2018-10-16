@@ -26,7 +26,6 @@ HRESULT Snake::Init()
 	snakeBody = make_shared<SnakeBody>();
 	spritesManager =make_shared<Sprites>();
 	g_pTexturewall = *D3DUtil::getTexture(L"img\wall\brick.png");
-	//…Ë÷√≤ƒ÷   
 	D3DMATERIAL9 mtrl;
 	::ZeroMemory(&mtrl, sizeof(mtrl));
 	mtrl.Ambient = D3DXCOLOR(0.5f, 0.5f, 0.7f, 1.0f);
