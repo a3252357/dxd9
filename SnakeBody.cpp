@@ -52,17 +52,21 @@ void SnakeBody::snakenext()
 		shared_ptr<Sprite> basehead = bodys.getNow()->data;
 		if (basehead == bodys.find(0)) {
 			if (snakeup == 0) {
-				basehead->Set_State(basehead->m_x + 32, basehead->m_y, 0);
+				basehead->Set_State(basehead->m_x, basehead->m_y, 0);
+				basehead->body->body->SetLinearVelocity(b2Vec2(5, 0));
 				printf("ce");
 			}
 			if (snakeup == 1) {
-				basehead->Set_State(basehead->m_x, basehead->m_y - 32, 0);
+				basehead->Set_State(basehead->m_x, basehead->m_y, 0);
+				basehead->body->body->SetLinearVelocity(b2Vec2(0, -5));
 			}
 			if (snakeup == 2) {
-				basehead->Set_State(basehead->m_x - 32, basehead->m_y, 0);
+				basehead->Set_State(basehead->m_x, basehead->m_y, 0);
+				basehead->body->body->SetLinearVelocity(b2Vec2(-5,0));
 			}
 			if (snakeup == 3) {
-				basehead->Set_State(basehead->m_x, basehead->m_y + 32, 0);
+				basehead->Set_State(basehead->m_x, basehead->m_y, 0);
+				basehead->body->body->SetLinearVelocity(b2Vec2(0,5));
 			}
 		}
 		else {

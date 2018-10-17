@@ -6,7 +6,7 @@ HRESULT GameSystem::Init()
 {
 	TimeInit::Time_Init();
 	box2DSystem = new Box2DSystem();
-	box2DSystem->Box2DInit(0, 1);
+	box2DSystem->Box2DInit(0, 0);
 	return S_OK;
 }
 

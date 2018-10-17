@@ -7,7 +7,7 @@
 using namespace std;
 //*****************************************************************************************
 // Desc: 头文件定义部分  
-//*****************************************************************************************    
+//***************************************************************************************** 
 #include <d3d9.h>
 #include <time.h>
 #include <stdio.h>
@@ -50,6 +50,7 @@ using namespace std;
 #include "Box2DSystem.h"
 #include "GameSystem.h"
 #include "SpriteBody.h"
+#include "tmxlite/Tileset.hpp"
 
 //*****************************************************************************************
 // Desc: 库文件定义部分  
@@ -58,6 +59,7 @@ using namespace std;
 #pragma comment(lib,"dxguid.lib")
 #pragma comment(lib,"d3dx9.lib")
 #pragma comment(lib,"dinput8.lib")
+#pragma comment(lib,"libtmxlite-s-d.lib")
 #pragma comment(lib, "winmm.lib")
 struct CUSTOMVERTEX1
 {
