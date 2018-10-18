@@ -10,7 +10,7 @@ public:
 	Sprite* Sprite_Select(int id);
 	HRESULT Sprite_Update(int id,float x, float y, int angels);
 private:
-	void OUpdate() override;
-	void ORender() override;
+	HRESULT Update() override;
+	HRESULT Render() override;
 
 };
