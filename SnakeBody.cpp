@@ -46,27 +46,22 @@ HRESULT SnakeBody::Render()
 void SnakeBody::snakenext()
 {
 	list<shared_ptr<Sprite>>::iterator plist;
-	bodys.setNow();
-	for (int i = 2;i<bodys.size();i++)
+	bodys.setHeadToNow();
+	for (int i = 2;i < bodys.size();i++)
 	{
 		shared_ptr<Sprite> basehead = bodys.getNow()->data;
 		if (basehead == bodys.find(0)) {
 			if (snakeup == 0) {
-				basehead->Set_State(basehead->m_x, basehead->m_y, 0);
-				basehead->body->body->SetLinearVelocity(b2Vec2(5, 0));
-				printf("ce");
+				basehead->Set_State(basehead->m_x + 32, basehead->m_y, 0);
 			}
 			if (snakeup == 1) {
-				basehead->Set_State(basehead->m_x, basehead->m_y, 0);
-				basehead->body->body->SetLinearVelocity(b2Vec2(0, -5));
+				basehead->Set_State(basehead->m_x, basehead->m_y - 32, 0);
 			}
 			if (snakeup == 2) {
-				basehead->Set_State(basehead->m_x, basehead->m_y, 0);
-				basehead->body->body->SetLinearVelocity(b2Vec2(-5,0));
+				basehead->Set_State(basehead->m_x - 32, basehead->m_y, 0);
 			}
 			if (snakeup == 3) {
-				basehead->Set_State(basehead->m_x, basehead->m_y, 0);
-				basehead->body->body->SetLinearVelocity(b2Vec2(0,5));
+				basehead->Set_State(basehead->m_x, basehead->m_y + 32, 0);
 			}
 		}
 		else {

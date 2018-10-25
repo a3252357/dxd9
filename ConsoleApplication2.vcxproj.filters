@@ -47,6 +47,15 @@
     <Filter Include="BaseGame\子系统管理">
       <UniqueIdentifier>{e614f962-8e35-4215-b2fa-2ebaf1e689c1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SnakeGame\游戏优先状态机">
+      <UniqueIdentifier>{309623cf-7374-403f-b229-b7df4a032e4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="观察者模式">
+      <UniqueIdentifier>{2d1baeb9-1696-41ae-a2fd-a985ca94f81a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="状态模式">
+      <UniqueIdentifier>{0597dd8e-4b1d-441f-b470-51e91ff0bb4d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DUtil.cpp">
@@ -135,6 +144,9 @@
     </ClCompile>
     <ClCompile Include="GameSystem.cpp">
       <Filter>BaseGame\子系统管理</Filter>
+    </ClCompile>
+    <ClCompile Include="StateControl.cpp">
+      <Filter>状态模式</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -289,6 +301,15 @@
     </ClInclude>
     <ClInclude Include="GameSystem.h">
       <Filter>BaseGame\子系统管理</Filter>
+    </ClInclude>
+    <ClInclude Include="FSM.h">
+      <Filter>SnakeGame\游戏优先状态机</Filter>
+    </ClInclude>
+    <ClInclude Include="StateControl.h">
+      <Filter>状态模式</Filter>
+    </ClInclude>
+    <ClInclude Include="IState.h">
+      <Filter>状态模式</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

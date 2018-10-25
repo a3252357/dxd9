@@ -20,7 +20,7 @@ public:
 	Node<T>* goNext();//得到下一个节点
 	Node<T>* goPrev();//得到前一个节点
 	Node<T>* getNow();//得到当前节点
-	Node<T>* setNow();//设置当前节点
+	Node<T>* setHeadToNow();//设置当前节点
 private:
 	Node<T> *head;
 	Node<T> *tail;
@@ -177,7 +177,7 @@ Node<T>* ListUser<T>::getNow()
 	return now;
 }
 template<class T>
-Node<T>* ListUser<T>::setNow()
+Node<T>* ListUser<T>::setHeadToNow()
 {
 	now= head;
 	return now;

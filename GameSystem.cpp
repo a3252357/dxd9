@@ -19,6 +19,6 @@ HRESULT GameSystem::Relese()
 
 HRESULT GameSystem::Update(float delta)
 {
-	box2DSystem->Update(delta);
+	//box2DSystem->Update(delta);
 	return S_OK;
 }
