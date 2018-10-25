@@ -1,6 +1,6 @@
 #include "LogSystem.h"
 
-
+LogSystem* LogSystem::instance;
 LogSystem::LogSystem()
 {
 }
@@ -8,12 +8,10 @@ LogSystem* LogSystem::getInstance()
 {
 	if (instance == NULL)
 	{
-		lock();
 		if (instance == NULL)
 		{
 			instance = new LogSystem();
 		}
-		unlock();
 	}
 
 	return instance;

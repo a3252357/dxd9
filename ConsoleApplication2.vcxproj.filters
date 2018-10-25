@@ -56,6 +56,9 @@
     <Filter Include="状态模式">
       <UniqueIdentifier>{0597dd8e-4b1d-441f-b470-51e91ff0bb4d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="日志">
+      <UniqueIdentifier>{0e91b5e7-3625-427c-a160-a0d6a39e7b6b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DUtil.cpp">
@@ -147,6 +150,9 @@
     </ClCompile>
     <ClCompile Include="StateControl.cpp">
       <Filter>状态模式</Filter>
+    </ClCompile>
+    <ClCompile Include="LogSystem.cpp">
+      <Filter>日志</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -310,6 +316,9 @@
     </ClInclude>
     <ClInclude Include="IState.h">
       <Filter>状态模式</Filter>
+    </ClInclude>
+    <ClInclude Include="LogSystem.h">
+      <Filter>日志</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
