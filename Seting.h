@@ -51,6 +51,7 @@ using namespace std;
 #include "GameSystem.h"
 #include "SpriteBody.h"
 #include "tmxlite/Tileset.hpp"
+#include "LogSystem.h"
 
 //*****************************************************************************************
 // Desc: 库文件定义部分  

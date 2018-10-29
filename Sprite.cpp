@@ -3,13 +3,13 @@ HRESULT Sprite::Sprite_Init(LPCWSTR  path,float x, float y, float angels)
 {
 	D3DXCreateSprite(D3DUtil::getD3DDev(), &m_Sprite);
 	m_Texture= D3DUtil::getTexture(path);
-	n_x = m_x;
-	n_y = m_y;
+	//n_x = m_x;
+	//n_y = m_y;
 	m_x = x;
 	m_y = y;
 	m_angels = angels;
-	body = new SpriteBody();
-	body->Init(&m_x, &m_y, &m_angels);
+	//body = new SpriteBody();
+	//body->Init(&m_x, &m_y, &m_angels);
 	return S_OK;
 }
 HRESULT Sprite::Sprite_Init(LPDIRECT3DTEXTURE9 * Texture, float x, float y, float angels)
@@ -26,17 +26,18 @@ HRESULT Sprite::Sprite_Init(LPDIRECT3DTEXTURE9 * Texture, float x, float y, floa
 
 HRESULT Sprite::Set_State(float x, float y, int angels)
 {
-	n_x = x;
-	n_y = y;
-	//m_x = x;
-	//m_y = y;
+	n_x = m_x;
+	n_y = m_y;
+	m_x = x;
+	m_y = y;
 	m_angels = angels;
 	return S_OK;
 }
 
 HRESULT Sprite::Update()
 {
-	body->Update(0);
+	m_angels+=0.5;
+	//body->Update(0);
 	rect.left = 0;
 	rect.right = BOX_WIDTH;
 	rect.top = 0;
@@ -48,8 +49,8 @@ HRESULT Sprite::Update()
 	D3DXMatrixRotationZ(&dd16, m_angels);
 	D3DXMatrixTranslation(&T1, -m_x - BOX_WIDTH / 2, -m_y - BOX_WIDTH / 2, 0.f);
 	D3DXMatrixTranslation(&T2, m_x + BOX_WIDTH / 2, m_y + BOX_WIDTH / 2, 0.f);
-	D3DXMatrixTranslation(&TInv, m_x, m_y, 0.f);
-	TInv = T1*dd16*T2*TInv;
+	//D3DXMatrixTranslation(&TInv, vec.x, vec.y, vec.z);
+	TInv = T1*dd16*T2;
 	return S_OK;
 }
 

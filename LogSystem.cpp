@@ -1,8 +1,8 @@
 #include "LogSystem.h"
-
 LogSystem* LogSystem::instance;
 LogSystem::LogSystem()
 {
+	InitLog();
 }
 LogSystem* LogSystem::getInstance()
 {
@@ -24,10 +24,8 @@ LogSystem::~LogSystem()
 
 HRESULT LogSystem::InitLog()
 {
-	return E_NOTIMPL;
-}
-
-HRESULT LogSystem::DebugLog(string _logmes)
-{
-	return E_NOTIMPL;
+	log4cplus::initialize();
+	PropertyConfigurator::doConfigure(LOG4CPLUS_TEXT(MY_LOG_FILE_PATH));
+	logger = Logger::getRoot();
+	return S_OK;
 }

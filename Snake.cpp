@@ -1,21 +1,8 @@
 #include "Snake.h"
-#include <log4cplus/logger.h>
-#include <log4cplus/configurator.h> 
-#include <log4cplus/layout.h> 
-#include <log4cplus/loggingmacros.h> 
-#include <log4cplus/helpers/stringhelper.h> 
-using namespace std;
-using namespace log4cplus;
-using namespace log4cplus::helpers;
-#define MY_LOG_FILE_PATH "F:/ConsoleApplication2/conf/logconfig.properites"
 
 Snake::Snake()
 {
-	
-	log4cplus::initialize();
-	PropertyConfigurator::doConfigure(LOG4CPLUS_TEXT(MY_LOG_FILE_PATH));
-	Logger logger = Logger::getRoot();
-	LOG4CPLUS_DEBUG(logger, " Service is removed");
+	DEBUG__LOG("1111");
 }
 
 Snake::~Snake()

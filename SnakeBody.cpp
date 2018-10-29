@@ -47,7 +47,7 @@ void SnakeBody::snakenext()
 {
 	list<shared_ptr<Sprite>>::iterator plist;
 	bodys.setHeadToNow();
-	for (int i = 2;i < bodys.size();i++)
+	for (int i = 1;i < bodys.size();i++)
 	{
 		shared_ptr<Sprite> basehead = bodys.getNow()->data;
 		if (basehead == bodys.find(0)) {
