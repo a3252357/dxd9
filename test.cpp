@@ -16,6 +16,7 @@
 //*****************************************************************************************                                                                                       
 #include "Seting.h"
 #include "TimeInit.h"
+#include "Test.h"
 #define dDOUBLE
 
 extern long g_lMouseMoveX, g_lMouseMoveY;
@@ -515,3 +516,13 @@ void Direct3D_CleanUp()
 }
 
 
+
+
+Test::Test()
+{
+}
+
+
+Test::~Test()
+{
+}

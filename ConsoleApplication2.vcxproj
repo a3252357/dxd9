@@ -231,6 +231,7 @@
     <ClInclude Include="IState.h" />
     <ClInclude Include="StringUtil.h" />
     <ClInclude Include="SystemInit.h" />
+    <ClInclude Include="Test.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="TerrainClass.h" />
     <ClInclude Include="CameraClass.h" />
