@@ -1,6 +1,8 @@
 #pragma once
 #include "Seting.h"
+#include "MapLoader.h"
 class Box2DSystem;
+class MapLoader;
 static class GameSystem
 {
 public:
@@ -9,4 +11,4 @@ public:
 	static HRESULT Init();
 	static HRESULT Relese();
 };
-
+ 

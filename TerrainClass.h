@@ -10,7 +10,7 @@
 class TerrainClass
 {
 private:
-	LPDIRECT3DTEXTURE9      m_pTexture;         //ÎÆÀí  
+	Texture2d*      m_pTexture;         //ÎÆÀí  
 	LPDIRECT3DINDEXBUFFER9  m_pIndexBuffer;         //¶¥µã»º´æ  
 	LPDIRECT3DVERTEXBUFFER9 m_pVertexBuffer;        //Ë÷Òý»º´æ  
 

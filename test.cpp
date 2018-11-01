@@ -16,7 +16,6 @@
 //*****************************************************************************************                                                                                       
 #include "Seting.h"
 #include "TimeInit.h"
-#include "Test.h"
 #define dDOUBLE
 
 extern long g_lMouseMoveX, g_lMouseMoveY;
@@ -223,7 +222,8 @@ HRESULT Objects_Init()
 	/*
 	for (int i = 0; i < wallnum; i++) {
 		g_pSprite1wall[i] = new Sprite();
-		g_pSprite1wall[i]->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH, BOX_WIDTH, 0);
+		g_pSprite1wall[i]->
+		(L"img/wall/brick.png", BOX_WIDTH, BOX_WIDTH, 0);
 	}
 	for (int i = 0; i < wallnum; i++) {
 		g_pSnake[i] = new Sprite();
@@ -242,8 +242,6 @@ HRESULT Objects_Init()
 	//三步曲之三，设置融合运算方式  
 	D3DUtil::getD3DDev()->SetRenderState(D3DRS_BLENDOP, D3DBLENDOP_ADD);  //这句设置运算方式为D3DBLENDOP_ADD的代码Direct3D默认为我们写了，所以注释掉这句也没大碍 
 
-	AllocConsole();
-	freopen("CONOUT$", "w", stdout);
 	lastTime = timeGetTime()*0.01f; //将当前时间currentTime赋给持续时间lastTime，作为下一秒的基准时间
 	return S_OK;
 }
@@ -515,14 +513,3 @@ void Direct3D_CleanUp()
 		SAFE_RELEASE(g_pd3dDevice)
 }
 
-
-
-
-Test::Test()
-{
-}
-
-
-Test::~Test()
-{
-}

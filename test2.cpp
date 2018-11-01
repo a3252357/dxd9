@@ -231,7 +231,7 @@
 //	g_pCamera = new CameraClass(D3DUtil::getD3DDev());
 //	for (int i = 0; i < wallnum; i++) {
 //		g_pSprite1wall[i] = new Sprite();
-//		g_pSprite1wall[i]->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH, BOX_WIDTH, 0);
+//		g_pSprite1wall[i]->(L"img/wall/brick.png", BOX_WIDTH, BOX_WIDTH, 0);
 //	}
 //	for (int i = 0; i < wallnum; i++) {
 //		g_pSnake[i] = new Sprite();

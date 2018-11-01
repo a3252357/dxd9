@@ -1,7 +1,7 @@
 #pragma once 
 #define SCREEN_WIDTH	1300						//为窗口宽度定义的宏，以方便在此处修改窗口宽度
 #define SCREEN_HEIGHT	900							//为窗口高度定义的宏，以方便在此处修改窗口高度
-#define BOX_WIDTH	32						//砖块宽度
+#define BOX_WIDTH	(int)16						//砖块宽度
 #define WINDOW_TITLE	_T("huangjianjian的测试窗口") //为窗口标题定义的宏
 #define SAFE_RELEASE(p) { if(p) { (p)->Release(); (p)=NULL; } }      //自定义一个SAFE_RELEASE()宏,便于资源的释放
 using namespace std;
@@ -52,7 +52,7 @@ using namespace std;
 #include "SpriteBody.h"
 #include "tmxlite/Tileset.hpp"
 #include "LogSystem.h"
-
+#include "Texture2d.h"
 //*****************************************************************************************
 // Desc: 库文件定义部分  
 //***************************************************************************************** 

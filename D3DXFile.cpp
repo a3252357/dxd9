@@ -13,10 +13,10 @@ HRESULT XFile::XFile_Init(LPCWSTR path)
 			mtrls[i].MatD3D.Ambient = mtrls[i].MatD3D.Diffuse;
 			m_Mtrls.push_back(mtrls[i].MatD3D);
 			if (mtrls[i].pTextureFilename != 0) {
-				LPDIRECT3DTEXTURE9  tex = 0;
+				Texture2d*   tex = 0;
 				char szBuf[1000];
 				sprintf_s(szBuf, "%s%s", StringUtil::ConvertLPWSTRToLPSTR(L"C://Users/hanhaishao/Desktop/max/"), mtrls[i].pTextureFilename);
-				tex =*D3DUtil::getTexture(StringUtil::ConvertLPSTRToLPWSTR(szBuf));
+				tex =D3DUtil::getTexture(StringUtil::ConvertLPSTRToLPWSTR(szBuf));
 				m_Textures.push_back(tex);
 			}
 			else {
@@ -31,7 +31,7 @@ HRESULT XFile::Update()
 {
 	for (int i = 0; i < m_Mtrls.size(); i++) {
 		D3DUtil::getD3DDev()->SetMaterial(&m_Mtrls[i]);
-		D3DUtil::getD3DDev()->SetTexture(0,m_Textures[i]);
+		D3DUtil::getD3DDev()->SetTexture(0,*m_Textures[i]->ptexture9);
 		m_Mesh->DrawSubset(i);
 	}
 	return S_OK;

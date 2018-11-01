@@ -47,7 +47,7 @@ BOOL TerrainClass::getTerrain(int num,wchar_t *pTextureFile)
 		
 
 
-	m_pTexture = *D3DUtil::getTexture(pTextureFile);
+	m_pTexture = D3DUtil::getTexture(pTextureFile);
 	// 加载地形纹理
 
 	return TRUE;
@@ -147,7 +147,7 @@ BOOL TerrainClass::RenderTerrain(D3DXMATRIX *pMatWorld, BOOL bRenderFrame)
 	D3DUtil::getD3DDev()->SetStreamSource(0, m_pVertexBuffer, 0, sizeof(TERRAINVERTEX));  ///把包含的几何体信息的顶点缓存和渲染流水线相关联 
 	D3DUtil::getD3DDev()->SetFVF(TERRAINVERTEX::FVF);//指定我们使用的灵活顶点格式的宏名称
 	D3DUtil::getD3DDev()->SetIndices(m_pIndexBuffer);//设置索引缓存 
-	D3DUtil::getD3DDev()->SetTexture(0, m_pTexture);//设置纹理
+	D3DUtil::getD3DDev()->SetTexture(0, *m_pTexture->ptexture9);//设置纹理
 	D3DUtil::getD3DDev()->SetTransform(D3DTS_WORLD, pMatWorld); //设置世界矩阵
 	D3DUtil::getD3DDev()->DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 0,
 		m_nNumVertices, 0, m_nNumVertices * 2);              //绘制顶点
@@ -168,7 +168,7 @@ BOOL TerrainClass::RenderTerrain(D3DXMATRIX *pMatWorld, BOOL bRenderFrame)
 //-----------------------------------------------------------------------------
 TerrainClass::~TerrainClass(void)
 {
-	SAFE_RELEASE(m_pTexture);
+	//SAFE_RELEASE(m_pTexture);
 	SAFE_RELEASE(m_pIndexBuffer);
 	SAFE_RELEASE(m_pVertexBuffer);
 }

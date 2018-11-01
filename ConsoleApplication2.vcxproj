@@ -113,7 +113,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>dinput8.lib;Box2d.lib;log4cplusSD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>dinput8.lib;Box2d.lib;log4cplusSD.lib;libtmxlite-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -166,6 +166,7 @@
     <ClCompile Include="ListUser.cpp" />
     <ClCompile Include="ListUser.h" />
     <ClCompile Include="LogSystem.cpp" />
+    <ClCompile Include="MapLoader.cpp" />
     <ClCompile Include="Snake.cpp" />
     <ClCompile Include="SnakeBody.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -178,14 +179,21 @@
     <ClCompile Include="TerrainClass.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="test2.cpp" />
+    <ClCompile Include="Texture2d.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TimeInit.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TimerData.cpp" />
     <ClCompile Include="TimeS.cpp" />
     <ClCompile Include="TimeWheel.cpp" />
+    <ClCompile Include="UserImageLayer.cpp" />
+    <ClCompile Include="UserMap.cpp" />
+    <ClCompile Include="UserObejectLayer.cpp" />
+    <ClCompile Include="UserTile.cpp" />
+    <ClCompile Include="UserTileLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="img\Dungeon_A1.jpg" />
     <Image Include="img\tank\bot_down.png" />
     <Image Include="img\tank\bot_left.png" />
     <Image Include="img\tank\bot_right.png" />
@@ -218,6 +226,7 @@
     <ClInclude Include="GameSystem.h" />
     <ClInclude Include="InputInit.h" />
     <ClInclude Include="LogSystem.h" />
+    <ClInclude Include="MapLoader.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Seting.h" />
     <ClInclude Include="Snake.h" />
@@ -231,7 +240,7 @@
     <ClInclude Include="IState.h" />
     <ClInclude Include="StringUtil.h" />
     <ClInclude Include="SystemInit.h" />
-    <ClInclude Include="Test.h" />
+    <ClInclude Include="Texture2d.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="TerrainClass.h" />
     <ClInclude Include="CameraClass.h" />
@@ -243,6 +252,11 @@
     <ClInclude Include="TimeWheel.h" />
     <ClInclude Include="TimeSystemInterface.h" />
     <ClInclude Include="SpriteType.h" />
+    <ClInclude Include="UserImageLayer.h" />
+    <ClInclude Include="UserMap.h" />
+    <ClInclude Include="UserObejectLayer.h" />
+    <ClInclude Include="UserTile.h" />
+    <ClInclude Include="UserTileLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

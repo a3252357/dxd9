@@ -1,16 +1,19 @@
 #pragma once
 #include "Seting.h"
+#include "MapLoader.h"
 class SnakeBody;
 class Sprites;
 class TimeWithSprite;
+class MapLoader;
 class Snake : BaseGame
 {
 private:
+	MapLoader * maps;
 	shared_ptr<Sprites> spritesManager;
 	shared_ptr<SnakeBody> snakeBody;
 	shared_ptr<Sprite> g_pSnake[200];
-	LPDIRECT3DTEXTURE9  	g_pTexture = NULL;
-	LPDIRECT3DTEXTURE9  	g_pTexturewall;
+	Texture2d* 	g_pTexture = NULL;
+	Texture2d*  	g_pTexturewall;
 	shared_ptr<Sprite>           g_pSprite1wall[100];
 	shared_ptr<TimeWithSprite> timer;
 	int snakenum = 10;
