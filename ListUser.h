@@ -258,8 +258,8 @@ ListUser<T>::~ListUser()
 {
 	if (length == 0)
 	{
-		delete head;
-		delete tail;
+		//delete head;
+		//delete tail;
 		head = nullptr;
 		tail = nullptr;
 		return;
@@ -268,8 +268,8 @@ ListUser<T>::~ListUser()
 	{
 		Node<T> *temp = head;
 		head = head->next;
-		delete temp;
+		//delete temp;
 	}
-	delete head;
+	//delete head;
 	head = nullptr;
 }

@@ -65,6 +65,12 @@
     <Filter Include="BaseGame\纹理">
       <UniqueIdentifier>{33b4fc99-3de0-4db0-b5d9-5e1c9ed51824}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BaseGame\帧动画">
+      <UniqueIdentifier>{110e9532-12f1-4755-bd70-c14ced6c8d3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseGame\回调代理">
+      <UniqueIdentifier>{e0213d66-0680-48f4-9d3f-ff2e1b9813e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DUtil.cpp">
@@ -180,6 +186,9 @@
     </ClCompile>
     <ClCompile Include="UserTileLayer.cpp">
       <Filter>TMX地图读取</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationFrame.cpp">
+      <Filter>BaseGame\帧动画</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -370,6 +379,12 @@
     </ClInclude>
     <ClInclude Include="UserTileLayer.h">
       <Filter>TMX地图读取</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationFrame.h">
+      <Filter>BaseGame\帧动画</Filter>
+    </ClInclude>
+    <ClInclude Include="CallbackProxy.h">
+      <Filter>BaseGame\回调代理</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

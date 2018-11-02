@@ -3,6 +3,7 @@
 #include "BaseSprite.h"
 #include "ListUser.h"
 #include "TimerWithSprite.h"
+#include "Sprite.h"
 class Sprite;
 class SnakeBody:public BaseSprite {
 private:

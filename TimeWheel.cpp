@@ -134,7 +134,7 @@ void TimeWheel::tick()
 			tmp = tmp->next;
 		}
 		else {
-				tmp->cb_func();
+				tmp->cb_func(tmp->data);
 				if (tmp == slots[cur_slot]) {
 					//printf("delete header in cur_slot\n");
 					slots[cur_slot] = tmp->next;

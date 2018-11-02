@@ -9,12 +9,12 @@ HWND D3DUtil::getHWND()
 	return SystemInit::hwnd;
 }
 
-Texture2d * D3DUtil::getTexture(LPCWSTR path)
+shared_ptr<Texture2d> D3DUtil::getTexture(LPCWSTR path)
 {
 	return TextureManager::getTexture(path,0,0,BOX_WIDTH,BOX_WIDTH);
 }
 
-Texture2d * D3DUtil::getTexture(LPCWSTR path,int x,int y,int w,int h)
+shared_ptr<Texture2d> D3DUtil::getTexture(LPCWSTR path,int x,int y,int w,int h)
 {
 	return TextureManager::getTexture(path, x, y, w, h);
 }

@@ -1,8 +1,10 @@
 #include "Sprite.h"
+#include "AnimationFrame.h"
 HRESULT Sprite::Sprite_Init(LPCWSTR  path,float x, float y, float angels)
 {
-	D3DXCreateSprite(D3DUtil::getD3DDev(), &m_Sprite);
-	m_Texture= make_shared<Texture2d>(*D3DUtil::getTexture(path));
+	m_animationFrame = make_shared<AnimationFrame>(this);
+	m_animationFrame->Add_AnimationSprite(path,1000);
+	//m_Texture= make_shared<Texture2d>(*D3DUtil::getTexture(path));
 	//n_x = m_x;
 	//n_y = m_y;
 	m_x = x;
@@ -12,10 +14,10 @@ HRESULT Sprite::Sprite_Init(LPCWSTR  path,float x, float y, float angels)
 	//body->Init(&m_x, &m_y, &m_angels);
 	return S_OK;
 }
-HRESULT Sprite::Sprite_Init(Texture2d * Texture, float x, float y, float angels)
+HRESULT Sprite::Sprite_Init(shared_ptr<Texture2d> Texture, float x, float y, float angels)
 {
-	D3DXCreateSprite(D3DUtil::getD3DDev(), &m_Sprite);
-	m_Texture = make_shared<Texture2d>(*Texture);
+	m_animationFrame = make_shared<AnimationFrame>(this);
+	m_animationFrame->Add_AnimationSprite(Texture, 1000);
 	//n_x = m_x;
 	///n_y = m_y;
 	m_x = x;
@@ -26,8 +28,8 @@ HRESULT Sprite::Sprite_Init(Texture2d * Texture, float x, float y, float angels)
 
 HRESULT Sprite::Sprite_Init(LPCWSTR  path, float x, float y, float angels,int tx,int ty,int w=BOX_WIDTH,int h = BOX_WIDTH)
 {
-	D3DXCreateSprite(D3DUtil::getD3DDev(), &m_Sprite);
-	m_Texture = make_shared<Texture2d>(*D3DUtil::getTexture(path,tx,ty,w,h));
+	m_animationFrame = make_shared<AnimationFrame>(this);
+	m_animationFrame->Add_AnimationSprite(path,tx,ty,1000,w,h);
 	//n_x = m_x;
 	//n_y = m_y;
 	m_x = x;
@@ -35,6 +37,24 @@ HRESULT Sprite::Sprite_Init(LPCWSTR  path, float x, float y, float angels,int tx
 	m_angels = angels;
 	//body = new SpriteBody();
 	//body->Init(&m_x, &m_y, &m_angels);
+	return S_OK;
+}
+
+HRESULT Sprite::Sprite_Add(LPCWSTR path)
+{
+	m_animationFrame->Add_AnimationSprite(path, 1000);
+	return S_OK;
+}
+
+HRESULT Sprite::Sprite_Add(shared_ptr<Texture2d> Texture)
+{
+	m_animationFrame->Add_AnimationSprite(Texture, 1000);
+	return S_OK;
+}
+
+HRESULT Sprite::Sprite_Add(LPCWSTR path, int tx, int ty, int w, int h)
+{
+	m_animationFrame->Add_AnimationSprite(path, tx, ty, 100, w, h);
 	return S_OK;
 }
 
@@ -50,29 +70,12 @@ HRESULT Sprite::Set_State(float x, float y, int angels)
 
 HRESULT Sprite::Update()
 {
-	//m_angels+=0.5;
-	//body->Update(0);
-	rect.left = m_Texture->x;
-	rect.right = m_Texture->x+ m_Texture->w;
-	rect.top = m_Texture->y;
-	rect.bottom = m_Texture->y+m_Texture->h;
-	vec.x = m_x;
-	vec.y = m_y;
-	vec.z = 0;
-
-	D3DXMatrixRotationZ(&dd16, m_angels);
-	D3DXMatrixTranslation(&T1, -m_x - m_Texture->w / 2, -m_y - m_Texture->h / 2, 0.f);
-	D3DXMatrixTranslation(&T2, m_x + m_Texture->w / 2, m_y + m_Texture->h / 2, 0.f);
-	//D3DXMatrixTranslation(&TInv, vec.x, vec.y, vec.z);
-	TInv = T1*dd16*T2;
+	m_animationFrame->Update();
 	return S_OK;
 }
 
 HRESULT Sprite::Render()
 {
-	m_Sprite->Begin(D3DXSPRITE_ALPHABLEND);
-	m_Sprite->SetTransform(&TInv);
-	HRESULT s1 = m_Sprite->Draw(*m_Texture->ptexture9, &rect, NULL, &vec, 0xffffffff);
-	HRESULT s= m_Sprite->End();
+	m_animationFrame->Render();
 	return S_OK;
 }

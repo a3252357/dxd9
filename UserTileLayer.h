@@ -5,6 +5,7 @@
 #include <tmxlite/TileLayer.hpp>
 #include "Seting.h"
 #include "ListUser.h"
+#include "AnimationFrame.h"
 class Sprite;
 class UserTileLayer:BaseSprite
 {

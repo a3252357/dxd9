@@ -29,7 +29,6 @@ using namespace std;
 #include "TextureManager.h"
 #include "InputInit.h"
 #include "D3DXFile.h"
-#include "Sprite.h"
 #include "TerrainClass.h"
 #include "CameraClass.h"
 #include "D3DUtil.h"

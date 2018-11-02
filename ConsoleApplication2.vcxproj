@@ -154,6 +154,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AbstractFactory.cpp" />
+    <ClCompile Include="AnimationFrame.cpp" />
     <ClCompile Include="BaseSprite.cpp" />
     <ClCompile Include="Box2DSystem.cpp" />
     <ClCompile Include="CameraClass.cpp" />
@@ -218,6 +219,7 @@
     <ClInclude Include="BaseSprite.h" />
     <ClInclude Include="BaseGame.h" />
     <ClInclude Include="Box2DSystem.h" />
+    <ClInclude Include="CallbackProxy.h" />
     <ClInclude Include="D3DRect.h" />
     <ClInclude Include="D3DUtil.h" />
     <ClInclude Include="D3DXFile.h" />
@@ -257,6 +259,7 @@
     <ClInclude Include="UserObejectLayer.h" />
     <ClInclude Include="UserTile.h" />
     <ClInclude Include="UserTileLayer.h" />
+    <ClInclude Include="AnimationFrame.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

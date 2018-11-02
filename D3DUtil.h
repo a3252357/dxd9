@@ -6,7 +6,7 @@ static class D3DUtil{
 public:
 	static IDirect3DDevice9 * getD3DDev();
 	static HWND  getHWND();
-	static Texture2d * getTexture(LPCWSTR path);
-	static Texture2d * getTexture(LPCWSTR path, int x, int y, int w, int h);
+	static shared_ptr<Texture2d> getTexture(LPCWSTR path);
+	static shared_ptr<Texture2d> getTexture(LPCWSTR path, int x, int y, int w, int h);
 };
 #endif

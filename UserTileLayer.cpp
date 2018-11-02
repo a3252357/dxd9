@@ -24,16 +24,24 @@ UserTileLayer::UserTileLayer(const tmx::Map& map, std::size_t layerIdx)
 
 	const auto& mapSize = map.getTileCount();
 	const auto& tilesets = map.getTilesets();
-	for (auto x = 0; x < mapSize.x; ++x)
+	for (auto i = 0; i < tilesets.size(); ++i)
 	{
-		for (auto y = 0; y < mapSize.y; ++y)
+		for (auto x = 0; x < mapSize.x; ++x)
 		{
-			auto idx = y * mapSize.x + x;
-			const auto& ts = tilesets[0];
-			const auto& tileIDs = layer->getTiles();
-			shared_ptr<Sprite> as = make_shared<Sprite>();
-			as->Sprite_Init(StringUtil::ConvertstringToLPCWSTR(ts.getTile((tileIDs[idx].ID - ts.getFirstGID()) + 1)->imagePath), x*BOX_WIDTH, y*BOX_WIDTH, 0.0f, ((tileIDs[idx].ID - ts.getFirstGID()) + 1)%64*16, ((tileIDs[idx].ID - ts.getFirstGID()) + 1) / 64*16, BOX_WIDTH, BOX_WIDTH);
-			Add(as);
+			for (auto y = 0; y < mapSize.y; ++y)
+			{
+				auto idx = y * mapSize.x + x;
+				const auto& ts = tilesets[i];
+				const auto& tileIDs = layer->getTiles();
+				if (ts.getTile((tileIDs[idx].ID - ts.getFirstGID()) + 1)->animation.frames.size() > 0) {
+
+				}
+				shared_ptr<Sprite> as = make_shared<Sprite>();
+				as->Sprite_Init(StringUtil::ConvertstringToLPCWSTR(ts.getTile((tileIDs[idx].ID - ts.getFirstGID()) + 1)->imagePath), x*BOX_WIDTH, y*BOX_WIDTH, 0.0f, ((tileIDs[idx].ID - ts.getFirstGID()) + 1) % 64 * 16, ((tileIDs[idx].ID - ts.getFirstGID()) + 1) / 64 * 16, BOX_WIDTH, BOX_WIDTH);
+				as->Sprite_Add(StringUtil::ConvertstringToLPCWSTR(ts.getTile((tileIDs[idx].ID - ts.getFirstGID()))->imagePath),((tileIDs[idx].ID - ts.getFirstGID())) % 64 * 16, ((tileIDs[idx].ID - ts.getFirstGID()) + 1) / 64 * 16, BOX_WIDTH, BOX_WIDTH);
+				as->m_animationFrame->Start(0);
+				Add(as);
+			}
 		}
 	}
 	/*

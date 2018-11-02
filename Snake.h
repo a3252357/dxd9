@@ -11,10 +11,10 @@ private:
 	MapLoader * maps;
 	shared_ptr<Sprites> spritesManager;
 	shared_ptr<SnakeBody> snakeBody;
-	shared_ptr<Sprite> g_pSnake[200];
-	Texture2d* 	g_pTexture = NULL;
-	Texture2d*  	g_pTexturewall;
-	shared_ptr<Sprite>           g_pSprite1wall[100];
+	//shared_ptr<Sprite> g_pSnake[200];
+	shared_ptr <Texture2d>  	g_pTexture = NULL;
+	shared_ptr <Texture2d>  	g_pTexturewall;
+	//shared_ptr<Sprite>           g_pSprite1wall[100];
 	shared_ptr<TimeWithSprite> timer;
 	int snakenum = 10;
 	int snakeup = 0;

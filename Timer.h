@@ -7,7 +7,8 @@ public:
 	Timer(int ts)
 		:next(NULL), prev(NULL), time(ts),_time(ts) {} 
 	void *(*cb_func)();      //定时器的回调函数
-	TimerData user_data;             //客户端数据
+	void * data;
+	//TimerData user_data;             //客户端数据
 
 public:
 	int time;                      //定时器时间
