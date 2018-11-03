@@ -82,12 +82,6 @@
     <ClCompile Include="SnakeBody.cpp">
       <Filter>SnakeGame\Bean</Filter>
     </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>BaseGame\TimeSystem</Filter>
-    </ClCompile>
-    <ClCompile Include="TimerData.cpp">
-      <Filter>BaseGame\TimeSystem</Filter>
-    </ClCompile>
     <ClCompile Include="TimeS.cpp">
       <Filter>BaseGame\TimeSystem</Filter>
     </ClCompile>
@@ -190,6 +184,9 @@
     <ClCompile Include="AnimationFrame.cpp">
       <Filter>BaseGame\帧动画</Filter>
     </ClCompile>
+    <ClCompile Include="TimerData.cpp">
+      <Filter>BaseGame\TimeSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\wall\base.png">
@@ -266,12 +263,6 @@
     <ClInclude Include="TimeSystemInterface.h">
       <Filter>BaseGame\TimeSystem</Filter>
     </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>BaseGame\TimeSystem</Filter>
-    </ClInclude>
-    <ClInclude Include="TimerData.h">
-      <Filter>BaseGame\TimeSystem</Filter>
-    </ClInclude>
     <ClInclude Include="TimeS.h">
       <Filter>BaseGame\TimeSystem</Filter>
     </ClInclude>
@@ -321,9 +312,6 @@
       <Filter>BaseGame\TimeSystem</Filter>
     </ClInclude>
     <ClInclude Include="TimeWheel.h">
-      <Filter>BaseGame\TimeSystem</Filter>
-    </ClInclude>
-    <ClInclude Include="TimerWithSprite.h">
       <Filter>BaseGame\TimeSystem</Filter>
     </ClInclude>
     <ClInclude Include="Box2DSystem.h">
@@ -385,6 +373,12 @@
     </ClInclude>
     <ClInclude Include="CallbackProxy.h">
       <Filter>BaseGame\回调代理</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>BaseGame\TimeSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerData.h">
+      <Filter>BaseGame\TimeSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

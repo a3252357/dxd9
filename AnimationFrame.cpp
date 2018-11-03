@@ -40,7 +40,6 @@ AnimationFrame::AnimationFrame(Sprite* _sprite)
 {
 
 	m_sprite = _sprite;
-	timer = new TimerWithSprite<AnimationFrame>(this, &AnimationFrame::AnimationPlay);
 }
 
 HRESULT AnimationFrame::Set_State(float x, float y, int angels)
@@ -56,7 +55,7 @@ HRESULT AnimationFrame::Set_State(float x, float y, int angels)
 HRESULT AnimationFrame::Start(int type)
 {
 	if (frames.size() > 1) {
-		timer->start(frames.getNow()->data->duration,0,1);
+		start(frames.getNow()->data->duration);
 	}
 	return E_NOTIMPL;
 }
@@ -64,17 +63,19 @@ HRESULT AnimationFrame::Start(int type)
 HRESULT AnimationFrame::Stop()
 {
 	if (frames.size() > 1) {
-		//timer->start(frames.getNow()->data->duration,0,1);
+		//start(frames.getNow()->data->duration,0,1);
 	}
-	return E_NOTIMPL;
+	return S_OK;
 }
 
-void AnimationFrame::AnimationPlay()
+void AnimationFrame::callback()
 {
-	this;
+	if (frames.goNext() == NULL)
+	{
+		frames.setHeadToNow();
+	}
 	curtexture2d = frames.getNow()->data->texture2d;
-	if (frames.goNext() == NULL)frames.setHeadToNow();
-	timer->start(frames.getNow()->data->duration);
+	start(frames.getNow()->data->duration);
 }
 
 

@@ -96,7 +96,7 @@ float32 angels1[100];
 RECT rect = RECT();
 D3DXVECTOR3 vec = D3DXVECTOR3();
 shared_ptr<TimeWheel> time1;
-shared_ptr<Timer> timer;
+Timer* timer;
 D3DXMATRIX dd16;
 D3DXMATRIX T1, T2, TInv;
 LPD3DXMESH g_teapot = NULL;     //茶壶对象  //在窗口右上角处，显示每秒帧数
@@ -174,18 +174,12 @@ LPDIRECT3DVERTEXBUFFER9 g_pVertexBuffer = NULL;    //顶点缓冲区对象
 												   //--------------------------------------------------------------------------------------  
 LPDIRECT3DTEXTURE9      g_pTexture1 = NULL;   // 纹理接口对象  
 shared_ptr<TimeS> time3=make_shared<TimeS>();
-void func(shared_ptr<TimerData> timedate) {
-	//AllocConsole();//打开控制台窗口
-	//freopen("CONOUT$", "w", stdout);
-	//printf("%s", time3->time);
-	//cout << "This is a test info" << std::endl;
-}
 shared_ptr<Snake>snake;
 HRESULT Objects_Init()
 {
 	//time1 = make_shared<time_wheel>();
 	//g_pTexturewall->Release();
-	//timer= make_shared<Timer>(5000);
+	//timer= new Timer(5000);
 	//timer->cb_func = func;
 	//time1->add_timer(timer);
 	snake = make_shared<Snake>();

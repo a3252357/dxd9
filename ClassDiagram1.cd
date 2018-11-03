@@ -42,18 +42,11 @@
       <FileName>TimeInit.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Timer" Collapsed="true">
-    <Position X="10" Y="3.5" Width="1.5" />
+  <Class Name="Timer">
+    <Position X="14.25" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAgAAAgBAAAAAAAAAABAAAAAABAAAIEAAA=</HashCode>
+      <HashCode>AAABAAAAAAAgAAAABAAAAAAQAAABAAAAAABAAAIEAAA=</HashCode>
       <FileName>Timer.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="TimerData" Collapsed="true">
-    <Position X="11.75" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>TimerData.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TimeS" Collapsed="true">
@@ -64,7 +57,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TimeWheel" Collapsed="true">
-    <Position X="10" Y="4.5" Width="1.5" />
+    <Position X="7.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAAACAQgACAAIAAAABAAAAAAAAAABAACAE=</HashCode>
       <FileName>TimeWheel.h</FileName>

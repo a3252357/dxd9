@@ -1,16 +1,14 @@
 #pragma once
 #include "Seting.h"
+#include "TimerData.h"
 //定时器
 class Timer
 {
 public:
 	Timer(int ts)
 		:next(NULL), prev(NULL), time(ts),_time(ts) {} 
-	void *(*cb_func)();      //定时器的回调函数
-	void * data;
+	TimerData * data;
 	//TimerData user_data;             //客户端数据
-
-public:
 	int time;                      //定时器时间
 	int _time;                      //定时器初始时间
 	int type = 0;

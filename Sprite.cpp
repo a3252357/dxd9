@@ -54,7 +54,7 @@ HRESULT Sprite::Sprite_Add(shared_ptr<Texture2d> Texture)
 
 HRESULT Sprite::Sprite_Add(LPCWSTR path, int tx, int ty, int w, int h)
 {
-	m_animationFrame->Add_AnimationSprite(path, tx, ty, 100, w, h);
+	m_animationFrame->Add_AnimationSprite(path, tx, ty, 1000, w, h);
 	return S_OK;
 }
 

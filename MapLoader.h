@@ -1,5 +1,5 @@
 #pragma once
-#include "Seting.h";
+#include "Seting.h"
 #include <iostream>
 #include <tmxlite/Map.hpp>
 #include <locale>

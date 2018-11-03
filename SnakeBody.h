@@ -2,10 +2,9 @@
 #include "Seting.h"
 #include "BaseSprite.h"
 #include "ListUser.h"
-#include "TimerWithSprite.h"
 #include "Sprite.h"
 class Sprite;
-class SnakeBody:public BaseSprite {
+class SnakeBody:public BaseSprite{
 private:
 	int snakeup=0;
 	ListUser<shared_ptr<Sprite>> bodys;
@@ -16,6 +15,5 @@ public:
 	HRESULT Update() override;
 	HRESULT Render() override;
 	void snakenext();
-	TimerWithSprite<SnakeBody>* timer;
 	//»Øµ÷º¯Êý  
 };

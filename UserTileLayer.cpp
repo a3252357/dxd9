@@ -33,13 +33,25 @@ UserTileLayer::UserTileLayer(const tmx::Map& map, std::size_t layerIdx)
 				auto idx = y * mapSize.x + x;
 				const auto& ts = tilesets[i];
 				const auto& tileIDs = layer->getTiles();
-				if (ts.getTile((tileIDs[idx].ID - ts.getFirstGID()) + 1)->animation.frames.size() > 0) {
-
-				}
+				auto idz= (tileIDs[idx].ID - ts.getFirstGID()) + 1;
 				shared_ptr<Sprite> as = make_shared<Sprite>();
-				as->Sprite_Init(StringUtil::ConvertstringToLPCWSTR(ts.getTile((tileIDs[idx].ID - ts.getFirstGID()) + 1)->imagePath), x*BOX_WIDTH, y*BOX_WIDTH, 0.0f, ((tileIDs[idx].ID - ts.getFirstGID()) + 1) % 64 * 16, ((tileIDs[idx].ID - ts.getFirstGID()) + 1) / 64 * 16, BOX_WIDTH, BOX_WIDTH);
-				as->Sprite_Add(StringUtil::ConvertstringToLPCWSTR(ts.getTile((tileIDs[idx].ID - ts.getFirstGID()))->imagePath),((tileIDs[idx].ID - ts.getFirstGID())) % 64 * 16, ((tileIDs[idx].ID - ts.getFirstGID()) + 1) / 64 * 16, BOX_WIDTH, BOX_WIDTH);
-				as->m_animationFrame->Start(0);
+				if (ts.getTile(idz)->animation.frames.size() > 0) {
+					for (int i = 0;i < ts.getTile(idz)->animation.frames.size();i++) {
+						auto tileid = ts.getTile(idz)->animation.frames[i].tileID + ts.getFirstGID();
+						if (i == 0) {
+							as->Sprite_Init(StringUtil::ConvertstringToLPCWSTR(ts.getTile(tileid)->imagePath), x*BOX_WIDTH, y*BOX_WIDTH, 0.0f, ts.getTile(tileid)->imagePosition.x, ts.getTile(tileid)->imagePosition.y, BOX_WIDTH, BOX_WIDTH);
+						}
+						else {
+							as->Sprite_Add(StringUtil::ConvertstringToLPCWSTR(ts.getTile(tileid)->imagePath), ts.getTile(tileid)->imagePosition.x, ts.getTile(tileid)->imagePosition.y, BOX_WIDTH, BOX_WIDTH);
+						}
+					}
+				}
+				else {
+					as->Sprite_Init(StringUtil::ConvertstringToLPCWSTR(ts.getTile(idz)->imagePath), x*BOX_WIDTH, y*BOX_WIDTH, 0.0f, ts.getTile(idz)->imagePosition.x, ts.getTile(idz)->imagePosition.y, BOX_WIDTH, BOX_WIDTH);
+				}
+				//as->Sprite_Add(StringUtil::ConvertstringToLPCWSTR(ts.getTile((tileIDs[idx].ID - ts.getFirstGID()))->imagePath),((tileIDs[idx].ID - ts.getFirstGID())) % 64 * 16, ((tileIDs[idx].ID - ts.getFirstGID()) + 1) / 64 * 16, BOX_WIDTH, BOX_WIDTH);
+				//as->Sprite_Add(StringUtil::ConvertstringToLPCWSTR(ts.getTile((tileIDs[idx].ID - ts.getFirstGID()))->imagePath), ((tileIDs[idx].ID - ts.getFirstGID())+2) % 64 * 16, ((tileIDs[idx].ID - ts.getFirstGID()) + 1) / 64 * 16, BOX_WIDTH, BOX_WIDTH);
+				as->m_animationFrame->Start(1000);
 				Add(as);
 			}
 		}

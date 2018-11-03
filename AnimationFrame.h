@@ -1,8 +1,8 @@
 #pragma once
 #include "Seting.h"
-#include "TimerWithSprite.h"
+#include "TimerData.h"
 class Sprite;
-class AnimationFrame {
+class AnimationFrame:public TimerData {
 public:
 	AnimationFrame(Sprite* _sprite);
 	struct AFrame final
@@ -20,12 +20,11 @@ public:
 	HRESULT Set_State(float x, float y, int angels);
 	HRESULT Start(int type);
 	HRESULT Stop();
-	void AnimationPlay();
+	void callback() override;
 	HRESULT Update();
 	HRESULT Render();
 	RECT rect;
 	D3DXVECTOR3 vec;
 	D3DXMATRIX dd16;
 	D3DXMATRIX T1, T2, TInv;
-	TimerWithSprite<AnimationFrame>* timer;
 };

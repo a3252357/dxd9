@@ -2,7 +2,6 @@
 
 SnakeBody::SnakeBody()
 {
-	timer = new TimerWithSprite<SnakeBody>(this, &SnakeBody::snakenext);
 	//timer->cb_func = &SnakeBody::snakenext;
 	//timer->CurMy = this;
 }
