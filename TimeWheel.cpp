@@ -16,7 +16,7 @@ TimeWheel::~TimeWheel()
 		shared_ptr<Timer> tmp = slots[i];
 		while (tmp) {
 			slots[i] = tmp->next;
-			tmp.~shared_ptr();
+	//		tmp.~shared_ptr();
 			tmp = slots[i];
 		}
 	}
@@ -75,14 +75,14 @@ void TimeWheel::del_timer(shared_ptr<Timer> timer)
 		if (slots[ts])
 			slots[ts]->prev = NULL;
 
-		timer.~shared_ptr();
+//		timer.~shared_ptr();
 	}
 	else {
 		timer->prev->next = timer->next;
 		if (timer->next)
 			timer->next->prev = timer->prev;
 
-		timer.~shared_ptr();
+	//	timer.~shared_ptr();
 	}
 }
 
@@ -138,34 +138,27 @@ void TimeWheel::tick()
 				if (tmp == slots[cur_slot]) {
 					//printf("delete header in cur_slot\n");
 					slots[cur_slot] = tmp->next;
-
-					if (tmp->type == 0 && --(tmp->count) == 0) {
-						tmp.~shared_ptr();
-					}
-					else {
-						//del_timer_next(tmp);
-						add_timer(tmp);
-					}
 					if (slots[cur_slot])
 						slots[cur_slot]->prev = NULL;
-
+					if (tmp->type == 0 && --(tmp->count) == 0) {
+						//tmp.~shared_ptr();
+					}
+					else {
+						add_timer(tmp);
+					}
 					tmp = slots[cur_slot];
 				}
 				else {
+	
 					tmp->prev->next = tmp->next;
 					if (tmp->next)
 						tmp->next->prev = tmp->prev;
-
-					shared_ptr<Timer> tmp2 = tmp->next;
-
 					if (tmp->type == 0 && --(tmp->count) == 0) {
-						tmp.~shared_ptr();
 					}
 					else {
-						//del_timer_next(tmp);
 						add_timer(tmp);
 					}
-					tmp = tmp2;
+					tmp = tmp->next;
 				}
 		}
 	}

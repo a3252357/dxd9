@@ -3,8 +3,9 @@
 #include "BaseSprite.h"
 #include "ListUser.h"
 #include "Sprite.h"
+#include "TimerData.h"
 class Sprite;
-class SnakeBody:public BaseSprite{
+class SnakeBody:public BaseSprite,public TimerData{
 private:
 	int snakeup=0;
 	ListUser<shared_ptr<Sprite>> bodys;
@@ -14,6 +15,6 @@ public:
 	HRESULT Add(shared_ptr<Sprite> _sprite);
 	HRESULT Update() override;
 	HRESULT Render() override;
-	void snakenext();
+	void callback() override;
 	//»Øµ÷º¯Êý  
 };

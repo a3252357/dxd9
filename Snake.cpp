@@ -48,19 +48,19 @@ HRESULT Snake::Init()
 		}
 		if (z == 0 || j == 0 || (z + 1) >= SCREEN_WIDTH / BOX_WIDTH || (j + 1) >= SCREEN_HEIGHT / BOX_WIDTH)
 		{
-			//shared_ptr<Sprite> wall = make_shared<Sprite>();
-			//wall->Sprite_Init(L"img/wall/brick.png", z*BOX_WIDTH, j * BOX_WIDTH, 0);
-			//spritesManager->AddSprite(wall);
+			shared_ptr<Sprite> wall = make_shared<Sprite>();
+			wall->Sprite_Init(L"img/wall/brick.png", z*BOX_WIDTH, j * BOX_WIDTH, 0);
+			spritesManager->AddSprite(wall);
 			i++;
 		}
 	}
 	for (int i = 0; i < snakenum; i++) {
-		//shared_ptr<Sprite> snake = make_shared<Sprite>();
-		//snake->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH*(5 - i), BOX_WIDTH * 5, 0);
-		//snakeBody->Add(snake);
+		shared_ptr<Sprite> snake = make_shared<Sprite>();
+		snake->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH*(5 - i), BOX_WIDTH * 5, 0);
+		snakeBody->Add(snake);
 	}
-	//spritesManager->AddSprite(snakeBody);
-	//snakeBody->timer->start(1000,0,10);
+	spritesManager->AddSprite(snakeBody);
+	snakeBody->start(100,1,10);
 	// 创建并初始化地形  
 	//g_pTerrain = new TerrainClass();
 	//g_pTerrain->getTerrain(64*100, L"img/wall/brick.png");      //从文件加载高度图和纹理  

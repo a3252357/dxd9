@@ -6,8 +6,7 @@ HRESULT SpriteBody::Init(float* x, float *y, float* angle)
 	//angle_ptr = angle;
 	//bodyDef = new b2BodyDef();
 	//bodyDef->type = b2BodyType::b2_dynamicBody;
-
-	//bodyDef->position.x = *x_ptr;
+	//c->position.x = *x_ptr;
 	//bodyDef->position.y = *y_ptr;
 	//bodyDef->angle = *angle_ptr;
 	//body = GameSystem::box2DSystem->world->CreateBody(bodyDef);

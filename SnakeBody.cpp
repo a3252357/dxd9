@@ -42,7 +42,7 @@ HRESULT SnakeBody::Render()
 	return S_OK;
 }
 
-void SnakeBody::snakenext()
+void SnakeBody::callback()
 {
 	list<shared_ptr<Sprite>>::iterator plist;
 	bodys.setHeadToNow();
@@ -51,16 +51,16 @@ void SnakeBody::snakenext()
 		shared_ptr<Sprite> basehead = bodys.getNow()->data;
 		if (basehead == bodys.find(0)) {
 			if (snakeup == 0) {
-				basehead->Set_State(basehead->m_x + 32, basehead->m_y, 0);
+				basehead->Set_State(basehead->m_x + BOX_WIDTH, basehead->m_y, 0);
 			}
 			if (snakeup == 1) {
-				basehead->Set_State(basehead->m_x, basehead->m_y - 32, 0);
+				basehead->Set_State(basehead->m_x, basehead->m_y - BOX_WIDTH, 0);
 			}
 			if (snakeup == 2) {
-				basehead->Set_State(basehead->m_x - 32, basehead->m_y, 0);
+				basehead->Set_State(basehead->m_x - BOX_WIDTH, basehead->m_y, 0);
 			}
 			if (snakeup == 3) {
-				basehead->Set_State(basehead->m_x, basehead->m_y + 32, 0);
+				basehead->Set_State(basehead->m_x, basehead->m_y + BOX_WIDTH, 0);
 			}
 		}
 		else {

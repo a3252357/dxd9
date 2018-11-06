@@ -55,7 +55,7 @@ HRESULT AnimationFrame::Set_State(float x, float y, int angels)
 HRESULT AnimationFrame::Start(int type)
 {
 	if (frames.size() > 1) {
-		start(frames.getNow()->data->duration);
+		start(frames.getNow()->data->duration,0,100);
 	}
 	return E_NOTIMPL;
 }

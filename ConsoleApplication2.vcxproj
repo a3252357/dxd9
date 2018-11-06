@@ -155,9 +155,12 @@
   <ItemGroup>
     <ClCompile Include="AbstractFactory.cpp" />
     <ClCompile Include="AnimationFrame.cpp" />
+    <ClCompile Include="b2Separator.cpp" />
     <ClCompile Include="BaseSprite.cpp" />
     <ClCompile Include="Box2DSystem.cpp" />
     <ClCompile Include="CameraClass.cpp" />
+    <ClCompile Include="CreateBody.cpp" />
+    <ClCompile Include="CreateFixtureDef.cpp" />
     <ClCompile Include="D3DRect.cpp" />
     <ClCompile Include="D3DUtil.cpp" />
     <ClCompile Include="D3DXFile.cpp" />
@@ -215,10 +218,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractFactory.h" />
+    <ClInclude Include="b2Separator.h" />
     <ClInclude Include="BaseSprite.h" />
     <ClInclude Include="BaseGame.h" />
     <ClInclude Include="Box2DSystem.h" />
     <ClInclude Include="CallbackProxy.h" />
+    <ClInclude Include="CreateBody.h" />
+    <ClInclude Include="CreateFixtureDef.h" />
     <ClInclude Include="D3DRect.h" />
     <ClInclude Include="D3DUtil.h" />
     <ClInclude Include="D3DXFile.h" />

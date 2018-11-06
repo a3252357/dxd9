@@ -29,10 +29,6 @@ extern void ReleaseCOMObject();
 //*****************************************************************************************
 // Desc: 全局变量声明部分  
 //*****************************************************************************************
-int    frameCount = -1;//帧数
-float  fps = 0; //我们需要计算的FPS值
-int  currentTime = 0;//当前时间
-int  lastTime = 0;//持续时间
 LPDIRECT3DDEVICE9       g_pd3dDevice = NULL; //Direct3D设备对象
 ID3DXFont*				g_pFont = NULL;    //字体COM接口
 float					g_FPS = 0.0f;       //一个浮点型的变量，代表帧速率
@@ -236,7 +232,7 @@ HRESULT Objects_Init()
 	//三步曲之三，设置融合运算方式  
 	D3DUtil::getD3DDev()->SetRenderState(D3DRS_BLENDOP, D3DBLENDOP_ADD);  //这句设置运算方式为D3DBLENDOP_ADD的代码Direct3D默认为我们写了，所以注释掉这句也没大碍 
 
-	lastTime = timeGetTime()*0.01f; //将当前时间currentTime赋给持续时间lastTime，作为下一秒的基准时间
+	//lastTime = timeGetTime()*0.01f; //将当前时间currentTime赋给持续时间lastTime，作为下一秒的基准时间
 	return S_OK;
 }
 
@@ -262,6 +258,7 @@ int z = 0;
 //*****************************************************************************************
 void Direct3D_Render(HWND hwnd)
 {
+	Get_FPS();
 	if (start == 0) {
 		time3->start();
 		start = time3->getStart();
@@ -442,55 +439,23 @@ void Direct3D_Render(HWND hwnd)
 //*****************************************************************************************
 float Get_FPS()
 {
-
 	//定义四个静态变量
-	lastTime = currentTime; //将当前时间currentTime赋给持续时间lastTime，作为下一秒的基准时间
+	static float  fps = 0; //我们需要计算的FPS值
+	static int    frameCount = 0;//帧数
+	static float  currentTime = 0.0f;//当前时间
+	static float  lastTime = 0.0f;//持续时间
+
 	frameCount++;//每调用一次Get_FPS()函数，帧数自增1
 	currentTime = timeGetTime()*0.001f;//获取系统时间，其中timeGetTime函数返回的是以毫秒为单位的系统时间，所以需要乘以0.001，得到单位为秒的时间
 
-									   //如果当前时间减去持续时间大于了1秒钟，就进行一次FPS的计算和持续时间的更新，并将帧数值清零
+	//如果当前时间减去持续时间大于了1秒钟，就进行一次FPS的计算和持续时间的更新，并将帧数值清零
 	if (currentTime - lastTime > 1.0f) //将时间控制在1秒钟
 	{
 		fps = (float)frameCount / (currentTime - lastTime);//计算这1秒钟的FPS值
+		DEBUG__LOG(fps);
 		lastTime = currentTime; //将当前时间currentTime赋给持续时间lastTime，作为下一秒的基准时间
 		frameCount = 0;//将本次帧数frameCount值清零
 	}
-
-
-
-
-	// This is our little game loop.
-	/*
-
-	for (int32 i = 0; i < 1; ++i)
-	{
-	//设置力的循序渐进
-	//	bodyPlayer->SetLinearVelocity(force);
-	// Instruct the world to perform a single step of simulation.
-	// It is generally best to keep the time step and iterations fixed.
-	world.Step(timeStep, velocityIterations, positionIterations);
-	for (int i = 0; i < (sizeof(body1) / sizeof(body1[0])); i++) {
-	x1[i]=body1[i]->GetPosition().x;
-	y2[i] = body1[i]->GetPosition().y;
-	angels1[i]= body1[i]->GetAngle();
-	}
-
-	// Now print the position and angle of the body.
-	b2Vec2 position = body->GetPosition();
-	float32 angle = body->GetAngle();
-	//xp = bodyPlayer->GetPosition().x;
-	//yp = bodyPlayer->GetPosition().y;
-	x = position.x;
-	y = position.y;
-	angels = angle;
-	//	printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
-	}
-	//AllocConsole();
-	//freopen("CONOUT$", "w", stdout);
-
-
-	//printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
-	*/
 
 	return fps;
 }
