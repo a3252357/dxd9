@@ -1,4 +1,5 @@
 #include "SystemInit.h"
+#include "UISystem.h"
 HWND SystemInit::hwnd;
 IDirect3DDevice9 * SystemInit::d3d9dev;
 HRESULT SystemInit::init_D3D()
@@ -39,6 +40,7 @@ HRESULT SystemInit::init_Sys(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR
 	Light_Set(1);
 	Matrix_Set();
 	InputInit::InitInput(hInstance);
+	UISystem::Init();
 	GameSystem::Init();
 	return S_OK;
 }

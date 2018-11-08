@@ -76,9 +76,10 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>tmx;Box2D;dxd\Include;$(WindowsSDK_IncludePath);log;$(IncludePath)</IncludePath>
-    <LibraryWPath>dxd\Lib</LibraryWPath>
-    <LibraryPath>lib;dxd\Lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>tmx;Box2D;dxd\Include;$(WindowsSDK_IncludePath);log;cegui\include;$(IncludePath)</IncludePath>
+    <LibraryWPath>dxd\Lib;cegui\bin</LibraryWPath>
+    <LibraryPath>lib;dxd\Lib\x64;cegui\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>cegui\bin;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -113,7 +114,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>dinput8.lib;Box2d.lib;log4cplusSD.lib;libtmxlite-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>dinput8.lib;Box2d.lib;log4cplusSD.lib;libtmxlite-s-d.lib;CEGUIBase-0_d.lib;CEGUIDirect3D9Renderer-0_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -189,6 +190,7 @@
     <ClCompile Include="TimerData.cpp" />
     <ClCompile Include="TimeS.cpp" />
     <ClCompile Include="TimeWheel.cpp" />
+    <ClCompile Include="UISystem.cpp" />
     <ClCompile Include="UserImageLayer.cpp" />
     <ClCompile Include="UserMap.cpp" />
     <ClCompile Include="UserObejectLayer.cpp" />
@@ -258,6 +260,7 @@
     <ClInclude Include="TimeWheel.h" />
     <ClInclude Include="TimeSystemInterface.h" />
     <ClInclude Include="SpriteType.h" />
+    <ClInclude Include="UISystem.h" />
     <ClInclude Include="UserImageLayer.h" />
     <ClInclude Include="UserMap.h" />
     <ClInclude Include="UserObejectLayer.h" />

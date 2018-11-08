@@ -16,6 +16,8 @@
 //*****************************************************************************************                                                                                       
 #include "Seting.h"
 #include "TimeInit.h"
+#include "CEGUI/BASE.h"
+#include "UISystem.h"
 #define dDOUBLE
 
 extern long g_lMouseMoveX, g_lMouseMoveY;
@@ -179,7 +181,7 @@ HRESULT Objects_Init()
 	//timer->cb_func = func;
 	//time1->add_timer(timer);
 	snake = make_shared<Snake>();
-	snake->Init();
+	//snake->Init();
 	//g_pTexturewall = *D3DUtil::getTexture(L"img\wall\brick.png");
 	//world.SetAllowSleeping(true);
 	//创建字体
@@ -367,9 +369,10 @@ void Direct3D_Render(HWND hwnd)
 	//--------------------------------------------------------------------------------------
 	// 【Direct3D渲染五步曲之二】：开始绘制
 	//--------------------------------------------------------------------------------------
-	snake->Update();
+	//snake->Update();
 	D3DUtil::getD3DDev()->BeginScene();
-	snake->Render();
+	//snake->Render();	
+	UISystem::Update(end1 - start_1);
 	InputInit::ReadKeyAndMouse();
 	// 获取键盘消息并给予设置相应的填充模式  
 	if (InputInit::g_KeyboardState[DIK_1] & 0x8000f)         // 若数字键1被按下，进行线框填充  

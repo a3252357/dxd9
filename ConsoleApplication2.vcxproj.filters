@@ -80,6 +80,9 @@
     <Filter Include="BaseGame\物理引擎%28Box2D%29\多边形分割">
       <UniqueIdentifier>{a106dc4c-027b-43a7-98ae-b8a57c714d49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BaseGame\UI系统">
+      <UniqueIdentifier>{8a3c85d9-7384-4029-8f47-b6375bca6f47}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DUtil.cpp">
@@ -204,6 +207,9 @@
     </ClCompile>
     <ClCompile Include="CreateBody.cpp">
       <Filter>BaseGame\物理引擎%28Box2D%29</Filter>
+    </ClCompile>
+    <ClCompile Include="UISystem.cpp">
+      <Filter>BaseGame\UI系统</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -406,6 +412,9 @@
     </ClInclude>
     <ClInclude Include="CreateBody.h">
       <Filter>BaseGame\物理引擎%28Box2D%29</Filter>
+    </ClInclude>
+    <ClInclude Include="UISystem.h">
+      <Filter>BaseGame\UI系统</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
