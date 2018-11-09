@@ -25,13 +25,13 @@ public:
 	void registerCallback(bool (T::*function)())
 	{
 		// 类成员函数
-		REGISTER_OBJFUNC(1, subscribeSlot, function, m_pAObj, this);
+		REGISTER_OBJFUNC(EVENT_TYPE1, subscribeSlot, function, m_pAObj, this);
 		// 类静态函数
 		//REGISTER_FUNC(EVENT_TYPE2, subscribeSlot2, A::Test2, this);
 	};
 	void callback() override
 	{
-		Callback::evoke(1);
+		Callback::evoke(EVENT_TYPE1);
 		//Callback::evoke(EVENT_TYPE2);
 	};
 	
