@@ -22,22 +22,25 @@ HRESULT UISystem::Init()
 	CEGUI::WindowManager::setDefaultResourceGroup("layouts");
 	CEGUI::ScriptModule::setDefaultResourceGroup("lua_scripts");
 	CEGUI::ImageManager::setImagesetDefaultResourceGroup("imagesets");
-	CEGUI::SchemeManager::getSingleton().createFromFile("TaharezLook.scheme");
-	CEGUI::WidgetLookManager::getSingleton().parseLookNFeelSpecificationFromFile("TaharezLook.looknfeel");
+	CEGUI::SchemeManager::getSingleton().createFromFile("AlfiskoSkin.scheme");
+	CEGUI::WidgetLookManager::getSingleton().parseLookNFeelSpecificationFromFile("AlfiskoSkin.looknfeel");
 	CEGUI::FontManager::getSingleton().createFromFile("Batang-18.font");
 	Window* myRoot = (CEGUI::PushButton*)CEGUI::WindowManager::getSingleton().createWindow("DefaultWindow", "root");
 	System::getSingleton().createGUIContext(myRenderer->getDefaultRenderTarget());
 	System::getSingleton().getDefaultGUIContext().setRootWindow(myRoot);
 
-	FrameWindow* fWnd = (FrameWindow*)CEGUI::WindowManager::getSingleton().createWindow("TaharezLook/FrameWindow","testWindow");
+	FrameWindow* fWnd = (FrameWindow*)CEGUI::WindowManager::getSingleton().createWindow("AlfiskoSkin/FrameWindow","testWindow");
 	fWnd->setPosition(UVector2(UDim(0.25f, 0.0f), UDim(0.25f, 0.0f)));
 	// set size to be half the size of the parent
 	fWnd->setSize(USize(UDim(0.5f, 0.0f), UDim(0.5f, 0.0f)));
 	fWnd->setText("Hello World!");
-	myRoot->addChild(fWnd);
-	CEGUI::PushButton* quitBtn = (CEGUI::PushButton*)CEGUI::WindowManager::getSingleton().createWindow("TaharezLook/Button", (CEGUI::utf8*)"Quit");
-	quitBtn->setText((CEGUI::utf8*)"OK1");
-	fWnd->addChild(quitBtn);
+	//myRoot->addChild(fWnd);
+	CEGUI::PushButton* quitBtn = (CEGUI::PushButton*)CEGUI::WindowManager::getSingleton().createWindow("AlfiskoSkin/Button", (CEGUI::utf8*)"Quit");
+	quitBtn->setText((CEGUI::utf8*)"Start Game!");
+	quitBtn->setPosition(UVector2(UDim(0.25f, 0.0f), UDim(0.25f, 0.0f)));
+	// set size to be half the size of the parent
+	quitBtn->setSize(USize(UDim(0.1f, 0.0f), UDim(0.1f, 0.0f)));
+	myRoot->addChild(quitBtn);
 	return S_OK;
 }
 

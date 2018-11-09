@@ -1,7 +1,8 @@
 #pragma once
 #include "Seting.h"
 #include "BaseSprite.h"
-class Texture2d;
+#include "Texture2d.h"
+#include "D3DUtil.h"
 class XFile:BaseSprite
 {
 	public:

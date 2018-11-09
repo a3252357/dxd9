@@ -1,10 +1,7 @@
 #pragma once
 #include "Seting.h"
-#include "CEGUI/Base.h"
-#include "CEGUI/System.h"
-#include "CEGUI/RendererModules/Direct3D9/ViewportTarget.h"
-#include "CEGUI/CEGUI.h"
-class MapLoader;
+#include "MapLoader.h"
+#include "D3Dutil.h"
 using namespace CEGUI;
 static class UISystem
 {

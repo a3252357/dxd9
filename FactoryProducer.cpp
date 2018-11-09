@@ -1,4 +1,5 @@
 #include "FactoryProducer.h"
+#include "SpriteFactory.h"
 
 shared_ptr<AbstractFactory> FactoryProducer::getFactory(string choice)
 {

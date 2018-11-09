@@ -1,10 +1,11 @@
 #pragma once
 #include "Seting.h"
 #include "MapLoader.h"
-class SnakeBody;
-class Sprites;
-class TimeWithSprite;
-class MapLoader;
+#include "CallBackTimer.h"
+#include "BaseGame.h"
+#include "SnakeBody.h"
+#include "Sprites.h"
+
 class Snake : BaseGame
 {
 private:
@@ -15,7 +16,7 @@ private:
 	shared_ptr <Texture2d>  	g_pTexture = NULL;
 	shared_ptr <Texture2d>  	g_pTexturewall;
 	//shared_ptr<Sprite>           g_pSprite1wall[100];
-	shared_ptr<TimeWithSprite> timer;
+	//shared_ptr<TimeWithSprite> timer;
 	int snakenum = 10;
 	int snakeup = 0;
 	int wallnum = 200;

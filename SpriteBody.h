@@ -1,6 +1,5 @@
 #pragma once
-#include <d3d9.h>
-#include "Box2D/Box2D.h"
+#include "Seting.h"
 #include "GameSystem.h"
 class SpriteBody {
 	public:

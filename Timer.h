@@ -1,6 +1,6 @@
 #pragma once
 #include "Seting.h"
-#include "TimerData.h"
+class TimerData;
 //¶¨Ê±Æ÷
 class Timer
 {

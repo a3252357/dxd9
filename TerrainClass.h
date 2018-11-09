@@ -6,7 +6,8 @@
 
 #pragma once  
 #include "Seting.h"
-
+#include "Texture2d.h"
+#include "D3DUtil.h"
 class TerrainClass
 {
 private:

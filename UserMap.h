@@ -1,8 +1,5 @@
 #pragma once
-#include <iostream>
-#include <tmxlite/Map.hpp>
-#include <locale>
-#include <tmxlite/TileLayer.hpp>
+#include "Seting.h"
 class UserMap
 {
 public:

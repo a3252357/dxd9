@@ -1,13 +1,11 @@
 #pragma once
-#include <iostream>
-#include <tmxlite/Map.hpp>
-#include <locale>
-#include <tmxlite/TileLayer.hpp>
 #include "Seting.h"
 #include "ListUser.h"
+#include "BaseSprite.h"
 #include "AnimationFrame.h"
+#include "Sprite.h"
 class Sprite;
-class UserTileLayer:BaseSprite
+class UserTileLayer: public BaseSprite
 {
 private:
 	int snakeup = 0;

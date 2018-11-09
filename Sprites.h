@@ -1,6 +1,6 @@
 #pragma once
-#include "BaseSprite.h"
 #include "Seting.h"
+#include "BaseSprite.h"
 class Sprites{
 	private:
 		list<shared_ptr<BaseSprite>> sprites;

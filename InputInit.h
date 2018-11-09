@@ -1,6 +1,6 @@
-#ifndef INPUINIT_H
-#define INPUINIT_H
+#pragma once 
 #include "Seting.h"
+#include "D3DUtil.h"
 #define INITGUID
 static class InputInit {
 	public:
@@ -13,4 +13,3 @@ static class InputInit {
 		static HRESULT ReadKeyAndMouse();
 		static BOOL Device_Read(IDirectInputDevice8*pDIDevice, void* pBuffer, long lSize);
 };
-#endif

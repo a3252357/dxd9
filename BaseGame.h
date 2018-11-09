@@ -1,5 +1,4 @@
-#ifndef BASEGAME_H
-#define BASEGAME_H
+#pragma once  
 #include "Seting.h"
 class BaseGame
 {
@@ -8,4 +7,3 @@ public:
 	virtual HRESULT Init() = 0;
 	virtual HRESULT Render() = 0;
 };
-#endif

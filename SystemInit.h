@@ -1,6 +1,9 @@
-#ifndef SYSTEMINIT_H
-#define SYSTEMINIT_H
+#pragma once  
 #include "Seting.h"
+#include "UISystem.h"
+#include "D3DRect.h"
+#include "GameSystem.h"
+#include "InputInit.h"
 static class SystemInit
 {
 	public:
@@ -12,4 +15,3 @@ static class SystemInit
 		static VOID Light_Set(UINT nType);
 		static VOID Matrix_Set();
 };
-#endif

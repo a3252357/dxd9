@@ -5,6 +5,7 @@
 #define WINDOW_TITLE	_T("huangjianjian的测试窗口") //为窗口标题定义的宏
 #define SAFE_RELEASE(p) { if(p) { (p)->Release(); (p)=NULL; } }      //自定义一个SAFE_RELEASE()宏,便于资源的释放
 #define PTM_RATIO 32
+#define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ |D3DFVF_TEX1)  
 using namespace std;
 //*****************************************************************************************
 // Desc: 头文件定义部分  
@@ -14,6 +15,7 @@ using namespace std;
 #include <stdio.h>
 #include <d3dx9.h>
 #include <DInput.h>
+#include <iostream>
 #include <tchar.h>
 #include "Box2D/Box2D.h"
 #include <wchar.h>
@@ -21,35 +23,23 @@ using namespace std;
 #include <map>
 #include <vector>
 #include <list>
+#include <codecvt>
 //#include <atlconv.h>
 #include <string>
 #include <cstring>
 #include <fstream>
-#include "D3DRect.h"
-#include "SystemInit.h"
-#include "TextureManager.h"
-#include "InputInit.h"
-#include "D3DXFile.h"
-#include "TerrainClass.h"
-#include "CameraClass.h"
-#include "D3DUtil.h"
-#include "StringUtil.h"
-#include "BaseGame.h"
-#include "Sprites.h"
-#include "TimeInit.h"
-#include "TimeS.h"
-#include "SnakeBody.h"
-#include "Snake.h"
-#include "Node.h"
-#include "SpriteType.h"
-#include "SpriteFactory.h"
-#include "FactoryProducer.h"
-#include "Box2DSystem.h"
-#include "GameSystem.h"
-#include "SpriteBody.h"
+#include <windows.h>
 #include "tmxlite/Tileset.hpp"
 #include "LogSystem.h"
-#include "Texture2d.h"
+#include "CEGUI/Base.h"
+#include "CEGUI/System.h"
+#include "CEGUI/RendererModules/Direct3D9/ViewportTarget.h"
+#include "CEGUI/CEGUI.h"
+#include "tmxlite/Map.hpp"
+#include <iostream>
+#include <locale>
+#include <tmxlite/TileLayer.hpp>
+#include "StringUtil.h"
 //*****************************************************************************************
 // Desc: 库文件定义部分  
 //***************************************************************************************** 
@@ -66,4 +56,3 @@ struct CUSTOMVERTEX1
 	CUSTOMVERTEX1(FLOAT x, FLOAT y, FLOAT z, FLOAT u, FLOAT v)
 		:_x(x), _y(y), _z(z), _u(u), _v(v) {}
 };
-#define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ |D3DFVF_TEX1)  

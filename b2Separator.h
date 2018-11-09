@@ -6,8 +6,7 @@
 //
 //
 
-#ifndef __Thermite__b2Separator__
-#define __Thermite__b2Separator__
+#pragma once  
 
 #include "Box2D/Box2D.h"
 #include <vector>
@@ -81,5 +80,3 @@ private:
     bool isOnLine(float px, float py, float x1, float y1, float x2, float y2);
     float det( float x1, float y1, float x2, float y2, float x3, float y3);
 };
-
-#endif /* defined(__Thermite__b2Separator__) */

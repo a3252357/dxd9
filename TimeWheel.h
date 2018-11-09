@@ -1,6 +1,7 @@
 #pragma once
 #include "Seting.h"
 #include "Timer.h"
+#include "TimerData.h"
 #define BUFFER_SIZE 64
 //Ê±¼äÂÖ
 class TimeWheel

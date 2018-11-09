@@ -1,6 +1,7 @@
 #pragma once
 #include "Seting.h"
 #include "CreateFixtureDef.h"
+#include "GameSystem.h"
 static class CreateBody
 {
 public:

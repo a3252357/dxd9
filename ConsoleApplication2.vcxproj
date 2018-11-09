@@ -224,7 +224,8 @@
     <ClInclude Include="BaseSprite.h" />
     <ClInclude Include="BaseGame.h" />
     <ClInclude Include="Box2DSystem.h" />
-    <ClInclude Include="CallbackProxy.h" />
+    <ClInclude Include="SnakeTimer.h" />
+    <ClInclude Include="TimerCallback.h" />
     <ClInclude Include="CreateBody.h" />
     <ClInclude Include="CreateFixtureDef.h" />
     <ClInclude Include="D3DRect.h" />
@@ -240,6 +241,7 @@
     <ClInclude Include="Seting.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="SnakeBody.h" />
+    <ClInclude Include="CallBackTimer.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteBody.h" />
     <ClInclude Include="SpriteFactory.h" />

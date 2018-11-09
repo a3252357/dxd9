@@ -18,6 +18,12 @@
 #include "TimeInit.h"
 #include "CEGUI/BASE.h"
 #include "UISystem.h"
+#include "CameraClass.h"
+#include "GameSystem.h"
+#include "D3DXFile.h"
+#include "TerrainClass.h"
+#include "TimeS.h"
+#include "Snake.h"
 #define dDOUBLE
 
 extern long g_lMouseMoveX, g_lMouseMoveY;
@@ -181,7 +187,7 @@ HRESULT Objects_Init()
 	//timer->cb_func = func;
 	//time1->add_timer(timer);
 	snake = make_shared<Snake>();
-	//snake->Init();
+	snake->Init();
 	//g_pTexturewall = *D3DUtil::getTexture(L"img\wall\brick.png");
 	//world.SetAllowSleeping(true);
 	//创建字体
@@ -274,7 +280,7 @@ void Direct3D_Render(HWND hwnd)
 				//sprintf(s, "@%d@", end1 - start_1);
 				//printf(s);
 				TimeInit::time->tick();
-				GameSystem::Update(end1 - start_1);
+				//GameSystem::Update(end1 - start_1);
 				start_1 += 20;
 			}
 		}
@@ -369,9 +375,9 @@ void Direct3D_Render(HWND hwnd)
 	//--------------------------------------------------------------------------------------
 	// 【Direct3D渲染五步曲之二】：开始绘制
 	//--------------------------------------------------------------------------------------
-	//snake->Update();
+	snake->Update();
 	D3DUtil::getD3DDev()->BeginScene();
-	//snake->Render();	
+	snake->Render();	
 	UISystem::Update(end1 - start_1);
 	InputInit::ReadKeyAndMouse();
 	// 获取键盘消息并给予设置相应的填充模式  

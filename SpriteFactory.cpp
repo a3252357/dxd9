@@ -1,6 +1,5 @@
 #include "SpriteFactory.h"
-
-
+#include "Sprite.h"
 
 SpriteFactory::SpriteFactory()
 {

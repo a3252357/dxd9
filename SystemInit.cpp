@@ -1,5 +1,4 @@
 #include "SystemInit.h"
-#include "UISystem.h"
 HWND SystemInit::hwnd;
 IDirect3DDevice9 * SystemInit::d3d9dev;
 HRESULT SystemInit::init_D3D()

@@ -42,7 +42,7 @@ HRESULT SnakeBody::Render()
 	return S_OK;
 }
 
-void SnakeBody::callback()
+bool SnakeBody::snake()
 {
 	list<shared_ptr<Sprite>>::iterator plist;
 	bodys.setHeadToNow();
@@ -74,4 +74,5 @@ void SnakeBody::callback()
 		}
 		bodys.goNext();
 	}
+	return true;
 }

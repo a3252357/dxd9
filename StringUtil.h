@@ -1,7 +1,5 @@
-#ifndef STRINGUTIL_H
-#define STRINGUTIL_H
+#pragma once  
 #include "Seting.h"
-#include<wchar.h>
 static class StringUtil{
 public:
 	static char* ConvertLPWSTRToLPSTR(LPWSTR lpwszStrIn);
@@ -16,4 +14,3 @@ public:
 	static wchar_t * UTF8ToUnicode(const char * str);
 	static char * UnicodeToUTF8(const wchar_t * str);
 };
-#endif

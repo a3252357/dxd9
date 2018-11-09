@@ -1,6 +1,7 @@
 #pragma once
 #include "Seting.h"
 #include "BaseSprite.h"
+#include "Sprite.h"
 class SpriteManager :public BaseSprite
 {
 public:

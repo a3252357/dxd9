@@ -1,10 +1,7 @@
 #pragma once
 #include "Seting.h"
-#include <iostream>
-#include <tmxlite/Map.hpp>
-#include <locale>
 #include "UserMap.h"
-#include "UserTileLayer.h"
+#include "UserObejectLayer.h"
 class UserTileLayer;
 class MapLoader
 {

@@ -1,8 +1,4 @@
 #include "TimerData.h"
-#include "Seting.h"
-#include "Timer.h"
-#include "TimeInit.h"
-#include "Seting.h"
 TimerData::TimerData()
 {
 	

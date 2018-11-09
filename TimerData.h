@@ -1,7 +1,8 @@
 #pragma once
-#include <string>
+#include "Seting.h"
+#include "Timer.h"
+#include "TimeInit.h"
 using namespace std;
-class Timer;
 class TimerData
 {
 public:

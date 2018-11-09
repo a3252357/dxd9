@@ -1,8 +1,7 @@
 #pragma once
 #include "Seting.h"
-#include "MapLoader.h"
-class Box2DSystem;
-class MapLoader;
+#include "TimeInit.h"
+#include "Box2DSystem.h"
 static class GameSystem
 {
 public:

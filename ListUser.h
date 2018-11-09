@@ -1,6 +1,6 @@
 #pragma once
+#include "Seting.h"
 #include "Node.h"
-#include <iostream>
 template <class T>
 class ListUser
 {

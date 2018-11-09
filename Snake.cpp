@@ -1,4 +1,5 @@
 #include "Snake.h"
+#include "UserTileLayer.h"
 
 Snake::Snake()
 {
@@ -60,7 +61,9 @@ HRESULT Snake::Init()
 		snakeBody->Add(snake);
 	}
 	spritesManager->AddSprite(snakeBody);
-	snakeBody->start(100,1,10);
+//	snakeBody->start(100,1,10);
+	CallBackTimer<SnakeBody>* snaketimer = new CallBackTimer<SnakeBody>(snakeBody,&SnakeBody::snake);
+	snaketimer->start(100, 1, 10);
 	// 创建并初始化地形  
 	//g_pTerrain = new TerrainClass();
 	//g_pTerrain->getTerrain(64*100, L"img/wall/brick.png");      //从文件加载高度图和纹理  

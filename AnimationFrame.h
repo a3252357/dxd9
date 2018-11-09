@@ -1,8 +1,11 @@
 #pragma once
 #include "Seting.h"
 #include "TimerData.h"
+#include "D3DUtil.h"
+#include "ListUser.h"
+#include "Texture2d.h"
 class Sprite;
-class AnimationFrame:public TimerData {
+class AnimationFrame : public TimerData {
 public:
 	AnimationFrame(Sprite* _sprite);
 	struct AFrame final

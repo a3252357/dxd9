@@ -1,7 +1,7 @@
-#ifndef TEXTUREMANAGER_H
-#define TEXTUREMANAGER_H
+#pragma once  
 #include "Seting.h"
-class Texture2d;
+#include "D3DUtil.h"
+#include "Texture2d.h"
 typedef  map<LPCWSTR, LPDIRECT3DTEXTURE9> TEXTURE_MAP;
 class TextureManager {
 	public:
@@ -10,4 +10,3 @@ class TextureManager {
 		static LPDIRECT3DTEXTURE9 ptexture9;
 
 };
-#endif

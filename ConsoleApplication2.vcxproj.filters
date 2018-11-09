@@ -91,9 +91,6 @@
     <ClCompile Include="StringUtil.cpp">
       <Filter>BaseGame\Util</Filter>
     </ClCompile>
-    <ClCompile Include="SnakeBody.cpp">
-      <Filter>SnakeGame\Bean</Filter>
-    </ClCompile>
     <ClCompile Include="Sprites.cpp">
       <Filter>BaseGame\Sprite管理</Filter>
     </ClCompile>
@@ -211,6 +208,9 @@
     <ClCompile Include="UISystem.cpp">
       <Filter>BaseGame\UI系统</Filter>
     </ClCompile>
+    <ClCompile Include="SnakeBody.cpp">
+      <Filter>SnakeGame\Bean</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\wall\base.png">
@@ -280,9 +280,6 @@
     </ClInclude>
     <ClInclude Include="BaseGame.h">
       <Filter>BaseGame</Filter>
-    </ClInclude>
-    <ClInclude Include="SnakeBody.h">
-      <Filter>SnakeGame\Bean</Filter>
     </ClInclude>
     <ClInclude Include="Node.h">
       <Filter>BaseGame\链表</Filter>
@@ -383,9 +380,6 @@
     <ClInclude Include="AnimationFrame.h">
       <Filter>BaseGame\帧动画</Filter>
     </ClInclude>
-    <ClInclude Include="CallbackProxy.h">
-      <Filter>BaseGame\回调代理</Filter>
-    </ClInclude>
     <ClInclude Include="TimeInit.h">
       <Filter>BaseGame\TimeSystem\定时器系统</Filter>
     </ClInclude>
@@ -415,6 +409,18 @@
     </ClInclude>
     <ClInclude Include="UISystem.h">
       <Filter>BaseGame\UI系统</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeBody.h">
+      <Filter>SnakeGame\Bean</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerCallback.h">
+      <Filter>BaseGame\回调代理</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeTimer.h">
+      <Filter>SnakeGame\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="CallBackTimer.h">
+      <Filter>SnakeGame\Bean</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

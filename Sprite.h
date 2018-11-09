@@ -1,8 +1,8 @@
 #pragma once
 #include "Seting.h"
 #include "BaseSprite.h"
-class AnimationFrame;
-class SpriteBody;
+#include "AnimationFrame.h"
+#include "SpriteBody.h"
 class Sprite:public BaseSprite
 {
 	public:

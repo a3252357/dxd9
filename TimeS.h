@@ -1,6 +1,5 @@
 #pragma once
-#include <windows.h>
-#include <time.h>
+#include "Seting.h"
 class TimeS
 {
 public:

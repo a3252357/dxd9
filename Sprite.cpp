@@ -1,5 +1,4 @@
 #include "Sprite.h"
-#include "AnimationFrame.h"
 HRESULT Sprite::Sprite_Init(LPCWSTR  path,float x, float y, float angels)
 {
 	m_animationFrame = make_shared<AnimationFrame>(this);
