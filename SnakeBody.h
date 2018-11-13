@@ -3,8 +3,10 @@
 #include "BaseSprite.h"
 #include "ListUser.h"
 #include "Sprite.h"
+#include "Subject.h"
+#include "Achievements.h"
 class Sprite;
-class SnakeBody:public BaseSprite{
+class SnakeBody:public BaseSprite,public Subject{
 private:
 	int snakeup=0;
 	ListUser<shared_ptr<Sprite>> bodys;

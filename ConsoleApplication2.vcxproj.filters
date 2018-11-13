@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="资源文件">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="SnakeGame">
       <UniqueIdentifier>{3d2c9dad-fcf5-41c3-aa7e-ef5d45de17ae}</UniqueIdentifier>
     </Filter>
@@ -38,23 +34,11 @@
     <Filter Include="BaseGame\物理引擎%28Box2D%29">
       <UniqueIdentifier>{857b9343-34e0-4509-a8be-4c154bace58d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="工厂">
-      <UniqueIdentifier>{8c5afdde-ad1e-498a-baa2-30b50dafa6ce}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="工厂\类型枚举">
-      <UniqueIdentifier>{6db6d663-cbd7-4802-a4be-6b1ba0e8cc31}</UniqueIdentifier>
-    </Filter>
     <Filter Include="BaseGame\子系统管理">
       <UniqueIdentifier>{e614f962-8e35-4215-b2fa-2ebaf1e689c1}</UniqueIdentifier>
     </Filter>
     <Filter Include="SnakeGame\游戏优先状态机">
       <UniqueIdentifier>{309623cf-7374-403f-b229-b7df4a032e4a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="观察者模式">
-      <UniqueIdentifier>{2d1baeb9-1696-41ae-a2fd-a985ca94f81a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="状态模式">
-      <UniqueIdentifier>{0597dd8e-4b1d-441f-b470-51e91ff0bb4d}</UniqueIdentifier>
     </Filter>
     <Filter Include="日志">
       <UniqueIdentifier>{0e91b5e7-3625-427c-a160-a0d6a39e7b6b}</UniqueIdentifier>
@@ -82,6 +66,34 @@
     </Filter>
     <Filter Include="BaseGame\UI系统">
       <UniqueIdentifier>{8a3c85d9-7384-4029-8f47-b6375bca6f47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="设计模式">
+      <UniqueIdentifier>{bd9e76ae-2834-45a6-bcec-81facf9b3a5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="设计模式\观察者模式">
+      <UniqueIdentifier>{2d1baeb9-1696-41ae-a2fd-a985ca94f81a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="设计模式\工厂">
+      <UniqueIdentifier>{8c5afdde-ad1e-498a-baa2-30b50dafa6ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="设计模式\工厂\类型枚举">
+      <UniqueIdentifier>{6db6d663-cbd7-4802-a4be-6b1ba0e8cc31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="设计模式\状态模式">
+      <UniqueIdentifier>{0597dd8e-4b1d-441f-b470-51e91ff0bb4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="设计模式\命令模式">
+      <UniqueIdentifier>{002df386-cc83-4ac1-8326-58cd907ae0a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="设计模式\NewFilter1">
+      <UniqueIdentifier>{3e91e255-deaa-4a69-9017-7fa2e2107776}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="设计模式\观察者模式\成就系统测试">
+      <UniqueIdentifier>{4eb19084-db65-4cd4-bfaa-b5f2b8042a61}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -140,13 +152,13 @@
       <Filter>BaseGame\物理引擎%28Box2D%29</Filter>
     </ClCompile>
     <ClCompile Include="FactoryProducer.cpp">
-      <Filter>工厂</Filter>
+      <Filter>设计模式\工厂</Filter>
     </ClCompile>
     <ClCompile Include="AbstractFactory.cpp">
-      <Filter>工厂</Filter>
+      <Filter>设计模式\工厂</Filter>
     </ClCompile>
     <ClCompile Include="SpriteFactory.cpp">
-      <Filter>工厂</Filter>
+      <Filter>设计模式\工厂</Filter>
     </ClCompile>
     <ClCompile Include="SpriteBody.cpp">
       <Filter>BaseGame\物理引擎%28Box2D%29</Filter>
@@ -155,7 +167,7 @@
       <Filter>BaseGame\子系统管理</Filter>
     </ClCompile>
     <ClCompile Include="StateControl.cpp">
-      <Filter>状态模式</Filter>
+      <Filter>设计模式\状态模式</Filter>
     </ClCompile>
     <ClCompile Include="LogSystem.cpp">
       <Filter>日志</Filter>
@@ -210,6 +222,9 @@
     </ClCompile>
     <ClCompile Include="SnakeBody.cpp">
       <Filter>SnakeGame\Bean</Filter>
+    </ClCompile>
+    <ClCompile Include="Achievements.cpp">
+      <Filter>设计模式\观察者模式\成就系统测试</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -330,16 +345,16 @@
       <Filter>BaseGame\物理引擎%28Box2D%29</Filter>
     </ClInclude>
     <ClInclude Include="FactoryProducer.h">
-      <Filter>工厂</Filter>
+      <Filter>设计模式\工厂</Filter>
     </ClInclude>
     <ClInclude Include="AbstractFactory.h">
-      <Filter>工厂</Filter>
+      <Filter>设计模式\工厂</Filter>
     </ClInclude>
     <ClInclude Include="SpriteFactory.h">
-      <Filter>工厂</Filter>
+      <Filter>设计模式\工厂</Filter>
     </ClInclude>
     <ClInclude Include="SpriteType.h">
-      <Filter>工厂\类型枚举</Filter>
+      <Filter>设计模式\工厂\类型枚举</Filter>
     </ClInclude>
     <ClInclude Include="GameSystem.h">
       <Filter>BaseGame\子系统管理</Filter>
@@ -348,10 +363,10 @@
       <Filter>SnakeGame\游戏优先状态机</Filter>
     </ClInclude>
     <ClInclude Include="StateControl.h">
-      <Filter>状态模式</Filter>
+      <Filter>设计模式\状态模式</Filter>
     </ClInclude>
     <ClInclude Include="IState.h">
-      <Filter>状态模式</Filter>
+      <Filter>设计模式\状态模式</Filter>
     </ClInclude>
     <ClInclude Include="LogSystem.h">
       <Filter>日志</Filter>
@@ -421,6 +436,21 @@
     </ClInclude>
     <ClInclude Include="CallBackTimer.h">
       <Filter>SnakeGame\Bean</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>设计模式\命令模式</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>设计模式\观察者模式</Filter>
+    </ClInclude>
+    <ClInclude Include="Achievements.h">
+      <Filter>设计模式\观察者模式\成就系统测试</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>设计模式\观察者模式\成就系统测试</Filter>
+    </ClInclude>
+    <ClInclude Include="Subject.h">
+      <Filter>设计模式\观察者模式</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

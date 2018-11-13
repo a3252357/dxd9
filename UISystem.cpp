@@ -24,7 +24,11 @@ HRESULT UISystem::Init()
 	CEGUI::ImageManager::setImagesetDefaultResourceGroup("imagesets");
 	CEGUI::SchemeManager::getSingleton().createFromFile("AlfiskoSkin.scheme");
 	CEGUI::WidgetLookManager::getSingleton().parseLookNFeelSpecificationFromFile("AlfiskoSkin.looknfeel");
-	CEGUI::FontManager::getSingleton().createFromFile("Batang-18.font");
+	//CEGUI::System::getSingleton().getDefaultGUIContext().setDefaultFont(&CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei33", 32, true, "simhei.ttf"));
+	//CEGUI::FontManager::getSingleton().createFromFile("simhei32.font");	
+	CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei30", 5, true, "simhei.ttf");
+	//CEGUI::Font &defaultFont = CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei33",12,true,"simhei.ttf");
+	CEGUI::FontManager& ma = CEGUI::FontManager::getSingleton();
 	Window* myRoot = (CEGUI::PushButton*)CEGUI::WindowManager::getSingleton().createWindow("DefaultWindow", "root");
 	System::getSingleton().createGUIContext(myRenderer->getDefaultRenderTarget());
 	System::getSingleton().getDefaultGUIContext().setRootWindow(myRoot);
@@ -35,9 +39,15 @@ HRESULT UISystem::Init()
 	fWnd->setSize(USize(UDim(0.5f, 0.0f), UDim(0.5f, 0.0f)));
 	fWnd->setText("Hello World!");
 	//myRoot->addChild(fWnd);
-	CEGUI::PushButton* quitBtn = (CEGUI::PushButton*)CEGUI::WindowManager::getSingleton().createWindow("AlfiskoSkin/Button", (CEGUI::utf8*)"Quit");
-	quitBtn->setText((CEGUI::utf8*)"Start Game!");
-	quitBtn->setPosition(UVector2(UDim(0.25f, 0.0f), UDim(0.25f, 0.0f)));
+	//CEGUI::String fontSizeString = "12";
+	//float fontSize = CEGUI::PropertyHelper<float>::fromString(fontSizeString);
+	//if (fontSize != 0.0f)
+	//defaultFont.setProperty<float>("PointSize", fontSize);
+	CEGUI::DefaultWindow* quitBtn = (CEGUI::DefaultWindow*)CEGUI::WindowManager::getSingleton().createWindow("AlfiskoSkin/Label", (CEGUI::utf8*)"Quit");
+	//quitBtn->setFont(&defaultFont);
+	quitBtn->setText((CEGUI::utf8*)StringUtil::ConvertLPWSTRToLPSTR(L"Ì°³ÔÉß"));
+	//((CEGUI::Font*)quitBtn->getFont())->setProperty<float>("PointSize", 12.0f);
+	quitBtn->setPosition(UVector2(UDim(0.45f, 0.0f), UDim(0.45f, 0.0f)));
 	// set size to be half the size of the parent
 	quitBtn->setSize(USize(UDim(0.1f, 0.0f), UDim(0.1f, 0.0f)));
 	myRoot->addChild(quitBtn);
@@ -48,6 +58,11 @@ HRESULT UISystem::Relese()
 {
 	CEGUI::Direct3D9Renderer::destroy(*myRenderer);
 	return S_OK;
+}
+
+bool UISystem::get(const EventArgs& args)
+{
+	return E_NOTIMPL;
 }
 
 

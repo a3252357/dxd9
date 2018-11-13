@@ -10,5 +10,6 @@ public:
 	static HRESULT Update(float delta);
 	static HRESULT Init();
 	static HRESULT Relese();
+	static bool get(const EventArgs& args);
 };
  

@@ -49,6 +49,8 @@ bool SnakeBody::snake()
 	for (int i = 1;i < bodys.size();i++)
 	{
 		shared_ptr<Sprite> basehead = bodys.getNow()->data;
+		addObservers(new Achievements());
+		notify(basehead, Huangjianjian::SNAKE_GO);
 		if (basehead == bodys.find(0)) {
 			if (snakeup == 0) {
 				basehead->Set_State(basehead->m_x + BOX_WIDTH, basehead->m_y, 0);
