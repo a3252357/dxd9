@@ -5,6 +5,8 @@
 #include "BaseGame.h"
 #include "SnakeBody.h"
 #include "Sprites.h"
+#include "spine-sfml.h"
+using namespace spine;
 
 class Snake : BaseGame
 {
@@ -13,8 +15,9 @@ private:
 	shared_ptr<Sprites> spritesManager;
 	shared_ptr<SnakeBody> snakeBody;
 	//shared_ptr<Sprite> g_pSnake[200];
-	shared_ptr <Texture2d>  	g_pTexture = NULL;
-	shared_ptr <Texture2d>  	g_pTexturewall;
+	Texture2d * 	g_pTexture = NULL;
+	Texture2d *   	g_pTexturewall;
+	SkeletonDrawable * a;
 	//shared_ptr<Sprite>           g_pSprite1wall[100];
 	//shared_ptr<TimeWithSprite> timer;
 	int snakenum = 10;

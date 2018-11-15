@@ -1,6 +1,8 @@
 #include "Snake.h"
 #include "UserTileLayer.h"
-
+#include <stdio.h>
+#include <spine/spine.h>
+#include <spine/Debug.h>
 Snake::Snake()
 {
 	DEBUG__LOG("1111");
@@ -19,13 +21,99 @@ HRESULT Snake::Update()
 
 HRESULT Snake::Render()
 {
+	a->update(10);
+	//a->state->setAnimation(0, "rotate", true);
+
 	maps->userTileLayer->Render();
 	spritesManager->Render();
 	return S_OK;
 }
+void loadBinary(const spine::String &binaryFile, const spine::String &atlasFile, Atlas *&atlas, SkeletonData *&skeletonData,
+	AnimationStateData *&stateData, Skeleton *&skeleton, AnimationState *&state) {
+	atlas = new(__FILE__, __LINE__) Atlas(atlasFile, &HuangTextureLoader());
+	assert(atlas != NULL);
 
+	SkeletonBinary binary(atlas);
+	skeletonData = binary.readSkeletonDataFile(binaryFile);
+	assert(skeletonData);
+
+	//skeleton = new(__FILE__, __LINE__) Skeleton(skeletonData);
+	//assert(skeleton != NULL);
+
+	//stateData = new(__FILE__, __LINE__) AnimationStateData(skeletonData);
+	//assert(stateData != NULL);
+	//stateData->setDefaultMix(0.4f);
+
+	//state = new(__FILE__, __LINE__) AnimationState(stateData);
+}
+
+void loadJson(const spine::String &jsonFile, const spine::String &atlasFile, Atlas *&atlas, SkeletonData *&skeletonData,
+	AnimationStateData *&stateData, Skeleton *&skeleton, AnimationState *&state) {
+	atlas = new(__FILE__, __LINE__) Atlas(atlasFile,  &HuangTextureLoader());
+	assert(atlas != NULL);
+
+	SkeletonJson json(atlas);
+	skeletonData = json.readSkeletonDataFile(jsonFile);
+	assert(skeletonData);
+
+	skeleton = new(__FILE__, __LINE__) Skeleton(skeletonData);
+	assert(skeleton != NULL);
+
+	stateData = new(__FILE__, __LINE__) AnimationStateData(skeletonData);
+	assert(stateData != NULL);
+	stateData->setDefaultMix(0.4f);
+
+	state = new(__FILE__, __LINE__) AnimationState(stateData);
+}
+
+void dispose(Atlas *atlas, SkeletonData *skeletonData, AnimationStateData *stateData, Skeleton *skeleton,
+	AnimationState *state) {
+	delete skeleton;
+	delete state;
+	delete stateData;
+	delete skeletonData;
+	delete atlas;
+}
+
+struct TestData {
+	TestData(const spine::String &jsonSkeleton, const spine::String &binarySkeleton, const spine::String &atlas) : _jsonSkeleton(
+		jsonSkeleton), _binarySkeleton(binarySkeleton), _atlas(atlas) {}
+
+	spine::String _jsonSkeleton;
+	spine::String _binarySkeleton;
+	spine::String _atlas;
+};
 HRESULT Snake::Init()
 {
+	Vector<TestData> testData;
+	testData.add(TestData("C:/Users/musi/Desktop/39.105.4.19/ConsoleApplication1/x64/Debug/coin/export/coin-pro.json", "C:/Users/musi/Desktop/39.105.4.19/ConsoleApplication1/x64/Debug/coin/export/coin-pro.skel", "C:/Users/musi/Desktop/39.105.4.19/ConsoleApplication1/x64/Debug/coin/export/coin.atlas"));
+	/*testData.add(TestData("testdata/goblins/goblins-pro.json", "testdata/goblins/goblins-pro.skel",
+							  "testdata/goblins/goblins.atlas"));
+		testData.add(TestData("testdata/raptor/raptor-pro.json", "testdata/raptor/raptor-pro.skel",
+							  "testdata/raptor/raptor.atlas"));
+		testData.add(TestData("testdata/spineboy/spineboy-pro.json", "testdata/spineboy/spineboy-pro.skel",
+							  "testdata/spineboy/spineboy.atlas"));
+		testData.add(TestData("testdata/stretchyman/stretchyman-pro.json", "testdata/stretchyman/stretchyman-pro.skel",
+							  "testdata/stretchyman/stretchyman.atlas"));
+		testData.add(TestData("testdata/tank/tank-pro.json", "testdata/tank/tank-pro.skel", "testdata/tank/tank.atlas"));*/
+
+	for (size_t i = 0; i < 1; i++) {
+		TestData &data = testData[i];
+		Atlas *atlas = NULL;
+		SkeletonData *skeletonData = NULL;
+		AnimationStateData *stateData = NULL;
+		Skeleton *skeleton = NULL;
+		AnimationState *state = NULL;
+
+		printf("Loading %s\n", data._jsonSkeleton.buffer());
+		loadJson(data._jsonSkeleton, data._atlas, atlas, skeletonData, stateData, skeleton, state);
+	//	dispose(atlas, skeletonData, stateData, skeleton, state);
+
+		printf("Loading %s\n", data._binarySkeleton.buffer());
+		loadBinary(data._binarySkeleton, data._atlas, atlas, skeletonData, stateData, skeleton, state);
+	//	dispose(atlas, skeletonData, stateData, skeleton, state);
+		a = new SkeletonDrawable(skeletonData, stateData);
+	}
 	maps = new MapLoader();
 	snakeBody = make_shared<SnakeBody>();
 	spritesManager =make_shared<Sprites>();

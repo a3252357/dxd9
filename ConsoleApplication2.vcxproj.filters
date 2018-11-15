@@ -95,6 +95,9 @@
     <Filter Include="设计模式\观察者模式\成就系统测试">
       <UniqueIdentifier>{4eb19084-db65-4cd4-bfaa-b5f2b8042a61}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Spine">
+      <UniqueIdentifier>{95bdee6e-1e87-45d1-ae49-7805ae67bd75}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DUtil.cpp">
@@ -225,6 +228,9 @@
     </ClCompile>
     <ClCompile Include="Achievements.cpp">
       <Filter>设计模式\观察者模式\成就系统测试</Filter>
+    </ClCompile>
+    <ClCompile Include="spine-sfml.cpp">
+      <Filter>Spine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -451,6 +457,12 @@
     </ClInclude>
     <ClInclude Include="Subject.h">
       <Filter>设计模式\观察者模式</Filter>
+    </ClInclude>
+    <ClInclude Include="SpineTest.h">
+      <Filter>Spine</Filter>
+    </ClInclude>
+    <ClInclude Include="spine-sfml.h">
+      <Filter>Spine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

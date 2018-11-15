@@ -84,7 +84,7 @@
 
 
 // include this to see if it defines _STLPORT_VERION
-#	include <string>
+#include <String>
 
 // fix to undefine _STLP_DEBUG if STLport is not actually being used
 // (resolves some unresolved externals concerning boost)
@@ -125,7 +125,7 @@
 #   define CEGUI_RETHROW throw
 #endif
 
-// CEGUI_FUNCTION_NAME - CEGUI::String containing current function name
+// CEGUI_FUNCTION_NAME - CEGUI::string containing current function name
 // in the best form we can get it
 #if defined(_MSC_VER)
 #   define  CEGUI_FUNCTION_NAME CEGUI::String(__FUNCSIG__)
