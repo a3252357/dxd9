@@ -14,18 +14,18 @@ Snake::~Snake()
 
 HRESULT Snake::Update()
 {
-	spritesManager->Update();
-	maps->userTileLayer->Update();
+	//spritesManager->Update();
+	//maps->userTileLayer->Update();
 	return S_OK;
 }
 
 HRESULT Snake::Render()
 {
-	a->update(10);
+	a->Update();
 	//a->state->setAnimation(0, "rotate", true);
 
-	maps->userTileLayer->Render();
-	spritesManager->Render();
+	//maps->userTileLayer->Render();
+	//spritesManager->Render();
 	return S_OK;
 }
 void loadBinary(const spine::String &binaryFile, const spine::String &atlasFile, Atlas *&atlas, SkeletonData *&skeletonData,
@@ -138,14 +138,14 @@ HRESULT Snake::Init()
 		if (z == 0 || j == 0 || (z + 1) >= SCREEN_WIDTH / BOX_WIDTH || (j + 1) >= SCREEN_HEIGHT / BOX_WIDTH)
 		{
 			shared_ptr<Sprite> wall = make_shared<Sprite>();
-			wall->Sprite_Init(L"img/wall/brick.png", z*BOX_WIDTH, j * BOX_WIDTH, 0);
+			wall->Sprite_Init(L"img/wall/brick.png", z*BOX_WIDTH, j * BOX_WIDTH, 0,0,0, BOX_WIDTH, BOX_WIDTH);
 			spritesManager->AddSprite(wall);
 			i++;
 		}
 	}
 	for (int i = 0; i < snakenum; i++) {
 		shared_ptr<Sprite> snake = make_shared<Sprite>();
-		snake->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH*(5 - i), BOX_WIDTH * 5, 0);
+		snake->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH*(5 - i), BOX_WIDTH * 5, 0, 0, 0, BOX_WIDTH, BOX_WIDTH);
 		snakeBody->Add(snake);
 	}
 	spritesManager->AddSprite(snakeBody);

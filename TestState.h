@@ -1,0 +1,9 @@
+#pragma once
+enum State {
+	FRIST_COMMON_TEST,
+	VIBRATION_TEST,
+	SECOND_COMMON_TEST,
+	BURN_IN_TEST,
+	THIRD_COMMON_TEST,
+
+};

@@ -88,7 +88,7 @@ void SkeletonDrawable::Update() const
 	//if (vertexEffect != NULL) vertexEffect->begin(*skeleton);
 
 	Vertex vertex;
-	Texture2d *texture = NULL;
+	Sprite *texture = NULL;
 	for (unsigned i = 0; i < skeleton->getSlots().size(); ++i) {
 		Slot &slot = *skeleton->getDrawOrder()[i];
 		Attachment *attachment = slot.getAttachment();
@@ -125,7 +125,7 @@ void SkeletonDrawable::Update() const
 			indicesCount = 6;
 			AtlasRegion * h = ((AtlasRegion *)regionAttachment->getRendererObject());
 			AtlasPage* z=h->page;
-			texture = (Texture2d *)((AtlasRegion *)regionAttachment->getRendererObject())->page->getRendererObject();
+			texture = (Sprite *)((AtlasRegion *)regionAttachment->getRendererObject())->page->getRendererObject();
 			indicesCount = 6;
 		}
 		else if (attachment->getRTTI().isExactly(MeshAttachment::rtti)) {
@@ -140,7 +140,7 @@ void SkeletonDrawable::Update() const
 			AtlasRegion * h = ((AtlasRegion *)mesh->getRendererObject());
 			AtlasPage* z = h->page;
 			worldVertices.setSize(mesh->getWorldVerticesLength(), 0);
-			texture = (Texture2d *)((AtlasRegion *)mesh->getRendererObject())->page->getRendererObject();
+			texture = (Sprite *)((AtlasRegion *)mesh->getRendererObject())->page->getRendererObject();
 			mesh->computeWorldVertices(slot, 0, mesh->getWorldVerticesLength(), worldVertices, 0, 2);
 			verticesCount = mesh->getWorldVerticesLength() >> 1;
 			uvs = &mesh->getUVs();
@@ -209,7 +209,7 @@ void SkeletonDrawable::Update() const
 				//blend = normalPma;
 			}
 		}*/
-			texture->Render();
+		texture->Update(); texture->Render();
 
 		if (clipper.isClipping()) {
 			clipper.clipTriangles(worldVertices, *indices, *uvs, 2);
@@ -231,7 +231,7 @@ void SkeletonDrawable::Update() const
 
 void HuangTextureLoader::load(AtlasPage &page, const String &path) {
 	Sprite * texture = new Sprite();
-	texture->Sprite_Init()
+	texture->Sprite_Init(StringUtil::ConvertstringToLPCWSTR(path.buffer()),0,0,0);
 	page.setRendererObject(texture); // use the texture later in your rendering code
 
 	//f (page.magFilter == TextureFilter_Linear) texture->setSmooth(true);
@@ -239,8 +239,8 @@ void HuangTextureLoader::load(AtlasPage &page, const String &path) {
 
 	//page.setRendererObject(texture);
 	//Vector2u size = texture->getSize();
-	page.width = texture->w;
-	page.height = texture->h;
+	page.width = texture->m_animationFrame->curtexture2d->w;
+	page.height = texture->m_animationFrame->curtexture2d->h;
 }
 
 void HuangTextureLoader::unload(void *texture) {

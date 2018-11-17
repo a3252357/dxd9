@@ -11,5 +11,10 @@ public:
 	static HRESULT Init();
 	static HRESULT Relese();
 	static bool get(const EventArgs& args);
+	/////// 获得输入框的坐标 (Added by Azure)
+	static bool getFocusedInputBoxCoord(POINT& point, float& height);
+
+	////// 输入法跟随 (Added by Azure)
+	static bool IMEFollow(HWND hWnd);
 };
  

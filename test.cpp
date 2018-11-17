@@ -24,6 +24,7 @@
 #include "TerrainClass.h"
 #include "TimeS.h"
 #include "Snake.h"
+#include "TestManger.h"
 #define dDOUBLE
 
 extern long g_lMouseMoveX, g_lMouseMoveY;
@@ -152,9 +153,48 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 //*****************************************************************************************
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)   //窗口过程函数WndProc
 {
-
+	int z = 0;
 	switch (message)				//switch语句开始
 	{
+	case WM_CHAR:
+		System::getSingleton().getDefaultGUIContext().injectChar(wParam);
+		break;
+	case WM_IME_COMPOSITION:
+		static wchar_t buf[1024];
+		if (lParam & GCS_RESULTSTR)
+		{
+			//获取 IME 句柄
+			HIMC hIMC = ImmGetContext(hwnd);
+			//获取 Unicode 结果字符串的长度，这个长度怎么也不会比 1024 还长
+			LONG buflen = ImmGetCompositionStringW(hIMC, GCS_RESULTSTR, NULL, 0);
+			//重置字符串长度的缓冲区为 0，否则会出现先前的字符
+			memset(buf, 0, buflen * sizeof(wchar_t));
+			//获取 Unicode 结果字符串
+			ImmGetCompositionStringW(hIMC, GCS_RESULTSTR, buf, buflen);
+			//逐个字符注入到 CEGUI 系统中
+			for (int i = 0; i < buflen; i++)
+			{
+				System::getSingleton().getDefaultGUIContext().injectChar((CEGUI::utf32)buf[i]);
+			}
+			//释放 IME 句柄
+			ImmReleaseContext(hwnd, hIMC);
+		}
+		break;
+	case WM_KEYUP:
+		//CEGUI::System::getSingleton().getDefaultGUIContext().injectKeyUp(Key::Scan::Backspace);
+		break;
+	case WM_KEYDOWN:
+		//CEGUI::System::getSingleton().getDefaultGUIContext().injectKeyDown(Key::Scan::Backspace);
+		break;
+	case WM_MOUSEMOVE:
+		CEGUI::System::getSingleton().getDefaultGUIContext().injectMousePosition((float)(LOWORD(lParam)), (float)(HIWORD(lParam)));
+		break;
+	case WM_LBUTTONDOWN:
+		CEGUI::System::getSingleton().getDefaultGUIContext().injectMouseButtonDown(CEGUI::LeftButton);
+		break;
+	case WM_LBUTTONUP:
+		CEGUI::System::getSingleton().getDefaultGUIContext().injectMouseButtonUp(CEGUI::LeftButton);
+		break;
 	case WM_PAINT:					 // 客户区重绘消息
 		Direct3D_Render(hwnd);          //调用Direct3D_Render函数，进行画面的绘制
 		ValidateRect(hwnd, NULL);   // 更新客户区的显示
@@ -178,7 +218,7 @@ LPDIRECT3DVERTEXBUFFER9 g_pVertexBuffer = NULL;    //顶点缓冲区对象
 												   //--------------------------------------------------------------------------------------  
 LPDIRECT3DTEXTURE9      g_pTexture1 = NULL;   // 纹理接口对象  
 shared_ptr<TimeS> time3=make_shared<TimeS>();
-shared_ptr<Snake>snake;
+shared_ptr<TestManger> snake;
 HRESULT Objects_Init()
 {
 	//time1 = make_shared<time_wheel>();
@@ -186,7 +226,7 @@ HRESULT Objects_Init()
 	//timer= new Timer(5000);
 	//timer->cb_func = func;
 	//time1->add_timer(timer);
-	snake = make_shared<Snake>();
+	snake = make_shared<TestManger>();
 	snake->Init();
 	//g_pTexturewall = *D3DUtil::getTexture(L"img\wall\brick.png");
 	//world.SetAllowSleeping(true);
@@ -380,6 +420,17 @@ void Direct3D_Render(HWND hwnd)
 	snake->Render();	
 	UISystem::Update(end1 - start_1);
 	InputInit::ReadKeyAndMouse();
+	for (int i = 0; i < 256; i++) {
+		CEGUI::Key::Scan key = CEGUI::Key::Scan(i);
+		if (InputInit::g_KeyboardState[i] & 0x8000f && !InputInit::l_KeyboardState[i] & 0x8000f)
+		{
+			UISystem::IMEFollow(hwnd);
+			CEGUI::System::getSingleton().getDefaultGUIContext().injectKeyDown(key);
+			//System::getSingleton().getDefaultGUIContext().injectChar((char)i);
+		}
+		if (!InputInit::g_KeyboardState[i] & 0x8000f&&InputInit::l_KeyboardState[i] & 0x8000f)
+			CEGUI::System::getSingleton().getDefaultGUIContext().injectKeyUp(key);
+	}
 	// 获取键盘消息并给予设置相应的填充模式  
 	if (InputInit::g_KeyboardState[DIK_1] & 0x8000f)         // 若数字键1被按下，进行线框填充  
 		D3DUtil::getD3DDev()->SetRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);

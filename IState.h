@@ -1,24 +1,10 @@
 #pragma once
+#include "Seting.h"
 class IState
 {
 public:
-	IState();
-	~IState();
-	HRESULT Update(float delta);
-
-private:
-
+	//IState();
+	virtual ~IState() {};
+	virtual HRESULT Update() =0;
+	virtual HRESULT ChangeState()=0;
 };
-
-IState::IState()
-{
-}
-
-IState::~IState()
-{
-}
-
-inline HRESULT IState::Update(float delta)
-{
-	throw "Is Not Im";
-}

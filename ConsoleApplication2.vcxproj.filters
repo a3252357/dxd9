@@ -232,6 +232,17 @@
     <ClCompile Include="spine-sfml.cpp">
       <Filter>Spine</Filter>
     </ClCompile>
+    <ClCompile Include="FristCommonTset.cpp">
+      <Filter>设计模式\状态模式</Filter>
+    </ClCompile>
+    <ClCompile Include="TestManger.cpp">
+      <Filter>设计模式\状态模式</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonTestUI.cpp" />
+    <ClCompile Include="Vibration.cpp">
+      <Filter>设计模式\状态模式</Filter>
+    </ClCompile>
+    <ClCompile Include="VibrationUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\wall\base.png">
@@ -464,6 +475,23 @@
     <ClInclude Include="spine-sfml.h">
       <Filter>Spine</Filter>
     </ClInclude>
+    <ClInclude Include="TestState.h">
+      <Filter>设计模式\状态模式</Filter>
+    </ClInclude>
+    <ClInclude Include="FristCommonTset.h">
+      <Filter>设计模式\状态模式</Filter>
+    </ClInclude>
+    <ClInclude Include="TestManger.h">
+      <Filter>设计模式\状态模式</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonTestUI.h" />
+    <ClInclude Include="Vibration.h">
+      <Filter>设计模式\状态模式</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseUI.h">
+      <Filter>设计模式\状态模式</Filter>
+    </ClInclude>
+    <ClInclude Include="VibrationUI.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

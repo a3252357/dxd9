@@ -29,8 +29,10 @@ Texture2d * TextureManager::getTexture(LPCWSTR path)
 	for (iter = TextureMap.rbegin(); iter != TextureMap.rend(); iter++)
 	{
 		if (lstrcmpW(iter->first, path) == 0)
+		{
 			iter->second->GetLevelDesc(0, &desc);
 			return new Texture2d(&iter->second, 0, 0, desc.Width, desc.Height);
+		}
 	}
 	HRESULT hr = D3DXCreateTextureFromFile(D3DUtil::getD3DDev(), path, &ptexture9);
 	if (hr == S_OK) {

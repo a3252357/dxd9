@@ -4,6 +4,7 @@ LPDIRECTINPUTDEVICE8   InputInit::g_pMouseDevice;
 LPDIRECTINPUTDEVICE8   InputInit::g_pKeyboardDevice;
 DIMOUSESTATE InputInit::mousestate;
 char InputInit::g_KeyboardState[256];
+char InputInit::l_KeyboardState[256];
 HRESULT InputInit::InitInput(HINSTANCE hInstance)
 {
 	if (FAILED(DirectInput8Create(hInstance, 0x0800, IID_IDirectInput8, (VOID **)&input8, NULL)))
@@ -32,6 +33,7 @@ HRESULT InputInit::ReadKeyAndMouse()
 	
 	::ZeroMemory(&mousestate, sizeof(mousestate));
 	Device_Read(g_pMouseDevice, &mousestate, sizeof(mousestate));
+	memcpy(l_KeyboardState, g_KeyboardState, sizeof(g_KeyboardState));
 	::ZeroMemory(&g_KeyboardState, sizeof(g_KeyboardState));
 	Device_Read(g_pKeyboardDevice, &g_KeyboardState, sizeof(g_KeyboardState));
 	return E_NOTIMPL;

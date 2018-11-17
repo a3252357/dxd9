@@ -38,6 +38,7 @@ using namespace std;
 #include "CEGUI/CEGUI.h"
 #include "tmxlite/Map.hpp"
 #include <iostream>
+#include <imm.h>
 #include <locale>
 #include <tmxlite/TileLayer.hpp>
 #include "StringUtil.h"
@@ -50,6 +51,7 @@ using namespace std;
 #pragma comment(lib,"dinput8.lib")
 #pragma comment(lib,"libtmxlite-s-d.lib")
 #pragma comment(lib, "winmm.lib")
+#pragma comment(lib,"Imm32.lib")
 struct CUSTOMVERTEX1
 {
 	FLOAT _x, _y, _z;               // ¶¥µãµÄÎ»ÖÃ  
