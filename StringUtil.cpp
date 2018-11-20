@@ -18,7 +18,7 @@ char* StringUtil::ConvertLPWSTRToLPSTR(LPWSTR lpwszStrIn)
 	}
 	return pszOut;
 }
-LPWSTR StringUtil::ConvertLPSTRToLPWSTR(char* lpwszStrIn)
+LPWSTR StringUtil::ConvertLPSTRToLPWSTR(const char* lpwszStrIn)
 {
 	int dwLen = strlen(lpwszStrIn) + 1;
 	int nwLen = MultiByteToWideChar(CP_UTF8, 0, lpwszStrIn, dwLen, NULL, 0);//算出合适的长度 

@@ -19,11 +19,6 @@ HRESULT CommonTestUI::Update()
 
 HRESULT CommonTestUI::Init()
 {
-	
-	CEGUI::WidgetLookManager::getSingleton().parseLookNFeelSpecificationFromFile("AlfiskoSkin.looknfeel");
-	CEGUI::System::getSingleton().getDefaultGUIContext().setDefaultFont(&CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei33", 32, true, "simhei.ttf"));
-	//CEGUI::FontManager::getSingleton().createFromFile("simhei32.font");	
-	CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei30",20, true, "simhei.ttf");
 	//CEGUI::Font &defaultFont = CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei33",12,true,"simhei.ttf");
 	CEGUI::FontManager& ma = CEGUI::FontManager::getSingleton();
 	myRoot = (CEGUI::Window*)CEGUI::WindowManager::getSingleton().createWindow("DefaultWindow", "root");
@@ -31,7 +26,7 @@ HRESULT CommonTestUI::Init()
 	System::getSingleton().getDefaultGUIContext().setRootWindow(myRoot);
 
 	Editbox* fWnd = (Editbox*)CEGUI::WindowManager::getSingleton().createWindow("AlfiskoSkin/Editbox", "testWindow");
-	fWnd->subscribeEvent(PushButton::EventMouseButtonDown, CEGUI::Event::Subscriber(&CommonTestUI::onMouseButtonDown, this));
+	fWnd->subscribeEvent(Editbox::EventMouseButtonDown, CEGUI::Event::Subscriber(&CommonTestUI::onMouseButtonDown, this));
 	fWnd->setPosition(UVector2(UDim(0.4f, 0.0f), UDim(0.4f, 0.0f)));
 	// set size to be half the size of the parent
 	fWnd->setSize(USize(UDim(0.2f, 0.0f), UDim(0.2f, 0.0f)));
@@ -62,13 +57,19 @@ HRESULT CommonTestUI::Init()
 bool CommonTestUI::onMouseButtonDown(const EventArgs & e)
 {
 	const MouseEventArgs & eMouse = static_cast<const MouseEventArgs &>(e);
-
+	Window* window = eMouse.window;
+	game->InputHandle(StringUtil::ConvertLPSTRToLPWSTR(window->getName().c_str()), StringUtil::ConvertLPSTRToLPWSTR(PushButton::EventMouseButtonDown.c_str()),eMouse, window);
 	//((TestManger *)game)->state = new Vibratiom();
 
 	return true;
 }
 
 HRESULT CommonTestUI::Relese()
+{
+	return E_NOTIMPL;
+}
+
+HRESULT CommonTestUI::Render()
 {
 	return E_NOTIMPL;
 }

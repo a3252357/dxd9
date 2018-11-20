@@ -3,7 +3,7 @@
 static class StringUtil{
 public:
 	static char* ConvertLPWSTRToLPSTR(LPWSTR lpwszStrIn);
-	static LPWSTR ConvertLPSTRToLPWSTR(char* lpwszStrIn);
+	static LPWSTR ConvertLPSTRToLPWSTR(const char* lpwszStrIn);
 	static LPCWSTR ConvertstringToLPCWSTR(std::string orig);
 	static wchar_t * MBCS2Unicode(wchar_t * buff, const char * str);
 	static char * Unicode2MBCS(char * buff, const wchar_t * str);

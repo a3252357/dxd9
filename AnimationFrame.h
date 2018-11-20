@@ -19,7 +19,7 @@ public:
 	ID3DXSprite* m_Sprite;
 	HRESULT Add_AnimationSprite(LPCWSTR  path, float duration);
 	HRESULT Add_AnimationSprite(shared_ptr<Texture2d> Texture,float duration);
-	HRESULT Add_AnimationSprite(LPCWSTR path,int tx, int ty, float duration, int w, int);
+	HRESULT Add_AnimationSprite(LPCWSTR path,int tx, int ty, float duration, int w=BOX_WIDTH, int h = BOX_WIDTH);
 	HRESULT Set_State(float x, float y, int angels);
 	HRESULT Start(int type);
 	HRESULT Stop();

@@ -218,7 +218,7 @@ LPDIRECT3DVERTEXBUFFER9 g_pVertexBuffer = NULL;    //顶点缓冲区对象
 												   //--------------------------------------------------------------------------------------  
 LPDIRECT3DTEXTURE9      g_pTexture1 = NULL;   // 纹理接口对象  
 shared_ptr<TimeS> time3=make_shared<TimeS>();
-shared_ptr<TestManger> snake;
+shared_ptr<Snake> snake;
 HRESULT Objects_Init()
 {
 	//time1 = make_shared<time_wheel>();
@@ -226,7 +226,7 @@ HRESULT Objects_Init()
 	//timer= new Timer(5000);
 	//timer->cb_func = func;
 	//time1->add_timer(timer);
-	snake = make_shared<TestManger>();
+	snake = make_shared<Snake>();
 	snake->Init();
 	//g_pTexturewall = *D3DUtil::getTexture(L"img\wall\brick.png");
 	//world.SetAllowSleeping(true);

@@ -1,5 +1,5 @@
 #include "Sprite.h"
-HRESULT Sprite::Sprite_Init(LPCWSTR  path,float x, float y, float angels)
+HRESULT Sprite::Sprite_Init(LPCWSTR  path,float x, float y, float angels, float _sx, float _sy)
 {
 	m_animationFrame = make_shared<AnimationFrame>(this);
 	m_animationFrame->Add_AnimationSprite(path,100);
@@ -13,7 +13,7 @@ HRESULT Sprite::Sprite_Init(LPCWSTR  path,float x, float y, float angels)
 	//body->Init(&m_x, &m_y, &m_angels);
 	return S_OK;
 }
-HRESULT Sprite::Sprite_Init(shared_ptr<Texture2d> Texture, float x, float y, float angels)
+HRESULT Sprite::Sprite_Init(shared_ptr<Texture2d> Texture, float x, float y, float angels, float _sx, float _sy)
 {
 	m_animationFrame = make_shared<AnimationFrame>(this);
 	m_animationFrame->Add_AnimationSprite(Texture, 100);
@@ -25,7 +25,7 @@ HRESULT Sprite::Sprite_Init(shared_ptr<Texture2d> Texture, float x, float y, flo
 	return S_OK;
 }
 
-HRESULT Sprite::Sprite_Init(LPCWSTR  path, float x, float y, float angels,int tx,int ty,int w=BOX_WIDTH,int h = BOX_WIDTH)
+HRESULT Sprite::Sprite_Init(LPCWSTR  path, float x, float y, float angels,int tx,int ty,int w,int h, float _sx, float _sy)
 {
 	m_animationFrame = make_shared<AnimationFrame>(this);
 	m_animationFrame->Add_AnimationSprite(path,tx,ty,100,w,h);

@@ -24,3 +24,13 @@ HRESULT Vibration::ChangeState()
 {
 	return E_NOTIMPL;
 }
+
+HRESULT Vibration::InputHandle(LPCWSTR name, LPCWSTR type, const EventArgs & e, Window * window)
+{
+	return E_NOTIMPL;
+}
+
+HRESULT Vibration::Render()
+{
+	return E_NOTIMPL;
+}

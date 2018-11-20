@@ -20,11 +20,6 @@ HRESULT VibrationUI::Update()
 
 HRESULT VibrationUI::Init()
 {
-
-	CEGUI::WidgetLookManager::getSingleton().parseLookNFeelSpecificationFromFile("AlfiskoSkin.looknfeel");
-	CEGUI::System::getSingleton().getDefaultGUIContext().setDefaultFont(&CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei33", 32, true, "simhei.ttf"));
-	//CEGUI::FontManager::getSingleton().createFromFile("simhei32.font");	
-	CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei30", 20, true, "simhei.ttf");
 	//CEGUI::Font &defaultFont = CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei33",12,true,"simhei.ttf");
 	CEGUI::FontManager& ma = CEGUI::FontManager::getSingleton();
 	myRoot = (CEGUI::Window*)CEGUI::WindowManager::getSingleton().createWindow("DefaultWindow", "root");
@@ -70,6 +65,11 @@ bool VibrationUI::onMouseButtonDown(const EventArgs & e)
 }
 
 HRESULT VibrationUI::Relese()
+{
+	return E_NOTIMPL;
+}
+
+HRESULT VibrationUI::Render()
 {
 	return E_NOTIMPL;
 }

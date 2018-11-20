@@ -52,7 +52,7 @@ SkeletonDrawable::SkeletonDrawable(SkeletonData *skeletonData, AnimationStateDat
 	if (ownsAnimationStateData) stateData = new(__FILE__, __LINE__) AnimationStateData(skeletonData);
 
 	state = new(__FILE__, __LINE__) AnimationState(stateData);
-
+	state->setAnimation(0, "rotate", true);
 	quadIndices.add(0);
 	quadIndices.add(1);
 	quadIndices.add(2);
@@ -70,13 +70,11 @@ SkeletonDrawable::~SkeletonDrawable() {
 
 void SkeletonDrawable::update(float deltaTime) {
 	skeleton->update(deltaTime);
-	//state->update(deltaTime * timeScale);
-	//state->apply(*skeleton);
+	state->update(deltaTime * timeScale);
+	state->apply(*skeleton);
 	skeleton->updateWorldTransform();
-
 	Update();
 }
-
 void SkeletonDrawable::Update() const
 {
 	//vertexArray->clear();
@@ -85,7 +83,7 @@ void SkeletonDrawable::Update() const
 	// Early out if skeleton is invisible
 	if (skeleton->getColor().a == 0) return;
 
-	//if (vertexEffect != NULL) vertexEffect->begin(*skeleton);
+	if (vertexEffect != NULL) vertexEffect->begin(*skeleton);
 
 	Vertex vertex;
 	Sprite *texture = NULL;
@@ -127,6 +125,25 @@ void SkeletonDrawable::Update() const
 			AtlasPage* z=h->page;
 			texture = (Sprite *)((AtlasRegion *)regionAttachment->getRendererObject())->page->getRendererObject();
 			indicesCount = 6;
+			IDirect3DVertexBuffer9 *VB = 0;
+			D3DUtil::getD3DDev()->CreateVertexBuffer(4 * sizeof(CUSTOMVERTEX1), D3DUSAGE_WRITEONLY,
+				D3DFVF_CUSTOMVERTEX, D3DPOOL_DEFAULT, &VB, 0);
+			CUSTOMVERTEX1 *vertexs;
+			VB->Lock(0, 0, (void**)&vertexs, 0);
+			for (int h = 0; h < verticesCount; h++) {
+				vertexs[h] = CUSTOMVERTEX1(worldVertices[h * 2], worldVertices[h * 2 + 1], 0.0f, uvs[0][h * 2], uvs[0][h * 2 + 1]);
+			}
+			//draw(texture, vertices, triangles, slot.data.blendMode);
+			VB->Unlock();
+			D3DUtil::getD3DDev()->SetFVF(D3DFVF_CUSTOMVERTEX);
+
+			D3DUtil::getD3DDev()->SetStreamSource(0, VB, 0, sizeof(CUSTOMVERTEX1));
+
+			D3DUtil::getD3DDev()->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+
+			//D3DUtil::getD3DDev()->SetRenderState(D3DRS_SHADEMODE, D3DSHADE_GOURAUD);
+			D3DUtil::getD3DDev()->SetTexture(0, *texture->m_animationFrame->curtexture2d->ptexture9);
+			D3DUtil::getD3DDev()->DrawPrimitive(/*D3DPT_TRIANGLELIST,*/D3DPT_TRIANGLESTRIP, 0, 2);
 		}
 		else if (attachment->getRTTI().isExactly(MeshAttachment::rtti)) {
 			MeshAttachment *mesh = (MeshAttachment *)attachment;
@@ -147,7 +164,44 @@ void SkeletonDrawable::Update() const
 			indices = &mesh->getTriangles();
 			indicesCount = mesh->getTriangles().size();
 
+			//
+			// We are going to fill the empty mesh with the geometry of a box,
+			// so we need 12 triangles and 24 vetices.
+			//
+			ID3DXMesh*         Mesh = 0;
+			D3DXCreateMeshFVF(
+				verticesCount,
+				indicesCount/3,
+				D3DXMESH_MANAGED,
+				D3DFVF_CUSTOMVERTEX,
+				D3DUtil::getD3DDev(),
+				&Mesh);
+			CUSTOMVERTEX1* v = 0;
+			Mesh->LockVertexBuffer(0, (void**)&v);
+			for (int h = 0; h < verticesCount;h++) {
+				v[h] = CUSTOMVERTEX1(worldVertices[h*2], worldVertices[h*2+1], 0.0f, uvs[0][h*2], uvs[0][h * 2+1]);
+			}
+			Mesh->UnlockVertexBuffer();
+			WORD* IndexBuffer = 0;
+			
+			Mesh->LockIndexBuffer(0, (void**)&IndexBuffer);
+			IndexBuffer = indices[0].buffer();
+			Mesh->UnlockIndexBuffer();
+			DWORD* attributeBuffer = 0;
+			
+			
+			Mesh->LockAttributeBuffer(0, &attributeBuffer);
+ 
+			for (int a = 0; a < indicesCount/9; a++)
+			{
+				attributeBuffer[a] = 0;
+			}
+			Mesh->UnlockAttributeBuffer();
+			
+			D3DUtil::getD3DDev()->SetTexture(0, *texture->m_animationFrame->curtexture2d->ptexture9);
+			Mesh->DrawSubset(0);
 		}
+
 		else if (attachment->getRTTI().isExactly(ClippingAttachment::rtti)) {
 			ClippingAttachment *clip = (ClippingAttachment *)slot.getAttachment();
 			clipper.clipStart(slot, clip);
@@ -209,7 +263,7 @@ void SkeletonDrawable::Update() const
 				//blend = normalPma;
 			}
 		}*/
-		texture->Update(); texture->Render();
+	//	texture->Update(); texture->Render();
 
 		if (clipper.isClipping()) {
 			clipper.clipTriangles(worldVertices, *indices, *uvs, 2);
@@ -219,7 +273,7 @@ void SkeletonDrawable::Update() const
 			indices = &clipper.getClippedTriangles();
 			indicesCount = clipper.getClippedTriangles().size();
 		}
-
+	
 		//float w = texture->w;
 		//float h = texture->h;
 	}

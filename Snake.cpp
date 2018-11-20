@@ -16,14 +16,13 @@ HRESULT Snake::Update()
 {
 	//spritesManager->Update();
 	//maps->userTileLayer->Update();
+	a->update(1);
 	return S_OK;
 }
-
+void callback(AnimationState* state, EventType type, TrackEntry* entry, spine::Event* event);
 HRESULT Snake::Render()
 {
 	a->Update();
-	//a->state->setAnimation(0, "rotate", true);
-
 	//maps->userTileLayer->Render();
 	//spritesManager->Render();
 	return S_OK;
@@ -113,6 +112,14 @@ HRESULT Snake::Init()
 		loadBinary(data._binarySkeleton, data._atlas, atlas, skeletonData, stateData, skeleton, state);
 	//	dispose(atlas, skeletonData, stateData, skeleton, state);
 		a = new SkeletonDrawable(skeletonData, stateData);
+		Skeleton* skeleto1 = a->skeleton;
+		skeleto1->setToSetupPose();
+		skeleto1->setPosition(320, 590);
+		skeleto1->updateWorldTransform();
+	//	a->state->setListener(callback);
+		a->state->addAnimation(0, "rotate", true,0);
+		a->update(1);
+		Slot* headSlot = skeleton->findSlot("head");
 	}
 	maps = new MapLoader();
 	snakeBody = make_shared<SnakeBody>();
@@ -165,4 +172,31 @@ HRESULT Snake::Init()
 	D3DUtil::getD3DDev()->SetRenderState(D3DRS_BLENDOP, D3DBLENDOP_ADD);  //这句设置运算方式为D3DBLENDOP_ADD的代码Direct3D默认为我们写了，所以注释掉这句也没大碍 
 	lastTime = timeGetTime()*0.01f; //将当前时间currentTime赋给持续时间lastTime，作为下一秒的基准时间
 	return S_OK;
+}
+
+void callback(AnimationState* state, EventType type, TrackEntry* entry, spine::Event* event) {
+	const spine::String& animationName = (entry && entry->getAnimation()) ? entry->getAnimation()->getName() : spine::String("");
+
+	switch (type) {
+	case EventType_Start:
+		printf("%d start: %s\n", entry->getTrackIndex(), animationName.buffer());
+		break;
+	case EventType_Interrupt:
+		printf("%d interrupt: %s\n", entry->getTrackIndex(), animationName.buffer());
+		break;
+	case EventType_End:
+		printf("%d end: %s\n", entry->getTrackIndex(), animationName.buffer());
+		break;
+	case EventType_Complete:
+		printf("%d complete: %s\n", entry->getTrackIndex(), animationName.buffer());
+		break;
+	case EventType_Dispose:
+		printf("%d dispose: %s\n", entry->getTrackIndex(), animationName.buffer());
+		break;
+	case EventType_Event:
+		printf("%d event: %s, %s: %d, %f, %s %f %f\n", entry->getTrackIndex(), animationName.buffer(), event->getData().getName().buffer(), event->getIntValue(), event->getFloatValue(),
+			event->getStringValue().buffer(), event->getVolume(), event->getBalance());
+		break;
+	}
+	fflush(stdout);
 }

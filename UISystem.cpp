@@ -24,9 +24,13 @@ HRESULT UISystem::Init()
 	CEGUI::ScriptModule::setDefaultResourceGroup("lua_scripts");
 	CEGUI::ImageManager::setImagesetDefaultResourceGroup("imagesets");
 	CEGUI::AnimationManager::setDefaultResourceGroup("animations");
-	CEGUI::SchemeManager::getSingleton().createAll("*.scheme", "schemes");
+	CEGUI::SchemeManager::getSingleton().createFromFile("AlfiskoSkin.scheme");
+	CEGUI::WidgetLookManager::getSingleton().parseLookNFeelSpecificationFromFile("AlfiskoSkin.looknfeel");
+	CEGUI::System::getSingleton().getDefaultGUIContext().setDefaultFont(&CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei33", 32, true, "simhei.ttf"));
+	//CEGUI::FontManager::getSingleton().createFromFile("simhei32.font");	
+	CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei30", 20, true, "simhei.ttf");
+	//CEGUI::SchemeManager::getSingleton().createAll("*.scheme", "schemes");
 	//CEGUI::SchemeManager::getSingleton().createAll("*.font", "fonts");
-	//CEGUI::SchemeManager::getSingleton().createFromFile("AlfiskoSkin.scheme");
 	/*
 	CEGUI::WidgetLookManager::getSingleton().parseLookNFeelSpecificationFromFile("AlfiskoSkin.looknfeel");
 

@@ -9,7 +9,6 @@ class CommonTestUI : public BaseUI
 public:
 	CommonTestUI(BaseGame * _game);
 	~CommonTestUI();
-	BaseGame *game;
 	Window* myRoot;
 	Scrollbar* fWnd;
 	HRESULT Update() ;
@@ -17,5 +16,8 @@ public:
 	bool onMouseButtonDown(const EventArgs & e);
 	HRESULT Relese();
 	bool get(const EventArgs& args);
+
+	// Í¨¹ý BaseUI ¼Ì³Ð
+	virtual HRESULT Render() override;
 };
 

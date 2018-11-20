@@ -23,7 +23,7 @@ HRESULT AnimationFrame::Add_AnimationSprite(shared_ptr<Texture2d> Texture,float 
 	return S_OK;
 }
 
-HRESULT AnimationFrame::Add_AnimationSprite(LPCWSTR  path,int tx, int ty, float duration=1000,int w = BOX_WIDTH, int h = BOX_WIDTH)
+HRESULT AnimationFrame::Add_AnimationSprite(LPCWSTR  path,int tx, int ty, float duration=1000,int w, int h)
 {
 	D3DXCreateSprite(D3DUtil::getD3DDev(), &m_Sprite);
 	shared_ptr <AFrame> frame= make_shared<AFrame>();
@@ -91,11 +91,12 @@ HRESULT AnimationFrame::Update()
 	vec.y = m_sprite->m_y;
 	vec.z = 0;
 
-	D3DXMatrixRotationZ(&dd16, m_sprite->m_angels);
 	D3DXMatrixTranslation(&T1, -m_sprite->m_x - curtexture2d->w / 2, -m_sprite->m_y - curtexture2d->h / 2, 0.f);
+	D3DXMatrixRotationZ(&dd16, m_sprite->m_angels);
 	D3DXMatrixTranslation(&T2, m_sprite->m_x + curtexture2d->w / 2, m_sprite->m_y + curtexture2d->h / 2, 0.f);
+	D3DXMatrixScaling(&TInv, m_sprite->sx, m_sprite->sy, 1.0f);
 	//D3DXMatrixTranslation(&TInv, vec.x, vec.y, vec.z);
-	TInv = T1 * dd16*T2;
+	TInv *= T1 * dd16*T2;
 	return S_OK;
 }
 

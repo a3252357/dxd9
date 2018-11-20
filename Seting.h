@@ -36,6 +36,7 @@ using namespace std;
 #include "CEGUI/System.h"
 #include "CEGUI/RendererModules/Direct3D9/ViewportTarget.h"
 #include "CEGUI/CEGUI.h"
+#include "CEGUI/EventArgs.h"
 #include "tmxlite/Map.hpp"
 #include <iostream>
 #include <imm.h>

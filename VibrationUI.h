@@ -18,5 +18,8 @@ public:
 	bool onMouseButtonDown(const EventArgs & e);
 	HRESULT Relese();
 	bool get(const EventArgs& args);
+
+	// Í¨¹ý BaseUI ¼Ì³Ð
+	virtual HRESULT Render() override;
 };
 
