@@ -8,7 +8,7 @@
 #include "spine-sfml.h"
 using namespace spine;
 
-class Snake : BaseGame
+class Snake :public BaseGame
 {
 private:
 	MapLoader * maps;

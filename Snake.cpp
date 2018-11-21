@@ -14,16 +14,18 @@ Snake::~Snake()
 
 HRESULT Snake::Update()
 {
-	//spritesManager->Update();
-	//maps->userTileLayer->Update();
-	a->update(1);
+	spritesManager->Update();
+	maps->userTileLayer->Update();
+	maps->userTileLayer1->Update();
+	//a->update(1);
 	return S_OK;
 }
 void callback(AnimationState* state, EventType type, TrackEntry* entry, spine::Event* event);
 HRESULT Snake::Render()
 {
-	a->Update();
-	//maps->userTileLayer->Render();
+	//a->Update();
+	maps->userTileLayer->Render();
+	maps->userTileLayer1->Render();
 	//spritesManager->Render();
 	return S_OK;
 }
@@ -84,6 +86,7 @@ struct TestData {
 };
 HRESULT Snake::Init()
 {
+	/*
 	Vector<TestData> testData;
 	testData.add(TestData("C:/Users/musi/Desktop/39.105.4.19/ConsoleApplication1/x64/Debug/coin/export/coin-pro.json", "C:/Users/musi/Desktop/39.105.4.19/ConsoleApplication1/x64/Debug/coin/export/coin-pro.skel", "C:/Users/musi/Desktop/39.105.4.19/ConsoleApplication1/x64/Debug/coin/export/coin.atlas"));
 	/*testData.add(TestData("testdata/goblins/goblins-pro.json", "testdata/goblins/goblins-pro.skel",
@@ -94,7 +97,7 @@ HRESULT Snake::Init()
 							  "testdata/spineboy/spineboy.atlas"));
 		testData.add(TestData("testdata/stretchyman/stretchyman-pro.json", "testdata/stretchyman/stretchyman-pro.skel",
 							  "testdata/stretchyman/stretchyman.atlas"));
-		testData.add(TestData("testdata/tank/tank-pro.json", "testdata/tank/tank-pro.skel", "testdata/tank/tank.atlas"));*/
+		testData.add(TestData("testdata/tank/tank-pro.json", "testdata/tank/tank-pro.skel", "testdata/tank/tank.atlas"));
 
 	for (size_t i = 0; i < 1; i++) {
 		TestData &data = testData[i];
@@ -114,13 +117,15 @@ HRESULT Snake::Init()
 		a = new SkeletonDrawable(skeletonData, stateData);
 		Skeleton* skeleto1 = a->skeleton;
 		skeleto1->setToSetupPose();
-		skeleto1->setPosition(320, 590);
+		skeleto1->setPosition(400, 1700);
 		skeleto1->updateWorldTransform();
-	//	a->state->setListener(callback);
-		a->state->addAnimation(0, "rotate", true,0);
+		a->state->setListener(callback);
+		a->state->addAnimation(1, "rotate", true,0);
 		a->update(1);
-		Slot* headSlot = skeleton->findSlot("head");
+		//Slot* headSlot = skeleton->findSlot("head");
 	}
+	*/
+
 	maps = new MapLoader();
 	snakeBody = make_shared<SnakeBody>();
 	spritesManager =make_shared<Sprites>();

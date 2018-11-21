@@ -169,6 +169,7 @@
     <ClCompile Include="D3DXFile.cpp" />
     <ClCompile Include="FactoryProducer.cpp" />
     <ClCompile Include="FristCommonTset.cpp" />
+    <ClCompile Include="GameMenuState.cpp" />
     <ClCompile Include="GameSystem.cpp" />
     <ClCompile Include="InputInit.cpp" />
     <ClCompile Include="ListUser.cpp" />
@@ -177,6 +178,7 @@
     <ClCompile Include="MapLoader.cpp" />
     <ClCompile Include="Snake.cpp" />
     <ClCompile Include="SnakeBody.cpp" />
+    <ClCompile Include="SnakeGameMenuUI.cpp" />
     <ClCompile Include="spine-sfml.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteBody.cpp" />
@@ -237,7 +239,9 @@
     <ClInclude Include="CommonTestUI.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="FristCommonTset.h" />
+    <ClInclude Include="GameMenuState.h" />
     <ClInclude Include="Observer.h" />
+    <ClInclude Include="SnakeGameMenuUI.h" />
     <ClInclude Include="SnakeTimer.h" />
     <ClInclude Include="spine-sfml.h" />
     <ClInclude Include="SpineTest.h" />

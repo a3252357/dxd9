@@ -33,10 +33,12 @@ UserTileLayer::UserTileLayer(const tmx::Map& map, std::size_t layerIdx)
 			for (auto y = 0; y < mapSize.y; ++y)
 			{
 				auto idx = y * mapSize.x + x;
-				const auto& ts = tilesets[i];
 				const auto& tileIDs = layer->getTiles();
-				auto idz= (tileIDs[idx].ID - ts.getFirstGID()) + 1;
+				auto idz = tileIDs[idx].ID;
+				const auto& ts = tilesets[getTiles(tilesets, idz)];
 				shared_ptr<Sprite> as = make_shared<Sprite>();
+				if(idz==0)continue;
+				auto asa= &ts.getTile(idz)->animation.frames;
 				if (ts.getTile(idz)->animation.frames.size() > 0) {
 					for (int i = 0;i < ts.getTile(idz)->animation.frames.size();i++) {
 						auto tileid = ts.getTile(idz)->animation.frames[i].tileID + ts.getFirstGID();
@@ -57,7 +59,13 @@ UserTileLayer::UserTileLayer(const tmx::Map& map, std::size_t layerIdx)
 		}
 	}
 }
-
+int UserTileLayer::getTiles(const std::vector<tmx::Tileset>& tilesets,long ID)
+{
+	for (auto i = 0; i < tilesets.size(); ++i) {
+		if (ID >= tilesets[i].getFirstGID() && ID <= tilesets[i].getLastGID())return i;
+	}
+	return S_OK;
+}
 
 UserTileLayer::~UserTileLayer()
 {

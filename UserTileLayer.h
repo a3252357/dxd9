@@ -12,6 +12,7 @@ private:
 	ListUser<shared_ptr<Sprite>> bodys;
 public:
 	UserTileLayer(const tmx::Map& map, std::size_t layerIdx);
+	int getTiles(const std::vector<tmx::Tileset>& tilesets, long ID);
 	~UserTileLayer();
 	HRESULT Add(shared_ptr<Sprite> _sprite);
 	HRESULT Update() override;

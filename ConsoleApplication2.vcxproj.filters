@@ -98,6 +98,12 @@
     <Filter Include="Spine">
       <UniqueIdentifier>{95bdee6e-1e87-45d1-ae49-7805ae67bd75}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SnakeGame\UI">
+      <UniqueIdentifier>{3b38e0ce-3a02-47c0-8c0a-0f202b817e84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SnakeGame\状态">
+      <UniqueIdentifier>{d7c43862-9d98-421b-b90a-5708352a5cfe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DUtil.cpp">
@@ -238,11 +244,21 @@
     <ClCompile Include="TestManger.cpp">
       <Filter>设计模式\状态模式</Filter>
     </ClCompile>
-    <ClCompile Include="CommonTestUI.cpp" />
     <ClCompile Include="Vibration.cpp">
       <Filter>设计模式\状态模式</Filter>
     </ClCompile>
-    <ClCompile Include="VibrationUI.cpp" />
+    <ClCompile Include="CommonTestUI.cpp">
+      <Filter>设计模式\状态模式</Filter>
+    </ClCompile>
+    <ClCompile Include="VibrationUI.cpp">
+      <Filter>设计模式\状态模式</Filter>
+    </ClCompile>
+    <ClCompile Include="SnakeGameMenuUI.cpp">
+      <Filter>SnakeGame\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMenuState.cpp">
+      <Filter>SnakeGame\状态</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\wall\base.png">
@@ -484,14 +500,24 @@
     <ClInclude Include="TestManger.h">
       <Filter>设计模式\状态模式</Filter>
     </ClInclude>
-    <ClInclude Include="CommonTestUI.h" />
     <ClInclude Include="Vibration.h">
       <Filter>设计模式\状态模式</Filter>
     </ClInclude>
     <ClInclude Include="BaseUI.h">
       <Filter>设计模式\状态模式</Filter>
     </ClInclude>
-    <ClInclude Include="VibrationUI.h" />
+    <ClInclude Include="CommonTestUI.h">
+      <Filter>设计模式\状态模式</Filter>
+    </ClInclude>
+    <ClInclude Include="VibrationUI.h">
+      <Filter>设计模式\状态模式</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeGameMenuUI.h">
+      <Filter>SnakeGame\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMenuState.h">
+      <Filter>SnakeGame\状态</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

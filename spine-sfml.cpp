@@ -52,7 +52,6 @@ SkeletonDrawable::SkeletonDrawable(SkeletonData *skeletonData, AnimationStateDat
 	if (ownsAnimationStateData) stateData = new(__FILE__, __LINE__) AnimationStateData(skeletonData);
 
 	state = new(__FILE__, __LINE__) AnimationState(stateData);
-	state->setAnimation(0, "rotate", true);
 	quadIndices.add(0);
 	quadIndices.add(1);
 	quadIndices.add(2);
@@ -73,7 +72,7 @@ void SkeletonDrawable::update(float deltaTime) {
 	state->update(deltaTime * timeScale);
 	state->apply(*skeleton);
 	skeleton->updateWorldTransform();
-	Update();
+	//Update();
 }
 void SkeletonDrawable::Update() const
 {
@@ -131,7 +130,7 @@ void SkeletonDrawable::Update() const
 			CUSTOMVERTEX1 *vertexs;
 			VB->Lock(0, 0, (void**)&vertexs, 0);
 			for (int h = 0; h < verticesCount; h++) {
-				vertexs[h] = CUSTOMVERTEX1(worldVertices[h * 2], worldVertices[h * 2 + 1], 0.0f, uvs[0][h * 2], uvs[0][h * 2 + 1]);
+				vertexs[h] = CUSTOMVERTEX1(worldVertices[h * 2], worldVertices[h * 2 + 1], 10.0f, uvs[0][h * 2], uvs[0][h * 2 + 1]);
 			}
 			//draw(texture, vertices, triangles, slot.data.blendMode);
 			VB->Unlock();
@@ -139,21 +138,21 @@ void SkeletonDrawable::Update() const
 
 			D3DUtil::getD3DDev()->SetStreamSource(0, VB, 0, sizeof(CUSTOMVERTEX1));
 
-			D3DUtil::getD3DDev()->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+			D3DUtil::getD3DDev()->SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
 
 			//D3DUtil::getD3DDev()->SetRenderState(D3DRS_SHADEMODE, D3DSHADE_GOURAUD);
 			D3DUtil::getD3DDev()->SetTexture(0, *texture->m_animationFrame->curtexture2d->ptexture9);
-			D3DUtil::getD3DDev()->DrawPrimitive(/*D3DPT_TRIANGLELIST,*/D3DPT_TRIANGLESTRIP, 0, 2);
+			D3DUtil::getD3DDev()->DrawPrimitive(/*D3DPT_TRIANGLELIST,*/D3DPT_TRIANGLESTRIP, 0, 4);
 		}
 		else if (attachment->getRTTI().isExactly(MeshAttachment::rtti)) {
 			MeshAttachment *mesh = (MeshAttachment *)attachment;
 			attachmentColor = &mesh->getColor();
 
 			// Early out if the slot color is 0
-			if (attachmentColor->a == 0) {
-				clipper.clipEnd(slot);
-				continue;
-			}
+			//if (attachmentColor->a == 0) {
+			//	clipper.clipEnd(slot);
+			//	continue;
+			//}
 			AtlasRegion * h = ((AtlasRegion *)mesh->getRendererObject());
 			AtlasPage* z = h->page;
 			worldVertices.setSize(mesh->getWorldVerticesLength(), 0);
@@ -176,16 +175,18 @@ void SkeletonDrawable::Update() const
 				D3DFVF_CUSTOMVERTEX,
 				D3DUtil::getD3DDev(),
 				&Mesh);
-			CUSTOMVERTEX1* v = 0;
+			CUSTOMVERTEX1 *v = 0;
 			Mesh->LockVertexBuffer(0, (void**)&v);
 			for (int h = 0; h < verticesCount;h++) {
-				v[h] = CUSTOMVERTEX1(worldVertices[h*2], worldVertices[h*2+1], 0.0f, uvs[0][h*2], uvs[0][h * 2+1]);
+			
+				v[h] = CUSTOMVERTEX1(worldVertices[h*2], worldVertices[h*2+1], 10.0f, uvs[0][h*2], uvs[0][h * 2+1]);
 			}
 			Mesh->UnlockVertexBuffer();
 			WORD* IndexBuffer = 0;
 			
 			Mesh->LockIndexBuffer(0, (void**)&IndexBuffer);
-			IndexBuffer = indices[0].buffer();
+			//IndexBuffer = indices[0].buffer();
+			memcpy(IndexBuffer, indices[0].buffer(), sizeof(indices[0].buffer()));
 			Mesh->UnlockIndexBuffer();
 			DWORD* attributeBuffer = 0;
 			
@@ -197,8 +198,15 @@ void SkeletonDrawable::Update() const
 				attributeBuffer[a] = 0;
 			}
 			Mesh->UnlockAttributeBuffer();
-			
+			D3DUtil::getD3DDev()->SetFVF(D3DFVF_CUSTOMVERTEX);
+
+		//	D3DUtil::getD3DDev()->SetStreamSource(0, Mesh, 0, sizeof(CUSTOMVERTEX1));
+
+			D3DUtil::getD3DDev()->SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
+			//std::vector<DWORD> adjacencyBuffer(Mesh->GetNumFaces() * 3);
+			//Mesh->GenerateAdjacency(0.0f, &adjacencyBuffer[0]);
 			D3DUtil::getD3DDev()->SetTexture(0, *texture->m_animationFrame->curtexture2d->ptexture9);
+			D3DUtil::getD3DDev()->DrawPrimitive(/*D3DPT_TRIANGLELIST,*/D3DPT_TRIANGLESTRIP, 0, indicesCount / 3);
 			Mesh->DrawSubset(0);
 		}
 
@@ -277,9 +285,9 @@ void SkeletonDrawable::Update() const
 		//float w = texture->w;
 		//float h = texture->h;
 	}
-	clipper.clipEnd();
+	//clipper.clipEnd();
 
-	if (vertexEffect != 0) vertexEffect->end();
+	//if (vertexEffect != 0) vertexEffect->end();
 }
 
 

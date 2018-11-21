@@ -7,6 +7,7 @@ class MapLoader
 {
 public:
 	UserTileLayer* userTileLayer;
+	UserTileLayer* userTileLayer1;
 	MapLoader();
 	~MapLoader();
 };
