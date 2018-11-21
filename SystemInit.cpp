@@ -1,8 +1,10 @@
 #include "SystemInit.h"
 HWND SystemInit::hwnd;
 IDirect3DDevice9 * SystemInit::d3d9dev;
+ID3DXSprite* SystemInit::m_Sprite;
 HRESULT SystemInit::init_D3D()
 {
+	D3DXCreateSprite(D3DUtil::getD3DDev(), &m_Sprite);
 	D3DRect *d3d=new D3DRect();
 	HRESULT hr=d3d->initD3D(hwnd);
 	if (FAILED(hr)) {

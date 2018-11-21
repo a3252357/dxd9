@@ -46,6 +46,7 @@ int GetPNGWidthHeight(const char* path, unsigned int* punWidth, unsigned int* pu
 	for (int i = 0; i < 4; i++)
 		fread(&uc[i], sizeof(unsigned char), 1, pfRead);
 	*punHeight = MAKEUI(uc[0], uc[1], uc[2], uc[3]);
+	fclose(pfRead);
 
 }
 
@@ -125,6 +126,7 @@ int GetJPEGWidthHeight(const char* path, unsigned int *punWidth, unsigned int *p
 		printf("[GetJPEGWidthHeight]:can't find SOF0!\n");
 	else if (Finished == -2)
 		printf("[GetJPEGWidthHeight]:jpeg format error!\n");
+	fclose(pfRead);
 	return -1;
 }
 

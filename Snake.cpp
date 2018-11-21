@@ -15,8 +15,7 @@ Snake::~Snake()
 HRESULT Snake::Update()
 {
 	spritesManager->Update();
-	maps->userTileLayer->Update();
-	maps->userTileLayer1->Update();
+	maps->Update();
 	//a->update(1);
 	return S_OK;
 }
@@ -24,8 +23,7 @@ void callback(AnimationState* state, EventType type, TrackEntry* entry, spine::E
 HRESULT Snake::Render()
 {
 	//a->Update();
-	maps->userTileLayer->Render();
-	maps->userTileLayer1->Render();
+	maps->Render();
 	//spritesManager->Render();
 	return S_OK;
 }
@@ -129,7 +127,7 @@ HRESULT Snake::Init()
 	maps = new MapLoader();
 	snakeBody = make_shared<SnakeBody>();
 	spritesManager =make_shared<Sprites>();
-	g_pTexturewall = D3DUtil::getTexture(L"img\wall\brick.png");
+	//g_pTexturewall = D3DUtil::getTexture(L"img\wall\brick.png");
 	D3DMATERIAL9 mtrl;
 	::ZeroMemory(&mtrl, sizeof(mtrl));
 	mtrl.Ambient = D3DXCOLOR(0.5f, 0.5f, 0.7f, 1.0f);

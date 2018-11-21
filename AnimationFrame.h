@@ -16,7 +16,6 @@ public:
 	Sprite* m_sprite;
 	shared_ptr<Texture2d> curtexture2d;
 	ListUser<shared_ptr<AFrame>> frames;
-	ID3DXSprite* m_Sprite;
 	HRESULT Add_AnimationSprite(LPCWSTR  path, float duration);
 	HRESULT Add_AnimationSprite(shared_ptr<Texture2d> Texture,float duration);
 	HRESULT Add_AnimationSprite(LPCWSTR path,int tx, int ty, float duration, int w=BOX_WIDTH, int h = BOX_WIDTH);

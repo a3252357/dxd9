@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="10">
+<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="10">
  <tileset firstgid="1" name="Dungeon_A1" tilewidth="16" tileheight="16" tilecount="1152" columns="24">
   <image source="Dungeon_A5.png" width="384" height="768"/>
   <terraintypes>
@@ -82,6 +82,25 @@
 0,0,0,0,0,0,0,0,2309,0,0,0,0,0,2408,
 0,0,0,0,0,0,0,0,2261,0,0,0,0,2455,2456,
 0,0,0,0,0,0,0,0,2501,2502,2502,2502,2502,2503,2504
+</data>
+ </layer>
+ <layer id="4" name="块层 3" width="15" height="15">
+  <data encoding="csv">
+0,0,0,0,0,0,1447,1448,1449,1450,1451,1452,1595,1596,0,
+0,0,0,0,0,0,1495,1496,1497,1498,1499,1500,1643,1644,0,
+0,0,0,0,0,0,1543,1544,1545,1546,1547,1548,1691,1692,0,
+0,0,0,0,0,0,1591,1592,1593,0,0,1738,1739,1740,0,
+0,0,0,0,0,0,1639,1640,1641,0,0,1786,1787,1788,0,
+0,0,0,0,0,0,1687,1688,1689,0,0,1834,1835,1836,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
  <objectgroup id="2" name="对象层 1" visible="0">

@@ -2,7 +2,6 @@
 #include "Sprite.h"
 HRESULT AnimationFrame::Add_AnimationSprite(LPCWSTR  path, float duration)
 {
-	D3DXCreateSprite(D3DUtil::getD3DDev(), &m_Sprite);
 	shared_ptr <AFrame> frame = make_shared<AFrame>();
 	frame->texture2d = make_shared<Texture2d>(*D3DUtil::getTexture(path));
 	frame->duration = duration;
@@ -14,7 +13,6 @@ HRESULT AnimationFrame::Add_AnimationSprite(LPCWSTR  path, float duration)
 }
 HRESULT AnimationFrame::Add_AnimationSprite(shared_ptr<Texture2d> Texture,float duration)
 {
-	D3DXCreateSprite(D3DUtil::getD3DDev(), &m_Sprite);
 	shared_ptr <AFrame> frame = make_shared<AFrame>();
 	frame->texture2d =Texture;
 	frame->duration = duration;
@@ -25,7 +23,6 @@ HRESULT AnimationFrame::Add_AnimationSprite(shared_ptr<Texture2d> Texture,float 
 
 HRESULT AnimationFrame::Add_AnimationSprite(LPCWSTR  path,int tx, int ty, float duration=1000,int w, int h)
 {
-	D3DXCreateSprite(D3DUtil::getD3DDev(), &m_Sprite);
 	shared_ptr <AFrame> frame= make_shared<AFrame>();
 	frame->texture2d = make_shared<Texture2d>(*D3DUtil::getTexture(path, tx, ty, w, h));
 	frame->duration = duration;
@@ -102,9 +99,9 @@ HRESULT AnimationFrame::Update()
 
 HRESULT AnimationFrame::Render()
 {
-	m_Sprite->Begin(D3DXSPRITE_ALPHABLEND);
-	m_Sprite->SetTransform(&TInv);
-	HRESULT s1 = m_Sprite->Draw(*curtexture2d->ptexture9, &rect, NULL, &vec, 0xffffffff);
-	HRESULT s = m_Sprite->End();
+	D3DUtil::getID3DXSprite()->Begin(D3DXSPRITE_ALPHABLEND);
+	D3DUtil::getID3DXSprite()->SetTransform(&TInv);
+	D3DUtil::getID3DXSprite()->Draw(*curtexture2d->ptexture9, &rect, NULL, &vec, 0xffffffff);
+	D3DUtil::getID3DXSprite()->End();
 	return S_OK;
 }

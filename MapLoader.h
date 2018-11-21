@@ -2,13 +2,15 @@
 #include "Seting.h"
 #include "UserMap.h"
 #include "UserObejectLayer.h"
+#include "BaseSprite.h"
 class UserTileLayer;
-class MapLoader
+class MapLoader:public BaseSprite
 {
 public:
-	UserTileLayer* userTileLayer;
-	UserTileLayer* userTileLayer1;
+	vector<BaseSprite *> userTileLayer;
 	MapLoader();
 	~MapLoader();
+	HRESULT Update() override;
+	HRESULT Render() override;
 };
 

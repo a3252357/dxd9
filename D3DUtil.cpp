@@ -9,6 +9,11 @@ HWND D3DUtil::getHWND()
 	return SystemInit::hwnd;
 }
 
+ID3DXSprite* D3DUtil::getID3DXSprite()
+{
+	return SystemInit::m_Sprite;
+}
+
 Texture2d * D3DUtil::getTexture(LPCWSTR path)
 {
 	return TextureManager::getTexture(path);
