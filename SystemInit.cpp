@@ -4,7 +4,6 @@ IDirect3DDevice9 * SystemInit::d3d9dev;
 ID3DXSprite* SystemInit::m_Sprite;
 HRESULT SystemInit::init_D3D()
 {
-	D3DXCreateSprite(D3DUtil::getD3DDev(), &m_Sprite);
 	D3DRect *d3d=new D3DRect();
 	HRESULT hr=d3d->initD3D(hwnd);
 	if (FAILED(hr)) {
@@ -13,6 +12,7 @@ HRESULT SystemInit::init_D3D()
 	else {
 		d3d9dev = d3d->device;
 	}
+
 }
 
 HRESULT SystemInit::init_Sys(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd,WNDPROC WndProc)
@@ -38,6 +38,7 @@ HRESULT SystemInit::init_Sys(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR
 		WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, SCREEN_WIDTH,
 		SCREEN_HEIGHT, NULL, NULL, hInstance, NULL);
 	init_D3D();
+	D3DXCreateSprite(D3DUtil::getD3DDev(), &m_Sprite);
 	Light_Set(1);
 	Matrix_Set();
 	InputInit::InitInput(hInstance);

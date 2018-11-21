@@ -8,7 +8,7 @@ MapLoader::MapLoader()
 	{
 		userTileLayer.push_back(new UserTileLayer(map, 0));
 		userTileLayer.push_back(new UserTileLayer(map, 1));
-		//userTileLayer.push_back(new UserTileLayer(map, 2));
+		userTileLayer.push_back(new UserTileLayer(map, 2));
 		//UserObejectLayer * box = new UserObejectLayer(map,1);
 	}
 	else
