@@ -104,6 +104,9 @@
     <Filter Include="SnakeGame\状态">
       <UniqueIdentifier>{d7c43862-9d98-421b-b90a-5708352a5cfe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SnakeGame\RPG人物加载">
+      <UniqueIdentifier>{3944227a-948b-4ca3-8922-3ff2b5fef2f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DUtil.cpp">
@@ -131,9 +134,6 @@
       <Filter>BaseGame\Sprite系统</Filter>
     </ClCompile>
     <ClCompile Include="InputInit.cpp">
-      <Filter>BaseGame\Sprite系统</Filter>
-    </ClCompile>
-    <ClCompile Include="Sprite.cpp">
       <Filter>BaseGame\Sprite系统</Filter>
     </ClCompile>
     <ClCompile Include="SystemInit.cpp">
@@ -259,6 +259,9 @@
     <ClCompile Include="GameMenuState.cpp">
       <Filter>SnakeGame\状态</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerLoader.cpp">
+      <Filter>SnakeGame\RPG人物加载</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\wall\base.png">
@@ -351,9 +354,6 @@
       <Filter>BaseGame\Sprite系统</Filter>
     </ClInclude>
     <ClInclude Include="InputInit.h">
-      <Filter>BaseGame\Sprite系统</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprite.h">
       <Filter>BaseGame\Sprite系统</Filter>
     </ClInclude>
     <ClInclude Include="SpriteManager.h">
@@ -517,6 +517,9 @@
     </ClInclude>
     <ClInclude Include="GameMenuState.h">
       <Filter>SnakeGame\状态</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerLoader.h">
+      <Filter>SnakeGame\RPG人物加载</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

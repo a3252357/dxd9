@@ -8,7 +8,7 @@ class CallBackTimer :public TimerData,public UserCall::Callback
 {
 	
 private:
-	shared_ptr<T> m_pAObj;
+	T* m_pAObj;
 public:
 	enum EVENT_TYPE
 	{
@@ -17,7 +17,11 @@ public:
 		EVENT_TYPE2,
 		EVENT_TYPE_NUMBER,
 	};
-	CallBackTimer(shared_ptr<T> pA, bool (T::*function)()) : m_pAObj(pA)
+	CallBackTimer(shared_ptr<T> pA, bool (T::*function)()) : m_pAObj(pA.get())
+	{
+		registerCallback(function);
+	};
+	CallBackTimer(T* pA, bool (T::*function)()) : m_pAObj(pA)
 	{
 		registerCallback(function);
 	};

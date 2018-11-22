@@ -3,21 +3,21 @@
   <Class Name="SnakeBody" Collapsed="true">
     <Position X="0.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAYAAAAAAAAgAAAAIAAABAAAAAAAAAgAABAAABAAAAA=</HashCode>
+      <HashCode>AAYAAAAAAAAgAAAAIAAAAAAAAAAAAAgACBAAABAAAAA=</HashCode>
       <FileName>SnakeBody.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Snake" Collapsed="true">
     <Position X="3.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIYACAEAAAAAAAAABAAAAgAIAAAIAAiAEBAGAAAAAAI=</HashCode>
+      <HashCode>AIYACAEAAAAAAAAABAAAAgAIAAAIAAigEBAGAAAAAAI=</HashCode>
       <FileName>Snake.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BaseGame" Collapsed="true">
     <Position X="3.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABACAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAEAAAAAAAAAAAAAAAAAAEABACAAABAAA=</HashCode>
       <FileName>BaseGame.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -45,7 +45,7 @@
   <Class Name="Timer">
     <Position X="14.25" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAgAAAABAAAAAAQAAABAAAAAABAAAIEAAA=</HashCode>
+      <HashCode>AAABAAAAAAAgAAAABAAAAAAAAAABAAAAAABQAAIEAAA=</HashCode>
       <FileName>Timer.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -101,15 +101,8 @@
   <Class Name="InputInit" Collapsed="true">
     <Position X="10" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACAAEEBAAAAAAAAAAAAhAAIgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAACAAEEBAAAAAAAAAAAAhAAIgAAAAAAAAA=</HashCode>
       <FileName>InputInit.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Sprite" Collapsed="true">
-    <Position X="3" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQBAQAAAAAAACAAECgAMAAASQAACAAAABAAAAAAABI=</HashCode>
-      <FileName>Sprite.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpriteManager" Collapsed="true">
@@ -122,7 +115,7 @@
   <Class Name="SystemInit" Collapsed="true">
     <Position X="11.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAAKBAAAAEAAAAAAAAAAAgAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAACAAAAKBAgAAEAAAAAAAAAAAgAAAA=</HashCode>
       <FileName>SystemInit.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -150,7 +143,7 @@
   <Class Name="D3DUtil" Collapsed="true">
     <Position X="15.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAgABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAEAgAAAgABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>D3DUtil.h</FileName>
     </TypeIdentifier>
   </Class>

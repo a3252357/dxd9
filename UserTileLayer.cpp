@@ -36,24 +36,19 @@ UserTileLayer::UserTileLayer(const tmx::Map& map, std::size_t layerIdx)
 				const auto& tileIDs = layer->getTiles();
 				auto idz = tileIDs[idx].ID;
 				const auto& ts = tilesets[getTiles(tilesets, idz)];
-				shared_ptr<Sprite> as = make_shared<Sprite>();
+				shared_ptr<AnimationFrame> as = make_shared<AnimationFrame>();
 				if(idz==0)continue;
 				auto asa= &ts.getTile(idz)->animation.frames;
 				if (ts.getTile(idz)->animation.frames.size() > 0) {
 					for (int i = 0;i < ts.getTile(idz)->animation.frames.size();i++) {
-						auto tileid = ts.getTile(idz)->animation.frames[i].tileID + ts.getFirstGID();
-						if (i == 0) {
-							as->Sprite_Init(StringUtil::ConvertstringToLPCWSTR(ts.getTile(tileid)->imagePath), x*BOX_WIDTH, y*BOX_WIDTH, 0.0f, ts.getTile(tileid)->imagePosition.x, ts.getTile(tileid)->imagePosition.y, BOX_WIDTH, BOX_WIDTH);
-						}
-						else {
-							as->Sprite_Add(StringUtil::ConvertstringToLPCWSTR(ts.getTile(tileid)->imagePath), ts.getTile(tileid)->imagePosition.x, ts.getTile(tileid)->imagePosition.y, BOX_WIDTH, BOX_WIDTH);
-						}
+							auto tileid = ts.getTile(idz)->animation.frames[i].tileID + ts.getFirstGID();
+							as->Add_AnimationSprite(StringUtil::ConvertstringToLPCWSTR(ts.getTile(tileid)->imagePath), x*BOX_WIDTH, y*BOX_WIDTH, 0.0f, ts.getTile(tileid)->imagePosition.x, ts.getTile(tileid)->imagePosition.y, BOX_WIDTH, BOX_WIDTH,2,2);
 					}
 				}
 				else {
-					as->Sprite_Init(StringUtil::ConvertstringToLPCWSTR(ts.getTile(idz)->imagePath), x*BOX_WIDTH, y*BOX_WIDTH, 0.0f, ts.getTile(idz)->imagePosition.x, ts.getTile(idz)->imagePosition.y, BOX_WIDTH, BOX_WIDTH);
+					as->Add_AnimationSprite(StringUtil::ConvertstringToLPCWSTR(ts.getTile(idz)->imagePath), x*BOX_WIDTH, y*BOX_WIDTH, 0.0f, ts.getTile(idz)->imagePosition.x, ts.getTile(idz)->imagePosition.y, BOX_WIDTH, BOX_WIDTH, 2, 2);
 				}
-				as->m_animationFrame->Start(1000);
+				AnimationFrame::Start(as.get());
 				Add(as);
 			}
 		}
@@ -71,7 +66,7 @@ UserTileLayer::~UserTileLayer()
 {
 }
 
-HRESULT UserTileLayer::Add(shared_ptr<Sprite> _sprite)
+HRESULT UserTileLayer::Add(shared_ptr<AnimationFrame> _sprite)
 {
 	bodys.add(_sprite);
 	return S_OK;

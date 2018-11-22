@@ -6,6 +6,8 @@
 #include "SnakeBody.h"
 #include "Sprites.h"
 #include "spine-sfml.h"
+#include "SnakeGameMenuUI.h"
+#include "PlayerLoader.h"
 using namespace spine;
 
 class Snake :public BaseGame
@@ -18,11 +20,13 @@ private:
 	Texture2d * 	g_pTexture = NULL;
 	Texture2d *   	g_pTexturewall;
 	SkeletonDrawable * a;
+	PlayerLoader* asda;
 	//shared_ptr<Sprite>           g_pSprite1wall[100];
 	//shared_ptr<TimeWithSprite> timer;
 	int snakenum = 10;
 	int snakeup = 0;
 	int wallnum = 200;
+
 	int wall[10][10] =
 	{
 		{ 1,1,1,1,1,1,1,1,1,1 },

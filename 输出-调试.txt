@@ -1,0 +1,104 @@
+﻿“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\ConsoleApplication2.exe”。已加载符号。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\ntdll.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\kernel32.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\KernelBase.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\ws2_32.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\rpcrt4.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\user32.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\win32u.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\gdi32.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\gdi32full.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\msvcp_win.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\ucrtbase.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\advapi32.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\msvcrt.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\sechost.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\imm32.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\dinput8.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\CEGUIBase-0_d.dll”。已加载符号。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\shlwapi.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\combase.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\bcryptprimitives.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\msvcp140d.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\d3d9.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\d3dx9_43.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\winmm.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\vcruntime140d.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\ucrtbased.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\freetype_d.dll”。已加载符号。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\pcre_d.dll”。已加载符号。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\minizip_d.dll”。已加载符号。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\CEGUIDirect3D9Renderer-0_d.dll”。已加载符号。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\dbghelp.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\dwmapi.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\winmmbase.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\winmmbase.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已卸载“C:\Windows\System32\winmmbase.dll”
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\cfgmgr32.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\zlib_d.dll”。已加载符号。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\D3DX9d_43.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\winmmbase.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已卸载“C:\Windows\System32\winmmbase.dll”
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\InputHost.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\SHCore.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\CoreMessaging.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\WinTypes.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\CoreUIComponents.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\kernel.appcore.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\ntmarta.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\uxtheme.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\msctf.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\oleaut32.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_883848d8c1f760b0\igdumdim64.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_883848d8c1f760b0\igd9dxva64.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\ole32.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\ResourcePolicyClient.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已卸载“C:\Windows\System32\ResourcePolicyClient.dll”
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_883848d8c1f760b0\igdinfo64.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_883848d8c1f760b0\igc64.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\hid.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\setupapi.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\devobj.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\wintrust.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\msasn1.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\crypt32.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\CEGUIExpatParser_d.dll”。已加载符号。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\libexpat_d.dll”。已加载符号。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\CEGUISILLYImageCodec_d.dll”。已加载符号。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\SILLY_d.dll”。已加载符号。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\libpng_d.dll”。已加载符号。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\jpeg_d.dll”。已加载符号。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\ConsoleApplication2\x64\Debug\CEGUICoreWindowRendererSet_d.dll”。已加载符号。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\usp10.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\TextInputFramework.dll”。无法查找或打开 PDB 文件。
+D3DX: (INFO) Using Intel SSE2 optimizations
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\clbcatq.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“F:\Program Files (x86)\iFly Info Tek\iFlyIME\2.1.1611\x64\iFlyIMEQuickLaunch.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\psapi.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\shell32.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\windows.storage.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\profapi.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\powrprof.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\fltLib.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\msvcp100.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已加载“C:\Windows\System32\msvcr100.dll”。无法查找或打开 PDB 文件。
+“ConsoleApplication2.exe”(Win32): 已卸载“C:\Windows\System32\psapi.dll”
+“ConsoleApplication2.exe”(Win32): 已卸载“C:\Windows\System32\profapi.dll”
+“ConsoleApplication2.exe”(Win32): 已卸载“C:\Windows\System32\powrprof.dll”
+“ConsoleApplication2.exe”(Win32): 已卸载“C:\Windows\System32\fltLib.dll”
+“ConsoleApplication2.exe”(Win32): 已卸载“C:\Windows\System32\windows.storage.dll”
+“ConsoleApplication2.exe”(Win32): 已卸载“C:\Windows\System32\shell32.dll”
+“ConsoleApplication2.exe”(Win32): 已卸载“C:\Windows\System32\msvcp100.dll”
+“ConsoleApplication2.exe”(Win32): 已卸载“C:\Windows\System32\msvcr100.dll”
+“ConsoleApplication2.exe”(Win32): 已卸载“F:\Program Files (x86)\iFly Info Tek\iFlyIME\2.1.1611\x64\iFlyIMEQuickLaunch.dll”
+线程 0x492c 已退出，返回值为 0 (0x0)。
+线程 0x2c0c 已退出，返回值为 0 (0x0)。
+线程 0x5578 已退出，返回值为 0 (0x0)。
+线程 0x3cfc 已退出，返回值为 0 (0x0)。
+线程 0x348 已退出，返回值为 0 (0x0)。
+线程 0x425c 已退出，返回值为 0 (0x0)。
+线程 0x4710 已退出，返回值为 0 (0x0)。
+线程 0x1fc0 已退出，返回值为 0 (0x0)。
+线程 0x4ff4 已退出，返回值为 0 (0x0)。
+线程 0x1bc8 已退出，返回值为 0 (0x0)。
+程序“[7988] ConsoleApplication2.exe”已退出，返回值为 0 (0x0)。

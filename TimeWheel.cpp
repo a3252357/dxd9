@@ -39,7 +39,8 @@ void TimeWheel::add_timer(shared_ptr<Timer>timer)
 									 //int ts = (cur_slot + (ticks %N)) % N;
 
 									 //创建定时器，它在时间轮转动rotation圈之后触发，且位于第ts个槽上
-
+	timer->next = NULL;
+	timer->prev = NULL;
 	//如果槽为空，则它新定时器插入，并设置为该槽的头节点
 	if (!slots[ts]) {
 		//printf("add timer, rotation is %d, ts is %d, cur_slot is %d\n",

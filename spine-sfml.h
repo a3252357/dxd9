@@ -32,11 +32,14 @@
 #define SPINE_SFML_H_
 
 #include <spine/spine.h>
-#include "Sprite.h"
+#include "Seting.h"
+#include "BaseSprite.h"
+#include "Texture2d.h"
+#include "TextureManager.h"
 
 namespace spine {
 
-class SkeletonDrawable : public Sprite {
+class SkeletonDrawable : public BaseSprite {
 public:
 	Skeleton *skeleton;
 	AnimationState *state;

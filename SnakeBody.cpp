@@ -10,7 +10,7 @@ SnakeBody::~SnakeBody()
 {
 }
 
-HRESULT SnakeBody::Add(shared_ptr<Sprite> _sprite)
+HRESULT SnakeBody::Add(shared_ptr<AnimationFrame> _sprite)
 {
 	bodys.add(_sprite);
 	return S_OK;
@@ -44,11 +44,11 @@ HRESULT SnakeBody::Render()
 
 bool SnakeBody::snake()
 {
-	list<shared_ptr<Sprite>>::iterator plist;
+	list<shared_ptr<AnimationFrame>>::iterator plist;
 	bodys.setHeadToNow();
 	for (int i = 1;i < bodys.size();i++)
 	{
-		shared_ptr<Sprite> basehead = bodys.getNow()->data;
+		shared_ptr<AnimationFrame> basehead = bodys.getNow()->data;
 		notify(basehead, Huangjianjian::SNAKE_GO);
 		if (basehead == bodys.find(0)) {
 			if (snakeup == 0) {
@@ -65,7 +65,7 @@ bool SnakeBody::snake()
 			}
 		}
 		else {
-			shared_ptr<Sprite> base = basehead;
+			shared_ptr<AnimationFrame> base = basehead;
 			bodys.goPrev();
 			basehead = bodys.getNow()->data;
 			base->Set_State(basehead->n_x, basehead->n_y, 0);

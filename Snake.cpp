@@ -14,7 +14,8 @@ Snake::~Snake()
 
 HRESULT Snake::Update()
 {
-	spritesManager->Update();
+	asda->playeranimations[0]->Update();
+	//spritesManager->Update();
 	maps->Update();
 	//a->update(1);
 	return S_OK;
@@ -23,6 +24,8 @@ void callback(AnimationState* state, EventType type, TrackEntry* entry, spine::E
 HRESULT Snake::Render()
 {
 	//a->Update();
+
+	asda->playeranimations[0]->Render();
 	maps->Render();
 	//spritesManager->Render();
 	return S_OK;
@@ -123,7 +126,8 @@ HRESULT Snake::Init()
 		//Slot* headSlot = skeleton->findSlot("head");
 	}
 	*/
-
+	asda = new PlayerLoader();
+	ui = new SnakeGameMenuUI(this);
 	maps = new MapLoader();
 	snakeBody = make_shared<SnakeBody>();
 	spritesManager =make_shared<Sprites>();
@@ -147,15 +151,15 @@ HRESULT Snake::Init()
 		}
 		if (z == 0 || j == 0 || (z + 1) >= SCREEN_WIDTH / BOX_WIDTH || (j + 1) >= SCREEN_HEIGHT / BOX_WIDTH)
 		{
-			shared_ptr<Sprite> wall = make_shared<Sprite>();
-			wall->Sprite_Init(L"img/wall/brick.png", z*BOX_WIDTH, j * BOX_WIDTH, 0,0,0, BOX_WIDTH, BOX_WIDTH);
+			shared_ptr<AnimationFrame> wall = make_shared<AnimationFrame>();
+			wall->Add_AnimationSprite(L"img/wall/brick.png", z*BOX_WIDTH, j * BOX_WIDTH, 0,0,0, BOX_WIDTH, BOX_WIDTH);
 			spritesManager->AddSprite(wall);
 			i++;
 		}
 	}
 	for (int i = 0; i < snakenum; i++) {
-		shared_ptr<Sprite> snake = make_shared<Sprite>();
-		snake->Sprite_Init(L"img/wall/brick.png", BOX_WIDTH*(5 - i), BOX_WIDTH * 5, 0, 0, 0, BOX_WIDTH, BOX_WIDTH);
+		shared_ptr<AnimationFrame> snake = make_shared<AnimationFrame>();
+		snake->Add_AnimationSprite(L"img/wall/brick.png", BOX_WIDTH*(5 - i), BOX_WIDTH * 5, 0, 0, 0, BOX_WIDTH, BOX_WIDTH);
 		snakeBody->Add(snake);
 	}
 	spritesManager->AddSprite(snakeBody);

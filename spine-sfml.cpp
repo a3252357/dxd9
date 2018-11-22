@@ -85,7 +85,7 @@ void SkeletonDrawable::Update() const
 	if (vertexEffect != NULL) vertexEffect->begin(*skeleton);
 
 	Vertex vertex;
-	Sprite *texture = NULL;
+	Texture2d *texture = NULL;
 	for (unsigned i = 0; i < skeleton->getSlots().size(); ++i) {
 		Slot &slot = *skeleton->getDrawOrder()[i];
 		Attachment *attachment = slot.getAttachment();
@@ -122,7 +122,7 @@ void SkeletonDrawable::Update() const
 			indicesCount = 6;
 			AtlasRegion * h = ((AtlasRegion *)regionAttachment->getRendererObject());
 			AtlasPage* z=h->page;
-			texture = (Sprite *)((AtlasRegion *)regionAttachment->getRendererObject())->page->getRendererObject();
+			texture = (Texture2d *)((AtlasRegion *)regionAttachment->getRendererObject())->page->getRendererObject();
 			indicesCount = 6;
 			IDirect3DVertexBuffer9 *VB = 0;
 			D3DUtil::getD3DDev()->CreateVertexBuffer(4 * sizeof(CUSTOMVERTEX1), D3DUSAGE_WRITEONLY,
@@ -141,7 +141,7 @@ void SkeletonDrawable::Update() const
 			D3DUtil::getD3DDev()->SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
 
 			//D3DUtil::getD3DDev()->SetRenderState(D3DRS_SHADEMODE, D3DSHADE_GOURAUD);
-			D3DUtil::getD3DDev()->SetTexture(0, *texture->m_animationFrame->curtexture2d->ptexture9);
+			D3DUtil::getD3DDev()->SetTexture(0, *texture->ptexture9);
 			D3DUtil::getD3DDev()->DrawPrimitive(/*D3DPT_TRIANGLELIST,*/D3DPT_TRIANGLESTRIP, 0, 4);
 		}
 		else if (attachment->getRTTI().isExactly(MeshAttachment::rtti)) {
@@ -156,7 +156,7 @@ void SkeletonDrawable::Update() const
 			AtlasRegion * h = ((AtlasRegion *)mesh->getRendererObject());
 			AtlasPage* z = h->page;
 			worldVertices.setSize(mesh->getWorldVerticesLength(), 0);
-			texture = (Sprite *)((AtlasRegion *)mesh->getRendererObject())->page->getRendererObject();
+			texture = (Texture2d *)((AtlasRegion *)mesh->getRendererObject())->page->getRendererObject();
 			mesh->computeWorldVertices(slot, 0, mesh->getWorldVerticesLength(), worldVertices, 0, 2);
 			verticesCount = mesh->getWorldVerticesLength() >> 1;
 			uvs = &mesh->getUVs();
@@ -205,7 +205,7 @@ void SkeletonDrawable::Update() const
 			D3DUtil::getD3DDev()->SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
 			//std::vector<DWORD> adjacencyBuffer(Mesh->GetNumFaces() * 3);
 			//Mesh->GenerateAdjacency(0.0f, &adjacencyBuffer[0]);
-			D3DUtil::getD3DDev()->SetTexture(0, *texture->m_animationFrame->curtexture2d->ptexture9);
+			D3DUtil::getD3DDev()->SetTexture(0, *texture->ptexture9);
 			D3DUtil::getD3DDev()->DrawPrimitive(/*D3DPT_TRIANGLELIST,*/D3DPT_TRIANGLESTRIP, 0, indicesCount / 3);
 			Mesh->DrawSubset(0);
 		}
@@ -292,8 +292,8 @@ void SkeletonDrawable::Update() const
 
 
 void HuangTextureLoader::load(AtlasPage &page, const String &path) {
-	Sprite * texture = new Sprite();
-	texture->Sprite_Init(StringUtil::ConvertstringToLPCWSTR(path.buffer()),0,0,0);
+	Texture2d * texture;
+	texture=TextureManager::getTexture(StringUtil::ConvertstringToLPCWSTR(path.buffer()));
 	page.setRendererObject(texture); // use the texture later in your rendering code
 
 	//f (page.magFilter == TextureFilter_Linear) texture->setSmooth(true);
@@ -301,8 +301,8 @@ void HuangTextureLoader::load(AtlasPage &page, const String &path) {
 
 	//page.setRendererObject(texture);
 	//Vector2u size = texture->getSize();
-	page.width = texture->m_animationFrame->curtexture2d->w;
-	page.height = texture->m_animationFrame->curtexture2d->h;
+	page.width = texture->w;
+	page.height = texture->h;
 }
 
 void HuangTextureLoader::unload(void *texture) {

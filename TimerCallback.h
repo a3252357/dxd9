@@ -49,19 +49,19 @@ namespace UserCall {
 		typedef bool (T::*MemberFunctionType)();  //类的成员函数指针的类型
 
 	public:
-		MemberFunctionSlot(MemberFunctionType func, shared_ptr<T> obj) :
+		MemberFunctionSlot(MemberFunctionType func, T* obj) :
 			d_function(func), d_object(obj)
 		{}
 
 		virtual bool operator()()
 		{
-			T *pInt = d_object.get();
+			T *pInt = d_object;
 			return (pInt->*d_function)();  //调用类的成员函数
 		}
 
 	private:
 		MemberFunctionType d_function;
-		shared_ptr<T> d_object;
+		T* d_object;
 	};
 
 
@@ -101,7 +101,7 @@ namespace UserCall {
 
 		// 模板构造函数，以成员函数的封装为参数，MemberFunctionSlot。
 		template<typename T>
-		SubscriberSlot(bool (T::*function)(), shared_ptr<T> obj) :
+		SubscriberSlot(bool (T::*function)(), T* obj) :
 			d_functor_impl(new MemberFunctionSlot<T>(function, obj))
 		{}
 

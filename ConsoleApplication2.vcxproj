@@ -176,11 +176,11 @@
     <ClCompile Include="ListUser.h" />
     <ClCompile Include="LogSystem.cpp" />
     <ClCompile Include="MapLoader.cpp" />
+    <ClCompile Include="PlayerLoader.cpp" />
     <ClCompile Include="Snake.cpp" />
     <ClCompile Include="SnakeBody.cpp" />
     <ClCompile Include="SnakeGameMenuUI.cpp" />
     <ClCompile Include="spine-sfml.cpp" />
-    <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteBody.cpp" />
     <ClCompile Include="SpriteFactory.cpp" />
     <ClCompile Include="Sprites.cpp" />
@@ -241,6 +241,7 @@
     <ClInclude Include="FristCommonTset.h" />
     <ClInclude Include="GameMenuState.h" />
     <ClInclude Include="Observer.h" />
+    <ClInclude Include="PlayerLoader.h" />
     <ClInclude Include="SnakeGameMenuUI.h" />
     <ClInclude Include="SnakeTimer.h" />
     <ClInclude Include="spine-sfml.h" />
@@ -265,7 +266,6 @@
     <ClInclude Include="Snake.h" />
     <ClInclude Include="SnakeBody.h" />
     <ClInclude Include="CallBackTimer.h" />
-    <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteBody.h" />
     <ClInclude Include="SpriteFactory.h" />
     <ClInclude Include="SpriteManager.h" />

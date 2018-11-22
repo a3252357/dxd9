@@ -1,58 +1,83 @@
 #include "AnimationFrame.h"
-#include "Sprite.h"
-HRESULT AnimationFrame::Add_AnimationSprite(LPCWSTR  path, float duration)
+#include "CallBackTimer.h"
+HRESULT AnimationFrame::Add_AnimationSprite(LPCWSTR  path, float x, float y, float angels, float _sx, float _sy, float duration)
 {
 	shared_ptr <AFrame> frame = make_shared<AFrame>();
-	frame->texture2d = make_shared<Texture2d>(*D3DUtil::getTexture(path));
+	frame->texture2d =D3DUtil::getTexture(path);
 	frame->duration = duration;
 	frames.add(frame);
+	n_x = m_x;
+	n_y = m_y;
+	m_x = x;
+	m_y = y;
+	sx = _sx;
+	sy = _sy;
+	m_angels = angels;
 	//body = new SpriteBody();
 	//body->Init(&m_x, &m_y, &m_angels);
 	if (curtexture2d == nullptr)curtexture2d = frame->texture2d;
 	return S_OK;
 }
-HRESULT AnimationFrame::Add_AnimationSprite(shared_ptr<Texture2d> Texture,float duration)
+HRESULT AnimationFrame::Add_AnimationSprite(Texture2d* Texture, float x, float y, float angels, float _sx, float _sy, float duration)
 {
 	shared_ptr <AFrame> frame = make_shared<AFrame>();
-	frame->texture2d =Texture;
+	frame->texture2d = Texture;
 	frame->duration = duration;
 	frames.add(frame);
-	if (curtexture2d == nullptr)curtexture2d = frame->texture2d;
+	n_x = m_x;
+	n_y = m_y;
+	m_x = x;
+	m_y = y;
+	sx = _sx;
+	sy = _sy;
+	m_angels = angels;
+	if (curtexture2d== nullptr)curtexture2d = frame->texture2d;
 	return S_OK;
 }
 
-HRESULT AnimationFrame::Add_AnimationSprite(LPCWSTR  path,int tx, int ty, float duration=1000,int w, int h)
+HRESULT AnimationFrame::Add_AnimationSprite(LPCWSTR  path, float x, float y, float angels, int tx, int ty, int w, int h, float _sx, float _sy, float duration)
 {
 	shared_ptr <AFrame> frame= make_shared<AFrame>();
-	frame->texture2d = make_shared<Texture2d>(*D3DUtil::getTexture(path, tx, ty, w, h));
+	frame->texture2d = D3DUtil::getTexture(path, tx, ty, w, h);
 	frame->duration = duration;
 	frames.add(frame);
+	n_x = m_x;
+	n_y = m_y;
+	m_x = x;
+	m_y = y;
+	sx = _sx;
+	sy = _sy;
+	m_angels = angels;
 	//body = new SpriteBody();
 	//body->Init(&m_x, &m_y, &m_angels);
-	if(curtexture2d==nullptr)curtexture2d = frame->texture2d;
+	if(curtexture2d == nullptr)
+		curtexture2d = frame->texture2d;
 	return S_OK;
 }
 
-AnimationFrame::AnimationFrame(Sprite* _sprite)
+AnimationFrame::AnimationFrame()
 {
-
-	m_sprite = _sprite;
+	curtexture2d = nullptr;
 }
 
 HRESULT AnimationFrame::Set_State(float x, float y, int angels)
 {
-	//n_x = m_x;
-	//n_y = m_y;
-	//m_x = x;
-	//m_y = y;
-	//m_angels = angels;
+	n_x = m_x;
+	n_y = m_y;
+	m_x = x;
+	m_y = y;
+	m_angels = angels;
 	return S_OK;
 }
 
-HRESULT AnimationFrame::Start(int type)
+
+HRESULT AnimationFrame::Start(AnimationFrame* type)
 {
-	if (frames.size() > 1) {
-		start(frames.getNow()->data->duration,0,100);
+	if (type->frames.size() > 1) {
+		CallBackTimer<AnimationFrame>* snaketimer = new CallBackTimer<AnimationFrame>(type, &AnimationFrame::callback);
+		//
+		snaketimer->start(type->frames.getNow()->data->duration,0, 100);
+		//start(frames.getNow()->data->duration,type,100);
 	}
 	return E_NOTIMPL;
 }
@@ -65,14 +90,15 @@ HRESULT AnimationFrame::Stop()
 	return S_OK;
 }
 
-void AnimationFrame::callback()
+bool AnimationFrame::callback()
 {
 	if (frames.goNext() == NULL)
 	{
 		frames.setHeadToNow();
 	}
 	curtexture2d = frames.getNow()->data->texture2d;
-	start(frames.getNow()->data->duration);
+	//start(frames.getNow()->data->duration);
+	return true;
 }
 
 
@@ -84,14 +110,14 @@ HRESULT AnimationFrame::Update()
 	rect.right = curtexture2d->x + curtexture2d->w;
 	rect.top = curtexture2d->y;
 	rect.bottom = curtexture2d->y + curtexture2d->h;
-	vec.x = m_sprite->m_x;
-	vec.y = m_sprite->m_y;
+	vec.x = m_x;
+	vec.y = m_y;
 	vec.z = 0;
 
-	D3DXMatrixTranslation(&T1, -m_sprite->m_x - curtexture2d->w / 2, -m_sprite->m_y - curtexture2d->h / 2, 0.f);
-	D3DXMatrixRotationZ(&dd16, m_sprite->m_angels);
-	D3DXMatrixTranslation(&T2, m_sprite->m_x + curtexture2d->w / 2, m_sprite->m_y + curtexture2d->h / 2, 0.f);
-	D3DXMatrixScaling(&TInv, m_sprite->sx, m_sprite->sy, 1.0f);
+	D3DXMatrixTranslation(&T1, -m_x - curtexture2d->w / 2, -m_y - curtexture2d->h / 2, 0.f);
+	D3DXMatrixRotationZ(&dd16, m_angels);
+	D3DXMatrixTranslation(&T2, m_x + curtexture2d->w / 2, m_y + curtexture2d->h / 2, 0.f);
+	D3DXMatrixScaling(&TInv, sx, sy, 1.0f);
 	//D3DXMatrixTranslation(&TInv, vec.x, vec.y, vec.z);
 	TInv *= T1 * dd16*T2;
 	return S_OK;
@@ -99,9 +125,6 @@ HRESULT AnimationFrame::Update()
 
 HRESULT AnimationFrame::Render()
 {
-	D3DUtil::getID3DXSprite()->Begin(D3DXSPRITE_ALPHABLEND);
-	D3DUtil::getID3DXSprite()->SetTransform(&TInv);
-	D3DUtil::getID3DXSprite()->Draw(*curtexture2d->ptexture9, &rect, NULL, &vec, 0xffffffff);
-	D3DUtil::getID3DXSprite()->End();
+	curtexture2d->Render(TInv, rect, vec);
 	return S_OK;
 }

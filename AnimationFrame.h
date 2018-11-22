@@ -4,29 +4,31 @@
 #include "D3DUtil.h"
 #include "ListUser.h"
 #include "Texture2d.h"
+#include "SpriteBody.h"
 class Sprite;
-class AnimationFrame : public TimerData {
+class AnimationFrame : public BaseSprite {
 public:
-	AnimationFrame(Sprite* _sprite);
+	AnimationFrame();
 	struct AFrame final
 	{
-		shared_ptr<Texture2d> texture2d;
+		Texture2d* texture2d;
 		float duration=100;
 	};
-	Sprite* m_sprite;
-	shared_ptr<Texture2d> curtexture2d;
+	Texture2d* curtexture2d=nullptr;
 	ListUser<shared_ptr<AFrame>> frames;
-	HRESULT Add_AnimationSprite(LPCWSTR  path, float duration);
-	HRESULT Add_AnimationSprite(shared_ptr<Texture2d> Texture,float duration);
-	HRESULT Add_AnimationSprite(LPCWSTR path,int tx, int ty, float duration, int w=BOX_WIDTH, int h = BOX_WIDTH);
+	HRESULT Add_AnimationSprite(LPCWSTR path, float x, float y, float angels, float _sx=1, float _sy=1, float duration=1000);
+	HRESULT Add_AnimationSprite(Texture2d* Texture, float x, float y, float angels, float _sx=1, float _sy=1, float duration=1000);
+	HRESULT Add_AnimationSprite(LPCWSTR path, float x, float y, float angels, int tx, int ty, int w=BOX_WIDTH, int h = BOX_WIDTH, float _sx=1, float _sy=1, float duration=1000);
 	HRESULT Set_State(float x, float y, int angels);
-	HRESULT Start(int type);
+	static HRESULT Start(AnimationFrame * type);
 	HRESULT Stop();
-	void callback() override;
-	HRESULT Update();
-	HRESULT Render();
+	bool callback();
+	HRESULT Update() override;
+	HRESULT Render() override;
 	RECT rect;
 	D3DXVECTOR3 vec;
 	D3DXMATRIX dd16;
 	D3DXMATRIX T1, T2, TInv;
+	SpriteBody* body;
+	float m_x, m_y, m_angels, n_x, n_y, sx = 1, sy = 1;
 };

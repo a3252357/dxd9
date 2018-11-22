@@ -200,7 +200,7 @@ namespace tmx
     private:
 
         std::string m_workingDir;
-
+        std::string n_workingDir;
         std::uint32_t m_firstGID;
         std::string m_source;
         std::string m_name;
