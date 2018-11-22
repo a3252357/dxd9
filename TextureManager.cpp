@@ -153,7 +153,7 @@ Texture2d * TextureManager::getTexture(LPCWSTR path, int x, int y, int w, int h)
 	for (iter = TextureMap.rbegin(); iter != TextureMap.rend(); iter++)
 	{
 		if (lstrcmpW(iter->first, path) == 0)
-			return new Texture2d(&iter->second, x, y, w, h);
+			return new Texture2d(iter->second, x, y, w, h);
 	}
 	unsigned int ws = 0, hs = 0;
 	GetPicWidthHeight(StringUtil::wstr2str(path).c_str(), &ws, &hs);
@@ -173,7 +173,7 @@ Texture2d * TextureManager::getTexture(LPCWSTR path, int x, int y, int w, int h)
 		&ptexture9);
 	if (hr == S_OK) {
 		TextureMap.insert(TEXTURE_MAP::value_type(path, ptexture9));
-		return new Texture2d(&ptexture9, x, y, w, h);
+		return new Texture2d(ptexture9, x, y, w, h);
 	}
 	else {
 		return NULL;
@@ -190,7 +190,7 @@ Texture2d * TextureManager::getTexture(LPCWSTR path)
 		if (lstrcmpW(iter->first, path) == 0)
 		{
 			iter->second->GetLevelDesc(0, &desc);
-			return new Texture2d(&iter->second, 0, 0, desc.Width, desc.Height);
+			return new Texture2d(iter->second, 0, 0, desc.Width, desc.Height);
 		}
 	}
 	unsigned int ws = 0, hs = 0;
@@ -212,7 +212,7 @@ Texture2d * TextureManager::getTexture(LPCWSTR path)
 	if (hr == S_OK) {
 		TextureMap.insert(TEXTURE_MAP::value_type(path, ptexture9));
 		ptexture9->GetLevelDesc(0, &desc);
-		return new Texture2d(&ptexture9, 0, 0, desc.Width, desc.Height);
+		return new Texture2d(ptexture9, 0, 0, desc.Width, desc.Height);
 	}
 	else {
 		return NULL;

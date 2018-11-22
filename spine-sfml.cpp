@@ -141,7 +141,7 @@ void SkeletonDrawable::Update() const
 			D3DUtil::getD3DDev()->SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
 
 			//D3DUtil::getD3DDev()->SetRenderState(D3DRS_SHADEMODE, D3DSHADE_GOURAUD);
-			D3DUtil::getD3DDev()->SetTexture(0, *texture->ptexture9);
+			D3DUtil::getD3DDev()->SetTexture(0, texture->ptexture9);
 			D3DUtil::getD3DDev()->DrawPrimitive(/*D3DPT_TRIANGLELIST,*/D3DPT_TRIANGLESTRIP, 0, 4);
 		}
 		else if (attachment->getRTTI().isExactly(MeshAttachment::rtti)) {
@@ -205,7 +205,7 @@ void SkeletonDrawable::Update() const
 			D3DUtil::getD3DDev()->SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
 			//std::vector<DWORD> adjacencyBuffer(Mesh->GetNumFaces() * 3);
 			//Mesh->GenerateAdjacency(0.0f, &adjacencyBuffer[0]);
-			D3DUtil::getD3DDev()->SetTexture(0, *texture->ptexture9);
+			D3DUtil::getD3DDev()->SetTexture(0, texture->ptexture9);
 			D3DUtil::getD3DDev()->DrawPrimitive(/*D3DPT_TRIANGLELIST,*/D3DPT_TRIANGLESTRIP, 0, indicesCount / 3);
 			Mesh->DrawSubset(0);
 		}

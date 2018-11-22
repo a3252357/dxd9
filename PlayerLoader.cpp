@@ -7,7 +7,7 @@ PlayerLoader::PlayerLoader()
 	for (int i = 0; i < 6; i++) {
 		array[i].resize(9);
 		for (int j = 0; j < 9; j++) {
-			Texture2d* t = D3DUtil::getTexture(L"img/Actor1_1.png", i * 64, j * 64, 64, 64);
+			Texture2d* t = D3DUtil::getTexture(L"img/Actor1_1.png", j * 64, i * 64, 64, 64);
 			array[i][j] = t;
 		}
 	}

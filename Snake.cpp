@@ -26,7 +26,7 @@ HRESULT Snake::Render()
 	//a->Update();
 
 	asda->playeranimations[0]->Render();
-	maps->Render();
+	//maps->Render();
 	//spritesManager->Render();
 	return S_OK;
 }

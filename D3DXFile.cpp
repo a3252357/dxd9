@@ -31,7 +31,7 @@ HRESULT XFile::Update()
 {
 	for (int i = 0; i < m_Mtrls.size(); i++) {
 		D3DUtil::getD3DDev()->SetMaterial(&m_Mtrls[i]);
-		D3DUtil::getD3DDev()->SetTexture(0,*m_Textures[i]->ptexture9);
+		D3DUtil::getD3DDev()->SetTexture(0,m_Textures[i]->ptexture9);
 		m_Mesh->DrawSubset(i);
 	}
 	return S_OK;
