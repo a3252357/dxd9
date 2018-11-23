@@ -1,9 +1,13 @@
 #pragma once
 #include "Seting.h"
-class Player
+#include "AnimationFrame.h"
+class Player:public BaseSprite
 {
 public:
-	Player();
+	vector<AnimationFrame*> playeranimations;
+	AnimationFrame* cuanimations;
+	Player(vector<AnimationFrame*> _playeranimations);
 	~Player();
+	virtual HRESULT Update() override;
+	virtual HRESULT Render() override;
 };
-

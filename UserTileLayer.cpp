@@ -26,8 +26,7 @@ UserTileLayer::UserTileLayer(const tmx::Map& map, std::size_t layerIdx)
 
 	const auto& mapSize = map.getTileCount();
 	const auto& tilesets = map.getTilesets();
-	for (auto i = 0; i < tilesets.size(); ++i)
-	{
+
 		for (auto x = 0; x < mapSize.x; ++x)
 		{
 			for (auto y = 0; y < mapSize.y; ++y)
@@ -42,17 +41,17 @@ UserTileLayer::UserTileLayer(const tmx::Map& map, std::size_t layerIdx)
 				if (ts.getTile(idz)->animation.frames.size() > 0) {
 					for (int i = 0;i < ts.getTile(idz)->animation.frames.size();i++) {
 							auto tileid = ts.getTile(idz)->animation.frames[i].tileID + ts.getFirstGID();
-							as->Add_AnimationSprite(StringUtil::ConvertstringToLPCWSTR(ts.getTile(tileid)->imagePath), x*BOX_WIDTH, y*BOX_WIDTH, 0.0f, ts.getTile(tileid)->imagePosition.x, ts.getTile(tileid)->imagePosition.y, BOX_WIDTH, BOX_WIDTH,2,2);
+							as->Add_AnimationSprite(StringUtil::ConvertstringToLPCWSTR(ts.getTile(tileid)->imagePath), x*BOX_WIDTH, y*BOX_WIDTH, 0.0f, ts.getTile(tileid)->imagePosition.x, ts.getTile(tileid)->imagePosition.y, BOX_WIDTH, BOX_WIDTH,1,1);
 					}
 				}
 				else {
-					as->Add_AnimationSprite(StringUtil::ConvertstringToLPCWSTR(ts.getTile(idz)->imagePath), x*BOX_WIDTH, y*BOX_WIDTH, 0.0f, ts.getTile(idz)->imagePosition.x, ts.getTile(idz)->imagePosition.y, BOX_WIDTH, BOX_WIDTH, 2, 2);
+					as->Add_AnimationSprite(StringUtil::ConvertstringToLPCWSTR(ts.getTile(idz)->imagePath), x*BOX_WIDTH, y*BOX_WIDTH, 0.0f, ts.getTile(idz)->imagePosition.x, ts.getTile(idz)->imagePosition.y, BOX_WIDTH, BOX_WIDTH, 1, 1);
 				}
-				AnimationFrame::Start(as.get());
+				as->Start();
 				Add(as);
 			}
 		}
-	}
+	
 }
 int UserTileLayer::getTiles(const std::vector<tmx::Tileset>& tilesets,long ID)
 {

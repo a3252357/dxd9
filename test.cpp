@@ -320,6 +320,7 @@ void Direct3D_Render(HWND hwnd)
 				//sprintf(s, "@%d@", end1 - start_1);
 				//printf(s);
 				TimeInit::time->tick();
+				GameSystem::Update(20);
 				//GameSystem::Update(end1 - start_1);
 				start_1 += 20;
 			}

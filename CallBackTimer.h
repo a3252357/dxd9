@@ -1,5 +1,4 @@
 #pragma once
-#include "SnakeBody.h"
 #include "TimerCallback.h"
 #include "TimerData.h"
 using namespace UserCall;
@@ -19,10 +18,12 @@ public:
 	};
 	CallBackTimer(shared_ptr<T> pA, bool (T::*function)()) : m_pAObj(pA.get())
 	{
+		//registerCallback(function);
 		registerCallback(function);
 	};
 	CallBackTimer(T* pA, bool (T::*function)()) : m_pAObj(pA)
 	{
+		//registerCallback(function);
 		registerCallback(function);
 	};
 

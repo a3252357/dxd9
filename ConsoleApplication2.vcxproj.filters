@@ -107,6 +107,15 @@
     <Filter Include="SnakeGame\RPG人物加载">
       <UniqueIdentifier>{3944227a-948b-4ca3-8922-3ff2b5fef2f1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SnakeGame\RPG人物加载\人物状态类">
+      <UniqueIdentifier>{1b14fd03-fd46-401d-8eaa-41ddaf2ec339}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SnakeGame\RPG人物加载\人物状态类\站立">
+      <UniqueIdentifier>{81982115-c83b-48b9-ac39-be78f7e3b6eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseGame\物理引擎%28Box2D%29\碰撞监听">
+      <UniqueIdentifier>{b520064a-6135-41ff-9a7e-983a95826c4d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DUtil.cpp">
@@ -261,6 +270,15 @@
     </ClCompile>
     <ClCompile Include="PlayerLoader.cpp">
       <Filter>SnakeGame\RPG人物加载</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>SnakeGame\RPG人物加载</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerStandState.cpp">
+      <Filter>SnakeGame\RPG人物加载\人物状态类\站立</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2dContactListener.cpp">
+      <Filter>BaseGame\物理引擎%28Box2D%29\碰撞监听</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -521,8 +539,23 @@
     <ClInclude Include="PlayerLoader.h">
       <Filter>SnakeGame\RPG人物加载</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>SnakeGame\RPG人物加载</Filter>
+    </ClInclude>
+    <ClInclude Include="IPlayerState.h">
+      <Filter>SnakeGame\RPG人物加载\人物状态类</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerStandState.h">
+      <Filter>SnakeGame\RPG人物加载\人物状态类\站立</Filter>
+    </ClInclude>
+    <ClInclude Include="Timerutil.h">
+      <Filter>SnakeGame\Bean</Filter>
+    </ClInclude>
+    <ClInclude Include="Box2dContactListener.h">
+      <Filter>BaseGame\物理引擎%28Box2D%29\碰撞监听</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

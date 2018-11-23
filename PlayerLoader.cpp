@@ -19,9 +19,10 @@ PlayerLoader::PlayerLoader()
 		int m = i / 9;
 		int n = i % 9;
 		Texture2d* t = array[m][n];
-		playeranimations[i/3]->Add_AnimationSprite(array[m][n], 0, 0, 0,2,2,1000);
+		playeranimations[i/3]->Add_AnimationSprite(array[m][n], 0, 0, 0,0.5,0.5,1000);
 	}
-	AnimationFrame::Start(playeranimations[0]);
+	//AnimationFrame::Start(playeranimations[1]);
+	playeranimations[1]->Start();
 }
 
 

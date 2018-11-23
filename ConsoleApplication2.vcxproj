@@ -159,6 +159,7 @@
     <ClCompile Include="AnimationFrame.cpp" />
     <ClCompile Include="b2Separator.cpp" />
     <ClCompile Include="BaseSprite.cpp" />
+    <ClCompile Include="Box2dContactListener.cpp" />
     <ClCompile Include="Box2DSystem.cpp" />
     <ClCompile Include="CameraClass.cpp" />
     <ClCompile Include="CommonTestUI.cpp" />
@@ -176,7 +177,9 @@
     <ClCompile Include="ListUser.h" />
     <ClCompile Include="LogSystem.cpp" />
     <ClCompile Include="MapLoader.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerLoader.cpp" />
+    <ClCompile Include="PlayerStandState.cpp" />
     <ClCompile Include="Snake.cpp" />
     <ClCompile Include="SnakeBody.cpp" />
     <ClCompile Include="SnakeGameMenuUI.cpp" />
@@ -234,14 +237,18 @@
     <ClInclude Include="BaseSprite.h" />
     <ClInclude Include="BaseGame.h" />
     <ClInclude Include="BaseUI.h" />
+    <ClInclude Include="Box2dContactListener.h" />
     <ClInclude Include="Box2DSystem.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommonTestUI.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="FristCommonTset.h" />
     <ClInclude Include="GameMenuState.h" />
+    <ClInclude Include="IPlayerState.h" />
     <ClInclude Include="Observer.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerLoader.h" />
+    <ClInclude Include="PlayerStandState.h" />
     <ClInclude Include="SnakeGameMenuUI.h" />
     <ClInclude Include="SnakeTimer.h" />
     <ClInclude Include="spine-sfml.h" />
@@ -281,6 +288,7 @@
     <ClInclude Include="TimeInit.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TimerData.h" />
+    <ClInclude Include="Timerutil.h" />
     <ClInclude Include="TimeS.h" />
     <ClInclude Include="TimeWheel.h" />
     <ClInclude Include="TimeSystemInterface.h" />
@@ -296,7 +304,7 @@
     <ClInclude Include="VibrationUI.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

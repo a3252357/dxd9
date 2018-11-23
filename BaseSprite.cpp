@@ -14,3 +14,8 @@ HRESULT BaseSprite::Render()
 {
 	return S_OK;
 }
+
+HRESULT BaseSprite::OnTriggerStar(b2Contact * contact)
+{
+	return E_NOTIMPL;
+}

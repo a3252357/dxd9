@@ -14,9 +14,9 @@ Snake::~Snake()
 
 HRESULT Snake::Update()
 {
-	asda->playeranimations[0]->Update();
 	//spritesManager->Update();
 	maps->Update();
+	asda->playeranimations[1]->Update();
 	//a->update(1);
 	return S_OK;
 }
@@ -24,10 +24,10 @@ void callback(AnimationState* state, EventType type, TrackEntry* entry, spine::E
 HRESULT Snake::Render()
 {
 	//a->Update();
-
-	asda->playeranimations[0]->Render();
-	//maps->Render();
+	maps->Render();
 	//spritesManager->Render();
+
+	asda->playeranimations[1]->Render();
 	return S_OK;
 }
 void loadBinary(const spine::String &binaryFile, const spine::String &atlasFile, Atlas *&atlas, SkeletonData *&skeletonData,
@@ -126,9 +126,11 @@ HRESULT Snake::Init()
 		//Slot* headSlot = skeleton->findSlot("head");
 	}
 	*/
+	GameSystem::box2DSystem->world->DrawDebugData();
 	asda = new PlayerLoader();
-	ui = new SnakeGameMenuUI(this);
+	//ui = new SnakeGameMenuUI(this);
 	maps = new MapLoader();
+	/*
 	snakeBody = make_shared<SnakeBody>();
 	spritesManager =make_shared<Sprites>();
 	//g_pTexturewall = D3DUtil::getTexture(L"img\wall\brick.png");
@@ -163,9 +165,10 @@ HRESULT Snake::Init()
 		snakeBody->Add(snake);
 	}
 	spritesManager->AddSprite(snakeBody);
-//	snakeBody->start(100,1,10);
-	CallBackTimer<SnakeBody>* snaketimer = new CallBackTimer<SnakeBody>(snakeBody,&SnakeBody::snake);
-	snaketimer->start(100, 1, 10);
+	*/
+	//snakeBody->start(100,1,10);
+	//CallBackTimer<SnakeBody>* snaketimer = new CallBackTimer<SnakeBody>(snakeBody,&SnakeBody::snake);
+	//snaketimer->start(100, 1, 10);
 	// 创建并初始化地形  
 	//g_pTerrain = new TerrainClass();
 	//g_pTerrain->getTerrain(64*100, L"img/wall/brick.png");      //从文件加载高度图和纹理  

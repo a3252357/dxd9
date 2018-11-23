@@ -5,8 +5,8 @@
 class BaseGame
 {
 public:
-	IState * state;
-	BaseUI * ui;
+	IState * state=NULL;
+	BaseUI * ui = NULL;
 	virtual HRESULT Update() {
 		if(ui!=NULL)
 			ui->Update();
@@ -25,7 +25,9 @@ public:
 		return S_OK;
 	};
 	virtual HRESULT InputHandle(LPCWSTR name, LPCWSTR type, const CEGUI::EventArgs& e, CEGUI::Window * window) {
-		state->InputHandle(name, type, e, window);
+		if (state != NULL) {
+			state->InputHandle(name, type, e, window);
+		}
 		return S_OK;
 	};
 };

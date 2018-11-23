@@ -1,13 +1,11 @@
 #pragma once
 #include "Seting.h"
 #include "GameSystem.h"
+class AnimationFrame;
 class SpriteBody {
 	public:
-		HRESULT Init(float* x, float *y, float* angle);
-		HRESULT Update(float* delta);
-		float* x_ptr;
-		float* y_ptr;
-		float* angle_ptr;
-		b2BodyDef* bodyDef;
-		b2Body* body;
+		HRESULT Init(AnimationFrame * _sprite, b2Body* _body);
+		HRESULT Update();
+		b2Body* body=NULL;
+		AnimationFrame * sprite = NULL;
 };

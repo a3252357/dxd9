@@ -1,6 +1,10 @@
 #include "SpriteBody.h"
-HRESULT SpriteBody::Init(float* x, float *y, float* angle)
+#include "AnimationFrame.h"
+HRESULT SpriteBody::Init(AnimationFrame * _sprite, b2Body* _body)
 {
+	body = _body;
+	sprite = _sprite;
+	body->SetUserData(sprite);
 	//x_ptr = x;
 	//y_ptr = y;
 	//angle_ptr = angle;
@@ -13,8 +17,11 @@ HRESULT SpriteBody::Init(float* x, float *y, float* angle)
 	return S_OK;
 }
 
-HRESULT SpriteBody::Update(float * delta)
+HRESULT SpriteBody::Update()
 {
+	sprite->m_x = body->GetPosition().x*PTM_RATIO;
+	sprite->m_y = body->GetPosition().y*PTM_RATIO;
+	sprite->m_angels = body->GetAngle();
 	//*x_ptr = body->GetPosition().x;
 	//*y_ptr = body->GetPosition().y;
 	//*angle_ptr = body->GetAngle();

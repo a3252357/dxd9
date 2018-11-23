@@ -15,8 +15,8 @@ b2Body * CreateBody::CreateRectangleDef(float32 x, float32 y, float32 angle, flo
 {
 		b2BodyDef* bodyDef = new b2BodyDef();
 		bodyDef->type = type;
-		bodyDef->position.x = x;
-		bodyDef->position.y = y;
+		bodyDef->position.x = x/ PTM_RATIO;
+		bodyDef->position.y = y / PTM_RATIO;
 		bodyDef->angle = angle;
 		b2Body *body = GameSystem::box2DSystem->world->CreateBody(bodyDef);
 		body->CreateFixture(CreateFixtureDef::CreateRectangleDef(hx, hy, density, friction, restitution));
@@ -27,8 +27,8 @@ b2Body * CreateBody::CreateCircleDef(float32 x, float32 y, float32 angle, float3
 {
 	b2BodyDef* bodyDef = new b2BodyDef();
 	bodyDef->type = type;
-	bodyDef->position.x = x;
-	bodyDef->position.y = y;
+	bodyDef->position.x = x / PTM_RATIO;
+	bodyDef->position.y = y / PTM_RATIO;
 	bodyDef->angle = angle;
 	b2Body *body = GameSystem::box2DSystem->world->CreateBody(bodyDef);
 	body->CreateFixture(CreateFixtureDef::CreateCircleDef(radius, density, friction, restitution));
@@ -39,8 +39,8 @@ b2Body * CreateBody::CreatePolygonDef(float32 x, float32 y, float32 angle, vecto
 {
 	b2BodyDef* bodyDef = new b2BodyDef();
 	bodyDef->type = type;
-	bodyDef->position.x = x;
-	bodyDef->position.y = y;
+	bodyDef->position.x = x / PTM_RATIO;
+	bodyDef->position.y = y / PTM_RATIO;
 	bodyDef->angle = angle;
 	b2Body *body = GameSystem::box2DSystem->world->CreateBody(bodyDef);
 	body->CreateFixture(CreateFixtureDef::CreatePolygonDef(vec, density, friction, restitution));

@@ -8,6 +8,7 @@
 #include "spine-sfml.h"
 #include "SnakeGameMenuUI.h"
 #include "PlayerLoader.h"
+#include "CreateBody.h"
 using namespace spine;
 
 class Snake :public BaseGame

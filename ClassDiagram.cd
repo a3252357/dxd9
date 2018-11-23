@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SnakeBody" Collapsed="true">
+    <Position X="9.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAgAAAAIAAAAAAAAAAAAAgACBAAABAAAAA=</HashCode>
+      <FileName>SnakeBody.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CallBackTimer&lt;T&gt;" Collapsed="true">
+    <Position X="5.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABQAAAABAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CallBackTimer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Timerutil&lt;T&gt;" Collapsed="true">
+    <Position X="3.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAgAgA=</HashCode>
+      <FileName>Timerutil.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SnakeTimer" Collapsed="true">
+    <Position X="24" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>SnakeTimer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Snake" Collapsed="true">
+    <Position X="11.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIYACAEAAAAAAAAABCAAAgAIAAAIAAigEBAGAAAAAAI=</HashCode>
+      <FileName>Snake.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SnakeGameMenuUI" Collapsed="true">
+    <Position X="1" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAIAAAAIgACAAQAAAAAAAAAAAQBACAAACAAA=</HashCode>
+      <FileName>SnakeGameMenuUI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameMenuState" Collapsed="true">
+    <Position X="29.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameMenuState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerLoader" Collapsed="true">
+    <Position X="32.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAIAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>PlayerLoader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAIAAAAAAAABBAAQAAABA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IPlayerState" Collapsed="true">
+    <Position X="3.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAACAAAAAAAAAAAAAAAAABAAAAABAAA=</HashCode>
+      <FileName>IPlayerState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerStandState" Collapsed="true">
+    <Position X="3.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAgAAAAAAAAAAAAAAAQAABABAAAAABAAA=</HashCode>
+      <FileName>PlayerStandState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseGame" Collapsed="true">
+    <Position X="10" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAEAAAAAAAAAAAAAAAAAAEABACAAABAAA=</HashCode>
+      <FileName>BaseGame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ListUser&lt;T&gt;" Collapsed="true">
+    <Position X="24" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAgAgAAAAMAsBAIAAACAAAAgAADQAAAAACQgA=</HashCode>
+      <FileName>ListUser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Node&lt;T&gt;" Collapsed="true">
+    <Position X="31" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAIAAAA=</HashCode>
+      <FileName>Node.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeInit" Collapsed="true">
+    <Position X="29.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>TimeInit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Timer" Collapsed="true">
+    <Position X="31" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAgAAAABAAAAAAAAAABAAAAAABQAAIEAAA=</HashCode>
+      <FileName>Timer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimerData" Collapsed="true">
+    <Position X="5.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAAAAAAAQgAAgAAAAAAAAAAAgAAAAAAACCAAAAAI=</HashCode>
+      <FileName>TimerData.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWheel" Collapsed="true">
+    <Position X="24" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAACAQgACAAIAAAABAAAAAAAAAABAACAE=</HashCode>
+      <FileName>TimeWheel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeS" Collapsed="true">
+    <Position X="32.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAJAAACAACAAAAgAAAgACAAAAAAgAAgAAAAAEAAAAA=</HashCode>
+      <FileName>TimeS.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeSystemInterface" Collapsed="true">
+    <Position X="22.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TimeSystemInterface.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprites" Collapsed="true">
+    <Position X="27.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAgAAAAAAAAAAAAAABAAAAAAAAAJACAACAAAA=</HashCode>
+      <FileName>Sprites.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseSprite" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAgAAAAAAAAAQABAAAAABAAAAAAAAA=</HashCode>
+      <FileName>BaseSprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="D3DRect" Collapsed="true">
+    <Position X="22.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAACAAAAAABAAAACAAABAAESAAAAAAEAAAAA=</HashCode>
+      <FileName>D3DRect.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XFile" Collapsed="true">
+    <Position X="13" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQAAAAAAAAAAAAAEAAAAAAAIAAABAAAAAAAAg=</HashCode>
+      <FileName>D3DXFile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputInit" Collapsed="true">
+    <Position X="22.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAACAAEEBAAAAAAAAAAAAhAAIgAAAAAAAAA=</HashCode>
+      <FileName>InputInit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpriteManager" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAABAAAAAAAgAAAAACAAABBAAAAAAAA=</HashCode>
+      <FileName>SpriteManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemInit" Collapsed="true">
+    <Position X="22.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAKBAgAAEAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>SystemInit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextureManager" Collapsed="true">
+    <Position X="27.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAgAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TextureManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TerrainClass" Collapsed="true">
+    <Position X="24" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IjAAAAAAAYABAAAAQAgAAACAAAABAAhGBAAAAABEAAA=</HashCode>
+      <FileName>TerrainClass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraClass" Collapsed="true">
+    <Position X="27.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EVAAAACAAAEBCQAARAEAAAAAEAAAAgBQAwChABAAABA=</HashCode>
+      <FileName>CameraClass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="D3DUtil" Collapsed="true">
+    <Position X="24" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAgAAAgABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D3DUtil.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StringUtil" Collapsed="true">
+    <Position X="31" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BECAAAAAAAAIAAIAAAAAAACBAAAAAAAAEAAQAAQAAAA=</HashCode>
+      <FileName>StringUtil.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Box2DSystem" Collapsed="true">
+    <Position X="25.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAgBAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Box2DSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CreateBody" Collapsed="true">
+    <Position X="31" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAQAAAEAAAAAAAgAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>CreateBody.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CreateFixtureDef" Collapsed="true">
+    <Position X="32.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAEAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CreateFixtureDef.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpriteBody" Collapsed="true">
+    <Position X="25.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>SpriteBody.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="b2Separator" Collapsed="true">
+    <Position X="22.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAQAAAACAAkAEAAAAgAAAAAAIAAAAAAAAAggAAAA=</HashCode>
+      <FileName>b2Separator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Box2dContactListener" Collapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAABAAAAgAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Box2dContactListener.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameSystem" Collapsed="true">
+    <Position X="31" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAAAAAAAIAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>GameSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Texture2d" Collapsed="true">
+    <Position X="25.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAQBhgAAAAACA=</HashCode>
+      <FileName>Texture2d.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnimationFrame" Collapsed="true">
+    <Position X="6.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQBCAAIACAAACBAACAgMAgASQAACAAAIBAAAQAAABA=</HashCode>
+      <FileName>AnimationFrame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UISystem" Collapsed="true">
+    <Position X="25.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAAAAAAIAAAAAQAAEAABAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>UISystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogSystem" Collapsed="true">
+    <Position X="25.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAEAAAACAAAAAAAAAABAAAQQAAAgAAAAAAA=</HashCode>
+      <FileName>LogSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapLoader" Collapsed="true">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAEAAAAAAAQAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>MapLoader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserImageLayer" Collapsed="true">
+    <Position X="27.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>UserImageLayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserMap" Collapsed="true">
+    <Position X="29.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>UserMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserObejectLayer" Collapsed="true">
+    <Position X="31" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>UserObejectLayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserTile" Collapsed="true">
+    <Position X="32.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAgAAAA=</HashCode>
+      <FileName>UserTile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserTileLayer" Collapsed="true">
+    <Position X="19.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAAAIAAAAAAAAAAAAAgAABAgAAAgAgA=</HashCode>
+      <FileName>UserTileLayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Observer" Collapsed="true">
+    <Position X="0.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Observer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Subject" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAQAAAAAAAAAAAAACAAAAASAAAAAA=</HashCode>
+      <FileName>Subject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Achievements" Collapsed="true">
+    <Position X="0.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAoA=</HashCode>
+      <FileName>Achievements.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AbstractFactory" Collapsed="true">
+    <Position X="8.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AbstractFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FactoryProducer" Collapsed="true">
+    <Position X="25.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FactoryProducer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpriteFactory" Collapsed="true">
+    <Position X="8.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAIAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>SpriteFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseUI" Collapsed="true">
+    <Position X="3.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABACAAAIAAA=</HashCode>
+      <FileName>BaseUI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CommonTestUI" Collapsed="true">
+    <Position X="5.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAAAAAIAAAAIAAAAAQAAAAAAAAAAAQBACAIACAAA=</HashCode>
+      <FileName>CommonTestUI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FristCommonTset" Collapsed="true">
+    <Position X="1" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAAAAAABAAAAAAAAAAAAAAAAAAIABAAABABAAA=</HashCode>
+      <FileName>FristCommonTset.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestManger" Collapsed="true">
+    <Position X="9" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCAAAIAAA=</HashCode>
+      <FileName>TestManger.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StateControl" Collapsed="true">
+    <Position X="29.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAAAAAAAAAAAAAAQAAAAAQAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>StateControl.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IState" Collapsed="true">
+    <Position X="2" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAABAAAAAgAAAAAAAAAAAAAABAAAAABAAA=</HashCode>
+      <FileName>IState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vibration" Collapsed="true">
+    <Position X="3.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAAAAAABAAAAAAgAAAAAAAAAAAIABAAAAABAAA=</HashCode>
+      <FileName>Vibration.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VibrationUI" Collapsed="true">
+    <Position X="3.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQQAAAAAIAAAAIAAAAAQAAAAAAAAAAIQBACAAACAAA=</HashCode>
+      <FileName>VibrationUI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Command" Collapsed="true">
+    <Position X="29.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAEAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyTextureLoader" Collapsed="true">
+    <Position X="29.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SpineTest.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserCall::SlotFunctorBase" Collapsed="true">
+    <Position X="22.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TimerCallback.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserCall::FreeFunctionSlot" Collapsed="true">
+    <Position X="27.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAMgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TimerCallback.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserCall::MemberFunctionSlot&lt;T&gt;" Collapsed="true">
+    <Position X="27.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEgAAAAAAAAAAABAAIAAAAAAAAAA=</HashCode>
+      <FileName>TimerCallback.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserCall::SubscriberSlot" Collapsed="true">
+    <Position X="32.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IACAAABAAAAAAACAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TimerCallback.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserCall::Callback" Collapsed="true">
+    <Position X="8.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIACAAAAAAgAAAAAIAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>TimerCallback.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spine::SkeletonDrawable" Collapsed="true">
+    <Position X="15.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAIAAAAQAAAEIAAAAAAQAAAAAgAEgAAAAghEAAA=</HashCode>
+      <FileName>spine-sfml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spine::HuangTextureLoader" Collapsed="true">
+    <Position X="32.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAIAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>spine-sfml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="TestData" Collapsed="true">
+    <Position X="24" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAABAAAAAAAAAAAAAAAAEAAAAAAAACAAAA=</HashCode>
+      <FileName>Snake.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="CUSTOMVERTEX1" Collapsed="true">
+    <Position X="22.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAgAAAAAAAYAA=</HashCode>
+      <FileName>Seting.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="TEXTURE_MAP" Collapsed="true">
+    <Position X="25.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TextureManager.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="UserCall::EventID" Collapsed="true">
+    <Position X="22.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TimerCallback.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="UserCall::SlotFunction" Collapsed="true">
+    <Position X="24" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TimerCallback.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="SpriteType" Collapsed="true">
+    <Position X="24" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAIAAAABAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>SpriteType.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="State" Collapsed="true">
+    <Position X="25.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAgABABAA=</HashCode>
+      <FileName>TestState.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Huangjianjian::Event" Collapsed="true">
+    <Position X="22.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Event.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

@@ -4,9 +4,10 @@
 #define BOX_WIDTH	(int)16						//砖块宽度
 #define WINDOW_TITLE	_T("huangjianjian的测试窗口") //为窗口标题定义的宏
 #define SAFE_RELEASE(p) { if(p) { (p)->Release(); (p)=NULL; } }      //自定义一个SAFE_RELEASE()宏,便于资源的释放
-#define PTM_RATIO 32
+#define PTM_RATIO 64
 #define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ |D3DFVF_TEX1)  
 #define MAX_OBSERVERS 100
+#define GET_NAME(x) #x
 using namespace std;
 //*****************************************************************************************
 // Desc: 头文件定义部分  

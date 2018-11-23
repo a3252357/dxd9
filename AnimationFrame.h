@@ -1,12 +1,12 @@
 #pragma once
 #include "Seting.h"
-#include "TimerData.h"
 #include "D3DUtil.h"
 #include "ListUser.h"
 #include "Texture2d.h"
-#include "SpriteBody.h"
+#include "Timerutil.h"
 class Sprite;
-class AnimationFrame : public BaseSprite {
+class SpriteBody;
+class AnimationFrame : public BaseSprite,public Timerutil<AnimationFrame> {
 public:
 	AnimationFrame();
 	struct AFrame final
@@ -20,9 +20,9 @@ public:
 	HRESULT Add_AnimationSprite(Texture2d* Texture, float x, float y, float angels, float _sx=1, float _sy=1, float duration=1000);
 	HRESULT Add_AnimationSprite(LPCWSTR path, float x, float y, float angels, int tx, int ty, int w=BOX_WIDTH, int h = BOX_WIDTH, float _sx=1, float _sy=1, float duration=1000);
 	HRESULT Set_State(float x, float y, int angels);
-	static HRESULT Start(AnimationFrame * type);
+	HRESULT Start();
 	HRESULT Stop();
-	bool callback();
+	bool SetAnimationFrame();
 	HRESULT Update() override;
 	HRESULT Render() override;
 	RECT rect;
