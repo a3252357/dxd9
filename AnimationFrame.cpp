@@ -19,7 +19,7 @@ HRESULT AnimationFrame::Add_AnimationSprite(LPCWSTR  path, float x, float y, flo
 	//body->Init(&m_x, &m_y, &m_angels);
 	if (curtexture2d == nullptr&&body->body == NULL) {
 		curtexture2d = frame->texture2d;
-		body->Init(this,CreateBody::CreateRectangleDef(m_x,m_y, m_angels, sx*curtexture2d->w / 2, sy*curtexture2d->h / 2));
+		//body->Init(this,CreateBody::CreateRectangleDef(m_x,m_y, m_angels, sx*curtexture2d->w / 2, sy*curtexture2d->h / 2));
 	}
 	return S_OK;
 }
@@ -38,7 +38,7 @@ HRESULT AnimationFrame::Add_AnimationSprite(Texture2d* Texture, float x, float y
 	m_angels = angels;
 	if (curtexture2d == nullptr&&body->body == NULL) {
 		curtexture2d = frame->texture2d;
-		body->Init(this, CreateBody::CreateRectangleDef(m_x,m_y, m_angels, sx*curtexture2d->w / 2, sy*curtexture2d->h / 2));
+		//body->Init(this, CreateBody::CreateRectangleDef(m_x,m_y, m_angels, sx*curtexture2d->w / 2, sy*curtexture2d->h / 2));
 	}
 	return S_OK;
 }
@@ -61,7 +61,7 @@ HRESULT AnimationFrame::Add_AnimationSprite(LPCWSTR  path, float x, float y, flo
 	if (curtexture2d == nullptr&&body->body==NULL)
 	{
 		curtexture2d = frame->texture2d;
-		body->Init(this, CreateBody::CreateRectangleDef(m_x,m_y, m_angels, sx*curtexture2d->w / 2, sy*curtexture2d->h / 2));
+		//body->Init(this, CreateBody::CreateRectangleDef(m_x,m_y, m_angels, sx*curtexture2d->w / 2, sy*curtexture2d->h / 2));
 	}
 	return S_OK;
 }
@@ -118,7 +118,17 @@ bool AnimationFrame::SetAnimationFrame()
 
 HRESULT AnimationFrame::Update()
 {
+	/*
 	body->Update();
+	if (InputInit::g_KeyboardState[DIK_LEFT] & 0x8000f) {
+		body->body->SetLinearVelocity(b2Vec2(-3, 0));
+	}
+	if (InputInit::g_KeyboardState[DIK_RIGHT] & 0x8000f) { body->body->ApplyForce(b2Vec2(1, 0), body->body->GetWorldCenter(),true); }
+	if (InputInit::g_KeyboardState[DIK_UP] & 0x8000f) {
+		body->body->SetLinearVelocity(b2Vec2(0, -3));
+	}
+	if (InputInit::g_KeyboardState[DIK_DOWN] & 0x8000f) { body->body->SetLinearVelocity(b2Vec2(0,3)); }
+	*/
 	//m_angels+=0.5;
 	//body->Update(0);
 	rect.left = curtexture2d->x;

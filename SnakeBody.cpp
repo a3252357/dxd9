@@ -18,9 +18,11 @@ HRESULT SnakeBody::Add(shared_ptr<AnimationFrame> _sprite)
 
 HRESULT SnakeBody::Update()
 {
+	bodys.setHeadToNow();
 	for (int i = 0;i<bodys.size();i++)
 	{
-		bodys.find(i)->Update();
+		bodys.getNow()->data->Update();
+		bodys.goNext();
 	}
 	if (InputInit::g_KeyboardState[DIK_LEFT] & 0x8000f) {
 		snakeup = 2;
@@ -37,7 +39,8 @@ HRESULT SnakeBody::Render()
 {
 	for(int i=0;i<bodys.size();i++)
 	{
-		bodys.find(i)->Render();
+		bodys.getNow()->data->Render();
+		bodys.goNext();
 	}
 	return S_OK;
 }
@@ -50,7 +53,7 @@ bool SnakeBody::snake()
 	{
 		shared_ptr<AnimationFrame> basehead = bodys.getNow()->data;
 		notify(basehead, Huangjianjian::SNAKE_GO);
-		if (basehead == bodys.find(0)) {
+		if (basehead == bodys.head->data) {
 			if (snakeup == 0) {
 				basehead->Set_State(basehead->m_x + BOX_WIDTH, basehead->m_y, 0);
 			}

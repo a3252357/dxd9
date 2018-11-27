@@ -1,14 +1,16 @@
 #include "MapLoader.h"
-#include "UserTileLayer.h"
+#include "UserSixTileLayer.h"
 
 MapLoader::MapLoader()
 {
 	tmx::Map map;
-	if (map.load("F:/ConsoleApplication2/map/tileset/untitled.tmx"))
+	if (map.load("F:/ConsoleApplication2/map/tileset/example01.tmx"))
 	{
-		userTileLayer.push_back(new UserTileLayer(map, 0));
-		//userTileLayer.push_back(new UserTileLayer(map, 1));
-		//userTileLayer.push_back(new UserTileLayer(map, 2));
+		userTileLayer.push_back(new UserSixTileLayer(map, 0));
+		userTileLayer.push_back(new UserSixTileLayer(map, 1));
+		userTileLayer.push_back(new UserSixTileLayer(map, 2));
+		tmx::Tileset SD;
+
 		//UserObejectLayer * box = new UserObejectLayer(map,1);
 	}
 	else

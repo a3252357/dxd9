@@ -280,6 +280,9 @@
     <ClCompile Include="Box2dContactListener.cpp">
       <Filter>BaseGame\物理引擎%28Box2D%29\碰撞监听</Filter>
     </ClCompile>
+    <ClCompile Include="UserSixTileLayer.cpp">
+      <Filter>TMX地图读取</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\wall\base.png">
@@ -553,6 +556,9 @@
     </ClInclude>
     <ClInclude Include="Box2dContactListener.h">
       <Filter>BaseGame\物理引擎%28Box2D%29\碰撞监听</Filter>
+    </ClInclude>
+    <ClInclude Include="UserSixTileLayer.h">
+      <Filter>TMX地图读取</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

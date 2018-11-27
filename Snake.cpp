@@ -15,19 +15,22 @@ Snake::~Snake()
 HRESULT Snake::Update()
 {
 	//spritesManager->Update();
-	maps->Update();
+	//maps->Update();
 	asda->playeranimations[1]->Update();
+	ui->Update();
 	//a->update(1);
 	return S_OK;
 }
 void callback(AnimationState* state, EventType type, TrackEntry* entry, spine::Event* event);
 HRESULT Snake::Render()
 {
+	D3DUtil::getID3DXSprite()->Begin(D3DXSPRITE_ALPHABLEND);
 	//a->Update();
-	maps->Render();
+	//maps->Render();
 	//spritesManager->Render();
-
+	ui->Render();
 	asda->playeranimations[1]->Render();
+	D3DUtil::getID3DXSprite()->End();
 	return S_OK;
 }
 void loadBinary(const spine::String &binaryFile, const spine::String &atlasFile, Atlas *&atlas, SkeletonData *&skeletonData,
@@ -128,7 +131,7 @@ HRESULT Snake::Init()
 	*/
 	GameSystem::box2DSystem->world->DrawDebugData();
 	asda = new PlayerLoader();
-	//ui = new SnakeGameMenuUI(this);
+	ui = new SnakeGameMenuUI(this);
 	maps = new MapLoader();
 	/*
 	snakeBody = make_shared<SnakeBody>();

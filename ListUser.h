@@ -11,7 +11,7 @@ public:
 	void add(T e);//向链表添加数据
 	void ascSort();//升序排序
 	void remove(T index);//移除某个结点
-	T find(int index);//查找结点
+	//T find(int index);//查找结点
 	bool isEmpty();//判断是否为空
 	int size();//链表长度
 	void show();//显示链表
@@ -21,8 +21,8 @@ public:
 	Node<T>* goPrev();//得到前一个节点
 	Node<T>* getNow();//得到当前节点
 	Node<T>* setHeadToNow();//设置当前节点
-private:
 	Node<T> *head;
+private:
 	Node<T> *tail;
 	Node<T> *now;
 	int length;
@@ -82,6 +82,7 @@ void ListUser<T>::add(T e)
 		length++;
 	}
 }
+/*
 //查找结点
 template <typename T>
 T ListUser<T>::find(int index)
@@ -116,6 +117,7 @@ T ListUser<T>::find(int index)
 	}
 	return p->data;
 }
+*/
 //删除结点
 template <typename T>
 void ListUser<T>::remove(T index)

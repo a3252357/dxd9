@@ -73,18 +73,22 @@ HRESULT UserTileLayer::Add(shared_ptr<AnimationFrame> _sprite)
 
 HRESULT UserTileLayer::Update()
 {
-	for (int i = 0;i < bodys.size();i++)
+	bodys.setHeadToNow();
+	for (int i = 0; i < bodys.size(); i++)
 	{
-		bodys.find(i)->Update();
+		bodys.getNow()->data->Update();
+		bodys.goNext();
 	}
 	return S_OK;
 }
 
 HRESULT UserTileLayer::Render()
 {
-	for (int i = 0;i < bodys.size();i++)
+	bodys.setHeadToNow();
+	for (int i = 0; i < bodys.size(); i++)
 	{
-		bodys.find(i)->Render();
+		bodys.getNow()->data->Render();
+		bodys.goNext();
 	}
 	return S_OK;
 }

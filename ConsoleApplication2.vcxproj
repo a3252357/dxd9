@@ -204,6 +204,7 @@
     <ClCompile Include="UserImageLayer.cpp" />
     <ClCompile Include="UserMap.cpp" />
     <ClCompile Include="UserObejectLayer.cpp" />
+    <ClCompile Include="UserSixTileLayer.cpp" />
     <ClCompile Include="UserTile.cpp" />
     <ClCompile Include="UserTileLayer.cpp" />
     <ClCompile Include="Vibration.cpp" />
@@ -297,6 +298,7 @@
     <ClInclude Include="UserImageLayer.h" />
     <ClInclude Include="UserMap.h" />
     <ClInclude Include="UserObejectLayer.h" />
+    <ClInclude Include="UserSixTileLayer.h" />
     <ClInclude Include="UserTile.h" />
     <ClInclude Include="UserTileLayer.h" />
     <ClInclude Include="AnimationFrame.h" />
