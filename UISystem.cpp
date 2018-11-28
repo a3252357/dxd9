@@ -24,11 +24,11 @@ HRESULT UISystem::Init()
 	CEGUI::ScriptModule::setDefaultResourceGroup("lua_scripts");
 	CEGUI::ImageManager::setImagesetDefaultResourceGroup("imagesets");
 	CEGUI::AnimationManager::setDefaultResourceGroup("animations");
-	CEGUI::SchemeManager::getSingleton().createFromFile("Generic.scheme");
-	CEGUI::WidgetLookManager::getSingleton().parseLookNFeelSpecificationFromFile("Generic.looknfeel");
+	CEGUI::SchemeManager::getSingleton().createFromFile("TaharezLook.scheme");
+	CEGUI::WidgetLookManager::getSingleton().parseLookNFeelSpecificationFromFile("TaharezLook.looknfeel");
 	CEGUI::System::getSingleton().getDefaultGUIContext().setDefaultFont(&CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei33", 32, true, "simhei.ttf"));
 	//CEGUI::FontManager::getSingleton().createFromFile("simhei32.font");	
-	CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei30", 20, true, "simhei.ttf");
+	//CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei30", 20, true, "simhei.ttf");
 	//CEGUI::SchemeManager::getSingleton().createAll("*.scheme", "schemes");
 	//CEGUI::SchemeManager::getSingleton().createAll("*.font", "fonts");
 	/*

@@ -25,21 +25,42 @@ HRESULT SnakeGameMenuUI::Init()
 	System::getSingleton().createGUIContext(UISystem::myRenderer->getDefaultRenderTarget());
 	System::getSingleton().getDefaultGUIContext().setRootWindow(myRoot);
 
-	DefaultWindow* fWnd = (DefaultWindow*)CEGUI::WindowManager::getSingleton().createWindow("Generic/Label", "testWindow");
+	DefaultWindow* fWnd = (DefaultWindow*)CEGUI::WindowManager::getSingleton().createWindow("TaharezLook/Label", "testWindow");
 	fWnd->subscribeEvent(Editbox::EventMouseButtonDown, CEGUI::Event::Subscriber(&SnakeGameMenuUI::onMouseButtonDown, this));
-	fWnd->setPosition(UVector2(UDim(0.4f, 0.0f), UDim(0.4f, 0.0f)));
+	fWnd->setPosition(UVector2(UDim(0.4f, 0.0f), UDim(0.2f, 0.0f)));
 	// set size to be half the size of the parent
+	Font& font=CEGUI::FontManager::getSingleton().createFreeTypeFont("simhei30", 100, true, "simhei.ttf");
 	fWnd->setSize(USize(UDim(0.2f, 0.0f), UDim(0.2f, 0.0f)));
-	fWnd->setText((CEGUI::utf8*)StringUtil::ConvertLPWSTRToLPSTR(L"11111"));
+	fWnd->setFont(&font);
+	fWnd->setText((CEGUI::utf8*)StringUtil::ConvertLPWSTRToLPSTR(L"械羽"));
 	myRoot->addChild(fWnd);
 
-	DefaultWindow* fWnd1 = (DefaultWindow*)CEGUI::WindowManager::getSingleton().createWindow("Generic/LabelWithOutline", "testWindow1");
+	PushButton* fWnd1 = (PushButton*)CEGUI::WindowManager::getSingleton().createWindow("TaharezLook/Button", "testWindow1");
 	fWnd1->subscribeEvent(PushButton::EventMouseButtonDown, CEGUI::Event::Subscriber(&SnakeGameMenuUI::onMouseButtonDown, this));
-	fWnd1->setPosition(UVector2(UDim(0.2f, 0.0f), UDim(0.2f, 0.0f)));
+	fWnd1->setPosition(UVector2(UDim(0.425f, 0.0f), UDim(0.4f, 0.0f)));
+	//fWnd1->setProperty("name");
 	// set size to be half the size of the parent
-	fWnd1->setSize(USize(UDim(0.2f, 0.0f), UDim(0.2f, 0.0f)));
-	fWnd1->setText((CEGUI::utf8*)StringUtil::ConvertLPWSTRToLPSTR(L"11111"));
+	fWnd1->setSize(USize(UDim(0.15f, 0.0f), UDim(0.1f, 0.0f)));
+	fWnd1->setText((CEGUI::utf8*)StringUtil::ConvertLPWSTRToLPSTR(L"开始游戏"));
 	myRoot->addChild(fWnd1);
+
+	PushButton* fWnd2 = (PushButton*)CEGUI::WindowManager::getSingleton().createWindow("TaharezLook/Button", "testWindow2");
+	fWnd2->subscribeEvent(PushButton::EventMouseButtonDown, CEGUI::Event::Subscriber(&SnakeGameMenuUI::onMouseButtonDown, this));
+	fWnd2->setPosition(UVector2(UDim(0.425f, 0.0f), UDim(0.55f, 0.0f)));
+	//fWnd1->setProperty("name");
+	// set size to be half the size of the parent
+	fWnd2->setSize(USize(UDim(0.15f, 0.0f), UDim(0.1f, 0.0f)));
+	fWnd2->setText((CEGUI::utf8*)StringUtil::ConvertLPWSTRToLPSTR(L"继续游戏"));
+	myRoot->addChild(fWnd2);
+
+	PushButton* fWnd3 = (PushButton*)CEGUI::WindowManager::getSingleton().createWindow("TaharezLook/Button", "testWindow3");
+	fWnd3->subscribeEvent(PushButton::EventMouseButtonDown, CEGUI::Event::Subscriber(&SnakeGameMenuUI::onMouseButtonDown, this));
+	fWnd3->setPosition(UVector2(UDim(0.425f, 0.0f), UDim(0.70f, 0.0f)));
+	//fWnd1->setProperty("name");
+	// set size to be half the size of the parent
+	fWnd3->setSize(USize(UDim(0.15f, 0.0f), UDim(0.1f, 0.0f)));
+	fWnd3->setText((CEGUI::utf8*)StringUtil::ConvertLPWSTRToLPSTR(L"退出游戏"));
+	myRoot->addChild(fWnd3);
 	//CEGUI::String fontSizeString = "12";
 	//float fontSize = CEGUI::PropertyHelper<float>::fromString(fontSizeString);
 	//if (fontSize != 0.0f)

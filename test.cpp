@@ -418,7 +418,9 @@ void Direct3D_Render(HWND hwnd)
 	//--------------------------------------------------------------------------------------
 	snake->Update();
 	D3DUtil::getD3DDev()->BeginScene();
-	snake->Render();	
+	D3DUtil::getID3DXSprite()->Begin(D3DXSPRITE_ALPHABLEND);
+	snake->Render();
+	D3DUtil::getID3DXSprite()->End();
 	UISystem::Update(end1 - start_1);
 	InputInit::ReadKeyAndMouse();
 	for (int i = 0; i < 256; i++) {

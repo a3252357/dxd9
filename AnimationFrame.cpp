@@ -86,7 +86,7 @@ HRESULT AnimationFrame::Set_State(float x, float y, int angels)
 HRESULT AnimationFrame::Start()
 {
 	if (frames.size() > 1) {
-		InvokeRepeating(&AnimationFrame::SetAnimationFrame, "SetAnimationFrame", 1, 100);
+		InvokeRepeating(&AnimationFrame::SetAnimationFrame, "SetAnimationFrame", 1, 4000,4000);
 		//CancelInvoke("SetAnimationFrame");
 		//CallBackTimer* snaketimer = new CallBackTimer(type, &AnimationFrame::callback);
 		//

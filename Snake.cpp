@@ -1,5 +1,6 @@
 #include "Snake.h"
 #include "UserTileLayer.h"
+#include "GameMenuState.h"
 #include <stdio.h>
 #include <spine/spine.h>
 #include <spine/Debug.h>
@@ -12,27 +13,18 @@ Snake::~Snake()
 {
 }
 
-HRESULT Snake::Update()
-{
-	//spritesManager->Update();
-	//maps->Update();
-	asda->playeranimations[1]->Update();
-	ui->Update();
-	//a->update(1);
-	return S_OK;
-}
 void callback(AnimationState* state, EventType type, TrackEntry* entry, spine::Event* event);
-HRESULT Snake::Render()
-{
-	D3DUtil::getID3DXSprite()->Begin(D3DXSPRITE_ALPHABLEND);
-	//a->Update();
+//HRESULT Snake::Render()
+///{
+	//D3DUtil::getID3DXSprite()->Begin(D3DXSPRITE_ALPHABLEND);
+	///a->Update();
 	//maps->Render();
 	//spritesManager->Render();
-	ui->Render();
-	asda->playeranimations[1]->Render();
-	D3DUtil::getID3DXSprite()->End();
-	return S_OK;
-}
+	//ui->Render();
+	//asda->playeranimations[1]->Render();
+	//D3DUtil::getID3DXSprite()->End();
+	//return S_OK;
+//}
 void loadBinary(const spine::String &binaryFile, const spine::String &atlasFile, Atlas *&atlas, SkeletonData *&skeletonData,
 	AnimationStateData *&stateData, Skeleton *&skeleton, AnimationState *&state) {
 	atlas = new(__FILE__, __LINE__) Atlas(atlasFile, &HuangTextureLoader());
@@ -129,10 +121,11 @@ HRESULT Snake::Init()
 		//Slot* headSlot = skeleton->findSlot("head");
 	}
 	*/
-	GameSystem::box2DSystem->world->DrawDebugData();
-	asda = new PlayerLoader();
+	//GameSystem::box2DSystem->world->DrawDebugData();
+	//asda = new PlayerLoader();
+	state = new GameMenuState(this);
 	ui = new SnakeGameMenuUI(this);
-	maps = new MapLoader();
+	//maps = new MapLoader();
 	/*
 	snakeBody = make_shared<SnakeBody>();
 	spritesManager =make_shared<Sprites>();

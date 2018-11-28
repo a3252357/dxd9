@@ -172,6 +172,7 @@
     <ClCompile Include="FristCommonTset.cpp" />
     <ClCompile Include="GameMenuState.cpp" />
     <ClCompile Include="GameSystem.cpp" />
+    <ClCompile Include="GamingState.cpp" />
     <ClCompile Include="InputInit.cpp" />
     <ClCompile Include="ListUser.cpp" />
     <ClCompile Include="ListUser.h" />
@@ -211,6 +212,7 @@
     <ClCompile Include="VibrationUI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="C:\Users\musi\Documents\Games\Project1\img\parallaxes\Ocean1.png" />
     <Image Include="img\Dungeon_A1.jpg" />
     <Image Include="img\tank\bot_down.png" />
     <Image Include="img\tank\bot_left.png" />
@@ -245,6 +247,7 @@
     <ClInclude Include="Event.h" />
     <ClInclude Include="FristCommonTset.h" />
     <ClInclude Include="GameMenuState.h" />
+    <ClInclude Include="GamingState.h" />
     <ClInclude Include="IPlayerState.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="Player.h" />

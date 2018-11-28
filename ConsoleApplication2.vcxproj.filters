@@ -89,9 +89,6 @@
     <Filter Include="设计模式\命令模式">
       <UniqueIdentifier>{002df386-cc83-4ac1-8326-58cd907ae0a7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="设计模式\NewFilter1">
-      <UniqueIdentifier>{3e91e255-deaa-4a69-9017-7fa2e2107776}</UniqueIdentifier>
-    </Filter>
     <Filter Include="设计模式\观察者模式\成就系统测试">
       <UniqueIdentifier>{4eb19084-db65-4cd4-bfaa-b5f2b8042a61}</UniqueIdentifier>
     </Filter>
@@ -265,9 +262,6 @@
     <ClCompile Include="SnakeGameMenuUI.cpp">
       <Filter>SnakeGame\UI</Filter>
     </ClCompile>
-    <ClCompile Include="GameMenuState.cpp">
-      <Filter>SnakeGame\状态</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerLoader.cpp">
       <Filter>SnakeGame\RPG人物加载</Filter>
     </ClCompile>
@@ -282,6 +276,12 @@
     </ClCompile>
     <ClCompile Include="UserSixTileLayer.cpp">
       <Filter>TMX地图读取</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMenuState.cpp">
+      <Filter>SnakeGame\状态</Filter>
+    </ClCompile>
+    <ClCompile Include="GamingState.cpp">
+      <Filter>SnakeGame\状态</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -340,6 +340,9 @@
       <Filter>资源文件</Filter>
     </Image>
     <Image Include="img\Dungeon_A1.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="C:\Users\musi\Documents\Games\Project1\img\parallaxes\Ocean1.png">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>
@@ -559,6 +562,9 @@
     </ClInclude>
     <ClInclude Include="UserSixTileLayer.h">
       <Filter>TMX地图读取</Filter>
+    </ClInclude>
+    <ClInclude Include="GamingState.h">
+      <Filter>SnakeGame\状态</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

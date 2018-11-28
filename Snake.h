@@ -47,8 +47,8 @@ public:
 	
 	Snake();
 	~Snake();
-	HRESULT Update() override;
-	HRESULT Render() override;
+//	HRESULT Update() override;
+//	HRESULT Render() override;
 	HRESULT Init()	override;
 };
 void snakenext(shared_ptr<SnakeBody> sprite);
